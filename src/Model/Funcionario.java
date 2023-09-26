@@ -1,20 +1,18 @@
-package Funcionarios;
+package Model;
 
+public class Funcionario extends PessoaAbstrata {
 
-import Model.ContaBancaria;
-
-public class Funcionarios extends ContaBancaria {
-    private String nome;
     private int identificacao;
     private String departamento;
     private String cargo;
+    private double salario;
 
-    public String getNome() {
-        return nome;
+    public double getSalario() {
+        return salario;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
     public int getIdentificacao() {
@@ -44,7 +42,6 @@ public class Funcionarios extends ContaBancaria {
     @Override
     public String toString() {
         return "Funcionarios{" +
-                "nome ='" + nome + '\'' +
                 ", identificacao ='" + identificacao + '\'' +
                 ", departamento ='" + departamento + '\'' +
                 ", cargo ='" + cargo + '\'' +
