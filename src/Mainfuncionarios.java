@@ -14,9 +14,6 @@ public class Mainfuncionarios {
         funcionario.add(f1); // Adicionar funcionários à lista
 
         // Ler todos os funcionários
-        for (Funcionario Funcionarios : funcionario) {
-            System.out.println(funcionario);
-        }
 
         // Atualizar um funcionário
         Funcionario funcionarioAtualizado = new Funcionario();
