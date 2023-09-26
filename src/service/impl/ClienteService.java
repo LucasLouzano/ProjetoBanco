@@ -1,15 +1,10 @@
-package Repository;
+package service.impl;
 
 import java.util.List;
 
 import Model.Cliente;
 
-public interface ClienteDAO {
-    /**
-     * Cria uma conta na fake database
-     *
-     * @param contas
-     */
+public interface ClienteService {
     void create(Cliente contas);
 
     List<Cliente> readAll();
@@ -17,5 +12,4 @@ public interface ClienteDAO {
     void update(int id, Cliente contas);
 
     void delete(int id);
-
 }

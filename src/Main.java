@@ -1,20 +1,14 @@
-import Controller.ContaRendimento;
 import Model.Cliente;
-import Model.ContaBancaria;
-import Model.ContaCorrente;
-import Repository.ClienteDAO;
-import Repository.Rendimento;
-import Repository.impl.ClienteDAOImpl;
 
-import java.util.*;
+import Controller.ClienteController;
 
 public class Main {
     public static void main(String[] args) {
-        ContaBancaria c1 = new ContaCorrente();
-        Date d1 = new Date();
-        c1.setDataCriacao(d1);
-        c1.setAgencia("12345678912");
-        c1.setNumeroConta("123456");
+        Cliente c1 = new Cliente();
+        c1.setId(660);
+        c1.setNome("Lucas");
+        c1.setEmail("antonioserra@gmail.com");
+        c1.setCpfCnpj("123.456.789.12");
 
         Cliente c2 = new Cliente();
         c2.setId(660);
@@ -22,19 +16,15 @@ public class Main {
         c2.setEmail("Lucas@gmail.com");
         c2.setCpfCnpj("399.356.698.22");
 
-        ClienteDAO conta = new ClienteDAOImpl();
-        conta.create(c2);
-        List<Cliente> Clientescontas = conta.readAll();
-        Clientescontas.forEach(c -> {
-            System.out.println(c.toString());
-        });
+        ClienteController clienteController = new ClienteController();
 
-        Rendimento repository = new ContaRendimento();
-        repository.create(c1);
+        clienteController.create(c1);
+        clienteController.create(c2);
 
-        List<ContaBancaria> contasDataBase = repository.readAll();
-        contasDataBase.forEach(c -> {
-            System.out.println(c.toString());
+        clienteController.readAll().forEach(cliente -> {
+            System.out.println(cliente.getEmail());
         });
+        ;
+
     }
 }

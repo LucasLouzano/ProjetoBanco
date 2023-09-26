@@ -28,9 +28,5 @@ public class Mainfuncionarios {
         // funcionario.add(f1);
         funcionario.remove(funcionarioParaExcluir);
 
-        // Ler novamente a lista, Lista após atualização e exclusão
-        for (Funcionario funcionarios : funcionario) {
-            System.out.println(funcionario);
-        }
     }
 }

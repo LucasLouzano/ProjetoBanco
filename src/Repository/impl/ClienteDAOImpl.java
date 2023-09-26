@@ -27,12 +27,15 @@ public class ClienteDAOImpl implements ClienteDAO {
     // update-atualizar
     @Override
     public void update(int id, Cliente contas) {
-
+        // procurar o valor para atualizar
+        // atualizar
     }
 
     // delete-excluir
     @Override
-    public void Delete(int id) {
-
+    public void delete(int id) {
+        // procurar o valor para atualizar
+        // delete
     }
+
 }
