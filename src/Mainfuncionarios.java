@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Funcionario;
+import model.Funcionario;
 
 public class Mainfuncionarios {
     public static void main(String[] args) {

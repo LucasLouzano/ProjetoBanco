@@ -1,8 +1,8 @@
-package Repository;
+package repository;
 
 import java.util.List;
 
-import Model.Cliente;
+import model.Cliente;
 
 public interface ClienteDAO {
     /**

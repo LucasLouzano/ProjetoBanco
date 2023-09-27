@@ -1,8 +1,8 @@
-package service.impl;
+package Service.impl;
 
 import java.util.List;
 
-import Model.Cliente;
+import model.Cliente;
 
 public interface ClienteService {
     void create(Cliente contas);

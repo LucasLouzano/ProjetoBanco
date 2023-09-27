@@ -1,11 +1,11 @@
-package Repository.impl;
+package repository.impl;
 
-import Repository.ClienteDAO;
+import repository.ClienteDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Model.Cliente;
+import model.Cliente;
 
 public class ClienteDAOImpl implements ClienteDAO {
 
