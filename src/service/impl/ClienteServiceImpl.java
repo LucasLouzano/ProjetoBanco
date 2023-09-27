@@ -14,13 +14,11 @@ public class ClienteServiceImpl implements ClienteService {
 
         @Override
         public void create(Cliente cliente) {
-            // remover pontos e traços
             repository.create(cliente);
         }
 
         @Override
         public List<Cliente> readAll() {
-            // adicionar pontos e traços
             return repository.readAll();
         }
 
@@ -35,9 +33,3 @@ public class ClienteServiceImpl implements ClienteService {
         }
 
     }
-
-//@Override
-// public List<Cliente> readAll() {
-// adicionar pontos e traços
-// return repository.readAll();
-// }
