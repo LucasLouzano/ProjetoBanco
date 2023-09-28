@@ -15,8 +15,8 @@ public class ClienteDAOImpl implements ClienteDAO {
     }
 
     // create-criar
-    public void create(Cliente contas) {
-        baseDados.add(contas);
+    public void create(Cliente conta) {
+        baseDados.add(conta);
     }
 
     // ReadAll-ler-Tudo
@@ -26,7 +26,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     // update-atualizar
     @Override
-    public void update(int id, Cliente contas) {
+    public void update(int id, Cliente conta) {
         // procurar o valor para atualizar
         // atualizar
     }

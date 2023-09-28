@@ -1,8 +1,9 @@
+import controller.ContaController;
 import model.Cliente;
 
 import controller.ClienteController;
-import repository.ClienteDAO;
-import repository.impl.ClienteDAOImpl;
+import model.Conta;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -18,12 +19,23 @@ public class Main {
         c2.setEmail("Lucas@gmail.com");
         c2.setCpfCnpj("399.356.698.22");
 
+        Conta c3 = new Conta();
+        c3.setNome("Rocha");
+        c3.setEmail("Rocha@gmail.com");
+        c3.setSenha(1543);
+        c3.setCpfCnpj("250.635.892.30");
+        c3.setAgencia("256956.20");
+        c3.setNumeroConta("890");
+
+        ContaController contaController = new ContaController();
+        contaController.create(c3);
+        contaController.readAll().forEach(conta -> {
+            System.out.println(conta.toString());
+        });
 
         ClienteController clienteController = new ClienteController();
-
         clienteController.create(c1);
         clienteController.create(c2);
-
         clienteController.readAll().forEach(cliente -> {
             System.out.println(cliente.toString());
         });

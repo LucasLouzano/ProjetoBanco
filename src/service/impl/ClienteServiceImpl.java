@@ -6,15 +6,13 @@ import model.Cliente;
 import repository.ClienteDAO;
 import repository.impl.ClienteDAOImpl;
 
-import static java.util.Collections.replaceAll;
-
 public class ClienteServiceImpl implements ClienteService {
 
         private ClienteDAO repository = new ClienteDAOImpl();
 
         @Override
-        public void create(Cliente cliente) {
-            repository.create(cliente);
+        public void create(Cliente Conta) {
+            repository.create(Conta);
         }
 
         @Override
@@ -23,8 +21,9 @@ public class ClienteServiceImpl implements ClienteService {
         }
 
         @Override
-        public void update(int id, Cliente cliente) {
-            repository.update(id, cliente);
+        public List<Cliente> update(int id, Cliente Conta) {
+            repository.update(id, Conta);
+            return null;
         }
 
         @Override

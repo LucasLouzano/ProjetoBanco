@@ -31,10 +31,5 @@ public abstract class ContaBancaria {
     public void setDataCriacao(Date dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
-
-    @Override
-    public String toString() {
-        return "ContaBancaria{" + "numeroConta ='" + numeroConta + '\'' + ", agencia ='" + agencia + '\'' + ", dataCriacao = " + dataCriacao + '}';
-    }
 }
 
