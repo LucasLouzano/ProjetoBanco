@@ -1,31 +1,35 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import Service.impl.ClienteServiceImpl;
 import model.Cliente;
 import Service.impl.ClienteService;
-import Service.impl.ClienteServiceImpl;
 
 public class ClienteController {
 
+
     private ClienteService service = new ClienteServiceImpl();
 
-    public void create(Cliente contas) {
-        String SemPontos = contas.getCpfCnpj().replaceAll("[.-]", "");
-        contas.setCpfCnpj(SemPontos);
-        contas.setNome(contas.getNome() + " Louzano ");
-        service.create(contas);
+    private List<Cliente> clientes;
+
+
+    public void create(Cliente conta) {
+        String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
+        conta.setCpfCnpj(SemPontos);
+        conta.setNome(conta.getNome() + " Louzano ");
+        service.create(conta);
         // remover pontos e traços
     }
 
     // adicionar pontos e traços
     public List<Cliente> readAll() {
-        List<Cliente> Conta = service.readAll();
-        for (Cliente contas : Conta) {
-            String addPontosETracos = adicionarPontosETracos(contas.getNome());
-            contas.setNome(addPontosETracos);
+        for (Cliente cliente : readAll()) {
+            String addPontosETracos = adicionarPontosETracos(cliente.getNome());
+            cliente.setNome(addPontosETracos);
         }
-        return Conta;
+        return readAll();
     }
 
     private String adicionarPontosETracos(String nome) {
@@ -33,25 +37,34 @@ public class ClienteController {
         return nome;
     }
 
-    public void update(int id, Cliente Conta) {
-        List<Cliente> Contas = service.update(id, Conta);
-        Cliente Atualizarconta = null;
-        for (Cliente cliente : Contas) {
+    public List<Cliente> update(int id, Cliente conta) {
+        List<Cliente> Clientes = service.update(id, conta);
+        for (Cliente cliente : Clientes) {                  // procurar o valor para atualizar //atualizar
             if (cliente.getId() == id) {
-                Atualizarconta = cliente;
+                cliente.setNome(conta.getNome());
+            }
+        }
+        return Clientes;
+    }
+
+    // Encontrar o cliente com o ID correspondente na lista.
+    public void delete(int id) {
+        Cliente clienteParaRemover = null;
+        for (Cliente cliente : clientes) {
+            if (cliente.getId() == id) {
+                clienteParaRemover = cliente;// procurar o valor para atualizar delele
                 break;
             }
         }
-        if (Atualizarconta != null) {
-            Atualizarconta.setId(Conta.getId());
-
-        } else {
+        // Remover o cliente se ele foi encontrado.
+        if (clienteParaRemover != null) {
+            clientes.remove(clienteParaRemover);
 
         }
     }
-
-    public void delete(int id) {
-        service.delete(id);
-    }
-
 }
+
+
+
+
+

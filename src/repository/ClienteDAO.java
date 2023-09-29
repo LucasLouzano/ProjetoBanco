@@ -8,13 +8,13 @@ public interface ClienteDAO {
     /**
      * Cria uma conta na fake database
      *
-     * @param Conta
+     * @param conta
      */
-    void create(Cliente Conta);
+    void create(Cliente conta);
 
     List<Cliente> readAll();
 
-    void update(int id, Cliente Conta);
+    void update(int id, Cliente conta);
 
     void delete(int id);
 

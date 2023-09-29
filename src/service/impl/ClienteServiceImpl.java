@@ -27,8 +27,9 @@ public class ClienteServiceImpl implements ClienteService {
         }
 
         @Override
-        public void delete(int id) {
+        public List<Cliente> delete(int id) {
             repository.delete(id);
+            return null;
         }
 
     }

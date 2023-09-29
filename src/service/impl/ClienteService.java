@@ -5,11 +5,11 @@ import java.util.List;
 import model.Cliente;
 
 public interface ClienteService {
-    void create(Cliente Conta);
+    void create(Cliente conta);
 
     List<Cliente> readAll();
 
     List<Cliente> update(int id, Cliente Conta);
 
-    void delete(int id);
+    List<Cliente> delete(int id);
 }
