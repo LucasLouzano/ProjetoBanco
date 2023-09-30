@@ -3,17 +3,15 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import Service.impl.ClienteServiceImpl;
 import model.Cliente;
-import Service.impl.ClienteService;
+import service.impl.ClienteService;
+import service.impl.ClienteServiceImpl;
 
 public class ClienteController {
-
 
     private ClienteService service = new ClienteServiceImpl();
 
     private List<Cliente> clientes;
-
 
     public void create(Cliente conta) {
         String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
@@ -39,7 +37,7 @@ public class ClienteController {
 
     public List<Cliente> update(int id, Cliente conta) {
         List<Cliente> Clientes = service.update(id, conta);
-        for (Cliente cliente : Clientes) {                  // procurar o valor para atualizar //atualizar
+        for (Cliente cliente : Clientes) { // procurar o valor para atualizar //atualizar
             if (cliente.getId() == id) {
                 cliente.setNome(conta.getNome());
             }
@@ -63,8 +61,3 @@ public class ClienteController {
         }
     }
 }
-
-
-
-
-

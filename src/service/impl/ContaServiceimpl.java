@@ -1,4 +1,4 @@
-package Service.impl;
+package service.impl;
 
 import model.Conta;
 import repository.impl.ContaDAO;
@@ -21,7 +21,7 @@ public class ContaServiceimpl implements ContaService {
 
     @Override
     public void update(String nome, Conta parametro) {
-        repository.update(nome,parametro);
+        repository.update(nome, parametro);
 
     }
 

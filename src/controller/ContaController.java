@@ -1,7 +1,7 @@
 package controller;
 
-import Service.impl.ContaService;
-import Service.impl.ContaServiceimpl;
+import service.impl.ContaService;
+import service.impl.ContaServiceimpl;
 import model.Conta;
 
 import java.util.List;
@@ -32,15 +32,12 @@ public class ContaController {
         return nome;
     }
 
-
     public void update(String nome, Conta parametro) {
         service.update(nome, parametro);
     }
-
 
     public void delete(String nome) {
         service.delete(nome);
 
     }
 }
-

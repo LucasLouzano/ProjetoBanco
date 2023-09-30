@@ -1,4 +1,4 @@
-package Service.impl;
+package service.impl;
 
 import model.Conta;
 
@@ -15,4 +15,3 @@ public interface ContaService {
     void delete(String nome);
 
 }
-
