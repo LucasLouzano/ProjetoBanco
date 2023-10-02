@@ -6,7 +6,7 @@ import model.Cliente;
 
 public interface ClienteDAO {
     /**
-     * Cria uma conta na fake database
+     * Cria uma conta na fake data
      *
      * @param conta
      */
@@ -14,7 +14,7 @@ public interface ClienteDAO {
 
     List<Cliente> readAll();
 
-    void update(int id, Cliente conta);
+    List update(int id, Cliente conta);
 
     void delete(int id);
 

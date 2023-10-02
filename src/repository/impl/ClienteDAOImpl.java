@@ -37,16 +37,18 @@ public class ClienteDAOImpl implements ClienteDAO {
         return nome;
     }
 
-
+    // procurar o valor para atualizar //atualizar
     @Override
-    public void update(int id, Cliente conta) {
-        for (Cliente cliente : baseDados) {                  // procurar o valor para atualizar //atualizar
+    public List<Cliente> update(int id, Cliente conta) {
+        for (Cliente cliente : baseDados) {
             if (cliente.getId() == id) {
                 cliente.setNome(conta.getNome());
-                break;
+                baseDados.add(id, conta);
             }
         }
+        return null;
     }
+
 
     // delete-excluir
     @Override

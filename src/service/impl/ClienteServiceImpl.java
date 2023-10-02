@@ -1,35 +1,67 @@
 package Service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.Cliente;
-import repository.ClienteDAO;
-import repository.impl.ClienteDAOImpl;
 
 public class ClienteServiceImpl implements ClienteService {
+    private List<Cliente> Data = new ArrayList<>();
 
-        private ClienteDAO repository = new ClienteDAOImpl();
-
-        @Override
-        public void create(Cliente Conta) {
-            repository.create(Conta);
-        }
-
-        @Override
-        public List<Cliente> readAll() {
-            return repository.readAll();
-        }
-
-        @Override
-        public List<Cliente> update(int id, Cliente Conta) {
-            repository.update(id, Conta);
-            return null;
-        }
-
-        @Override
-        public List<Cliente> delete(int id) {
-            repository.delete(id);
-            return null;
-        }
-
+    @Override
+    public void create(Cliente conta) {
+        String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
+        conta.setCpfCnpj(SemPontos);
+        conta.setNome(conta.getNome() + " Louzano ");
+        Data.add(conta);
+        // remover pontos e traços
     }
+
+    // adicionar pontos e traços
+    @Override
+    public List<Cliente> readAll() {
+        for (Cliente cliente : readAll()) {
+            String addPontosETracos = adicionarPontosETracos(cliente.getNome());
+            cliente.setNome(addPontosETracos);
+        }
+        return readAll();
+    }
+
+
+    private String adicionarPontosETracos(String nome) {
+        nome = nome.replaceAll(" ", ".").replaceAll("-", ".");
+        return nome;
+    }
+
+
+    // procurar o valor para atualizar //atualizar
+
+    @Override
+    public List<Cliente> update(int id, Cliente conta) {
+        for (Cliente cliente : Data) {
+            if (cliente.getId() == id) {
+                cliente.setNome(conta.getNome());
+                Data.add(id, conta);
+            }
+        }
+        return null;
+    }
+
+
+    // Encontrar o cliente com o ID correspondente na lista.
+    @Override
+    public void delete(int id) {
+        Cliente clienteParaRemover = null;
+        for (Cliente cliente : Data) {
+            if (cliente.getId() == id) {
+                clienteParaRemover = cliente;// procurar o valor para atualizar delele
+                break;
+            }
+        }
+        // Remover o cliente se ele foi encontrado.
+        if (clienteParaRemover != null) {
+            Data.remove(clienteParaRemover);
+
+        }
+    }
+}

@@ -1,10 +1,7 @@
+import controller.ClienteController;
 import controller.ContaController;
 import model.Cliente;
-
-import controller.ClienteController;
 import model.Conta;
-
-
 public class Main {
     public static void main(String[] args) {
         Cliente c1 = new Cliente();
@@ -31,13 +28,6 @@ public class Main {
         contaController.create(c3);
         contaController.readAll().forEach(conta -> {
             System.out.println(conta.toString());
-        });
-
-        ClienteController clienteController = new ClienteController();
-        clienteController.create(c1);
-        clienteController.create(c2);
-        clienteController.readAll().forEach(cliente -> {
-            System.out.println(cliente.toString());
         });
 
     }

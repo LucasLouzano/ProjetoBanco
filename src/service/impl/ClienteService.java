@@ -9,7 +9,7 @@ public interface ClienteService {
 
     List<Cliente> readAll();
 
-    List<Cliente> update(int id, Cliente Conta);
+    List<Cliente> update(int id, Cliente conta);
 
-    List<Cliente> delete(int id);
+    void delete(int id);
 }
