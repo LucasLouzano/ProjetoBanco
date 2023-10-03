@@ -20,36 +20,29 @@ public class ClienteDAOImpl implements ClienteDAO {
         conta.setCpfCnpj(SemPontos);
         conta.setNome(conta.getNome() + " Louzano ");
         baseDados.add(conta);
-        // remover pontos e traços
     }
 
-    @Override   // ReadAll-ler-Tudo
-    public Cliente readAll() {
-        for (Cliente cliente : baseDados) {
-            if (cliente.getId() == cliente.getId()) {
-                return cliente;
-            }
-        }
-        return null;
+    @Override // ReadAll-ler-Tudo
+    public List<Cliente> readAll() {
+        return baseDados;
     }
 
-
-
- // procurar o valor para atualizar //atualizar
-    public boolean update(int id, Cliente conta) {
-        for (Cliente cliente : baseDados)
-            if (cliente.getId() == id) {
-                cliente.setNome(conta.getNome());
-                baseDados.add(id, conta);
+    // procurar o valor para atualizar //atualizar
+    public boolean update(String id, Cliente novoCliente) {
+        for (int i = 0; i < baseDados.size(); i++) {
+            Cliente cliente = baseDados.get(i);
+            if (cliente.getCpfCnpj().equals(id)) {
+                baseDados.set(i, novoCliente);
                 return true;
             }
+        }
         return false;
     }
 
     // delete-excluir
     public boolean delete(int id) {
         Cliente clienteParaRemover = null;
-        for (Cliente cliente :baseDados ) {
+        for (Cliente cliente : baseDados) {
             if (cliente.getId() == id) {
                 clienteParaRemover = cliente;
                 break;
@@ -62,6 +55,3 @@ public class ClienteDAOImpl implements ClienteDAO {
         return false;
     }
 }
-
-
-

@@ -20,24 +20,21 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override // adicionar pontos e traços
-    public Cliente readAll() {
-        for (Cliente cliente : clientes) {
-            if (cliente.getId() == cliente.getId()) {
-                return cliente;
-            }
-        }
-        return null;
+    public List<Cliente> readAll() {
+
+        /*
+         * for (Cliente cliente : clientes) {
+         * if (cliente.getId() == cliente.getId()) {
+         * return cliente;
+         * }
+         * }
+         */
+        return repository.readAll();
     }
 
     @Override // procurar o valor para atualizar //atualizar
-    public boolean update(int id, Cliente conta) {
-        for (Cliente cliente : clientes)
-            if (cliente.getId() == id) {
-                cliente.setNome(conta.getNome());
-                clientes.add(id, conta);
-                return true;
-            }
-        return false;
+    public boolean update(String id, Cliente conta) {
+        return repository.update(id, conta);
     }
 
     @Override

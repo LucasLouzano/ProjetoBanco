@@ -1,5 +1,7 @@
 package repository;
 
+import java.util.List;
+
 import model.Cliente;
 
 public interface ClienteDAO {
@@ -10,9 +12,9 @@ public interface ClienteDAO {
      */
     void create(Cliente conta);
 
-    Cliente readAll();
+    List<Cliente> readAll();
 
-    boolean update(int id, Cliente conta);
+    boolean update(String id, Cliente conta);
 
     boolean delete(int id);
 

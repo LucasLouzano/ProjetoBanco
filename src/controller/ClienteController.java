@@ -14,13 +14,12 @@ public class ClienteController {
         service.create(Conta);
     }
 
-    public Cliente readAll() {
+    public List<Cliente> readAll() {
         return service.readAll();
     }
 
-    public List<Cliente> update(int id, Cliente Conta) {
-        service.update(id, Conta);
-        return null;
+    public boolean update(String id, Cliente Conta) {
+        return service.update(id, Conta);
     }
 
     public List<Cliente> delete(int id) {
