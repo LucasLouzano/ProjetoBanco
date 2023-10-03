@@ -1,8 +1,5 @@
 package repository.impl;
-
-import model.Cliente;
 import model.Conta;
-
 import java.util.List;
 
 public interface ContaDAO {

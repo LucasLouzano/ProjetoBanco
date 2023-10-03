@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Cliente;
+import repository.ClienteDAO;
+import repository.impl.ClienteDAOImpl;
 
 public class ClienteServiceImpl implements ClienteService {
-    private List<Cliente> Data = new ArrayList<>();
+    private ClienteDAO repository = new ClienteDAOImpl();
+   private List<Cliente> Data = new ArrayList<>();
 
-    @Override
+    @Override // remover pontos e traços
     public void create(Cliente conta) {
         String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
         conta.setCpfCnpj(SemPontos);
         conta.setNome(conta.getNome() + " Louzano ");
-        Data.add(conta);
-        // remover pontos e traços
+        repository.create(conta);
     }
 
-    // adicionar pontos e traços
-    @Override
+    @Override // adicionar pontos e traços
     public List<Cliente> readAll() {
         for (Cliente cliente : readAll()) {
             String addPontosETracos = adicionarPontosETracos(cliente.getNome());
@@ -27,41 +28,37 @@ public class ClienteServiceImpl implements ClienteService {
         return readAll();
     }
 
-
     private String adicionarPontosETracos(String nome) {
         nome = nome.replaceAll(" ", ".").replaceAll("-", ".");
         return nome;
     }
 
-
-    // procurar o valor para atualizar //atualizar
-
-    @Override
+    @Override // procurar o valor para atualizar //atualizar
     public List<Cliente> update(int id, Cliente conta) {
-        for (Cliente cliente : Data) {
+        for (Cliente cliente : Data)
             if (cliente.getId() == id) {
                 cliente.setNome(conta.getNome());
-                Data.add(id, conta);
+                repository.update(id, conta);
             }
-        }
         return null;
     }
 
-
-    // Encontrar o cliente com o ID correspondente na lista.
     @Override
     public void delete(int id) {
         Cliente clienteParaRemover = null;
         for (Cliente cliente : Data) {
             if (cliente.getId() == id) {
-                clienteParaRemover = cliente;// procurar o valor para atualizar delele
+                clienteParaRemover = cliente;
                 break;
             }
         }
-        // Remover o cliente se ele foi encontrado.
         if (clienteParaRemover != null) {
             Data.remove(clienteParaRemover);
-
         }
     }
 }
+
+
+// Encontrar o cliente com o ID correspondente na lista.
+// procurar o valor para atualizar delele
+// Remover o cliente se ele foi encontrado.
