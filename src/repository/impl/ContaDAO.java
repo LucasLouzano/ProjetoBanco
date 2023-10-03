@@ -1,6 +1,6 @@
 package repository.impl;
+import model.Cliente;
 import model.Conta;
-import java.util.List;
 
 public interface ContaDAO {
     /**
@@ -10,7 +10,7 @@ public interface ContaDAO {
      */
     void create(Conta parametro);
 
-    List<Conta> readAll();
+    Cliente readAll();
 
     void update(String nome, Conta parametro);
 

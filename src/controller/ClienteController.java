@@ -14,7 +14,7 @@ public class ClienteController {
         service.create(Conta);
     }
 
-    public List<Cliente> readAll() {
+    public Cliente readAll() {
         return service.readAll();
     }
 

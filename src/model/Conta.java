@@ -2,18 +2,19 @@ package model;
 
 import java.util.Date;
 
-public class Conta extends ContaBancaria {
+public abstract class Conta {
     private String nome;
     private String email;
-    private int senha;
+    private String senha;
     private String cpfCnpj;
     private Date dataNascimento;
+    private Date dataCriacao;
 
 
-    public int getSenha() {
+    public String getSenha() {
         return senha;
     }
-    public void setSenha(int senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
 
@@ -49,9 +50,11 @@ public class Conta extends ContaBancaria {
         this.dataNascimento = dataNascimento;
     }
 
-    @Override
-    public String toString() {
-        return "Conta{" +
-                " nome ='" + nome + '\'' + ", email ='" + email + '\'' + ", senha = " + senha + ", cpfCnpj ='" + cpfCnpj + '\'' + ", dataNascimento = " + dataNascimento + " numeroConta ='" + getNumeroConta() + '\'' + ", agencia ='" + getAgencia() + '\'' + ", dataCriacao =" + getDataCriacao() + '}';
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 }

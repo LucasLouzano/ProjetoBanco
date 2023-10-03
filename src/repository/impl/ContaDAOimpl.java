@@ -1,5 +1,6 @@
 package repository.impl;
 
+import model.Cliente;
 import model.Conta;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +13,16 @@ public class ContaDAOimpl implements ContaDAO {
 
     // create-criar  database
     public void create(Conta parametro) {
+        parametro.setNome(parametro.getNome() + " Louzano ");
+        parametro.setEmail(parametro.getEmail() + "Louzano@gmail.com");
         DATABASE.add(parametro);
 
     }
-
     //ReadAll-ler-Tudo
-    public List<Conta> readAll() {
-        return DATABASE;
+    @Override
+    public Cliente readAll() {
+        return null;
     }
-
     @Override
     // update-atualizar
     public void update(String nome, Conta parametro) {
