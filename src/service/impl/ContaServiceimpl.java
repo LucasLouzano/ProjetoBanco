@@ -1,4 +1,4 @@
-package Service.impl;
+package service.impl;
 
 import model.Cliente;
 import model.Conta;
@@ -9,6 +9,7 @@ import repository.impl.ContaDAOimpl;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class ContaServiceimpl implements ContaService {
     List<Conta> contas = new ArrayList<>();
     private ContaDAO repository = new ContaDAOimpl();
@@ -29,14 +30,17 @@ public class ContaServiceimpl implements ContaService {
         }
         return contas;
     }
+
     private String adicionarPontosETracos(String nome) {
         nome = nome.replaceAll(" ", ".").replaceAll("-", ".");
         return nome;
     }
+
     @Override
     public void update(String nome, Conta parametro) {
         repository.update(nome, parametro);
     }
+
     @Override
     public void delete(String nome) {
         repository.delete(nome);

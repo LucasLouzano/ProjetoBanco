@@ -2,13 +2,13 @@ package controller;
 
 import java.util.List;
 
-import Service.impl.ClienteService;
-import Service.impl.ClienteServiceImpl;
+import service.impl.ClienteService;
+import service.impl.ClienteServiceImpl;
 import model.Cliente;
+
 public class ClienteController {
 
     private ClienteService service = new ClienteServiceImpl();
-
 
     public void create(Cliente Conta) {
         service.create(Conta);
@@ -29,4 +29,3 @@ public class ClienteController {
     }
 
 }
-
