@@ -1,11 +1,9 @@
 package service.impl;
 
-import model.Cliente;
 import model.Conta;
-import repository.ClienteDAO;
-import repository.impl.ClienteDAOImpl;
-import repository.impl.ContaDAO;
+import repository.ContaDAO;
 import repository.impl.ContaDAOimpl;
+import service.ContaService;
 
 import java.util.ArrayList;
 import java.util.List;

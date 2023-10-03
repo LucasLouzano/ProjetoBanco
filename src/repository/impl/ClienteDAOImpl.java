@@ -28,6 +28,7 @@ public class ClienteDAOImpl implements ClienteDAO {
     }
 
     // procurar o valor para atualizar //atualizar
+    @Override
     public boolean update(String id, Cliente novoCliente) {
         for (int i = 0; i < baseDados.size(); i++) {
             Cliente cliente = baseDados.get(i);

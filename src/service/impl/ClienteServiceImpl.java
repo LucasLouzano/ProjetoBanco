@@ -6,6 +6,7 @@ import java.util.List;
 import model.Cliente;
 import repository.ClienteDAO;
 import repository.impl.ClienteDAOImpl;
+import service.ClienteService;
 
 public class ClienteServiceImpl implements ClienteService {
     private List<Cliente> clientes = new ArrayList<>();
@@ -21,14 +22,6 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override // adicionar pontos e traços
     public List<Cliente> readAll() {
-
-        /*
-         * for (Cliente cliente : clientes) {
-         * if (cliente.getId() == cliente.getId()) {
-         * return cliente;
-         * }
-         * }
-         */
         return repository.readAll();
     }
 
@@ -39,18 +32,9 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public boolean delete(int id) {
-        Cliente clienteParaRemover = null;
-        for (Cliente cliente : clientes) {
-            if (cliente.getId() == id) {
-                clienteParaRemover = cliente;
-                break;
-            }
-        }
-        if (clienteParaRemover != null) {
-            clientes.remove(clienteParaRemover);
-            return true;
-        }
-        return false;
+        // chamar o read
+        // passar o objeto com parametro
+        return repository.delete(id);
     }
 }
 

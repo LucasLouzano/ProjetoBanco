@@ -2,7 +2,7 @@ package controller;
 
 import java.util.List;
 
-import service.impl.ClienteService;
+import service.ClienteService;
 import service.impl.ClienteServiceImpl;
 import model.Cliente;
 

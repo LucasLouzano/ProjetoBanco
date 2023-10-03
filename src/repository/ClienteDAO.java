@@ -4,6 +4,7 @@ import java.util.List;
 
 import model.Cliente;
 
+//TODO exteds do GenericCRUD
 public interface ClienteDAO {
     /**
      * Cria uma conta na fake data

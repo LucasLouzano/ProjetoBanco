@@ -1,6 +1,6 @@
 package controller;
 
-import service.impl.ContaService;
+import service.ContaService;
 import service.impl.ContaServiceimpl;
 import model.Conta;
 import java.util.List;
