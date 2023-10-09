@@ -13,27 +13,21 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     public ClienteDAOImpl() {
     }
-
-    // create-criar // remover pontos e traços
+    // create-criar
     public void create(Cliente conta) {
         String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
         conta.setCpfCnpj(SemPontos);
+        conta.setNome(conta.getNome() + " Louzano ");
         baseDados.add(conta);
     }
 
-    // ReadAll-ler-Tudo
+    @Override // ReadAll-ler-Tudo
     public List<Cliente> readAll() {
-        List<Cliente> clientesMaioresDe60 = new ArrayList<>();
-        for (Cliente cliente : baseDados) {
-            if (cliente.getIdade() > 60) {
-                clientesMaioresDe60.add(cliente);
-
-            }
-        }
-        return clientesMaioresDe60;
+        return baseDados;
     }
 
     // procurar o valor para atualizar //atualizar
+    @Override
     public boolean update(String id, Cliente novoCliente) {
         for (int i = 0; i < baseDados.size(); i++) {
             Cliente cliente = baseDados.get(i);
@@ -47,11 +41,16 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     // delete-excluir
     public boolean delete(int id) {
+        Cliente clienteParaRemover = null;
         for (Cliente cliente : baseDados) {
             if (cliente.getId() == id) {
-                baseDados.remove(cliente);
+                clienteParaRemover = cliente;
                 break;
             }
+        }
+        if (clienteParaRemover != null) {
+            baseDados.remove(clienteParaRemover);
+            return true;
         }
         return false;
     }
