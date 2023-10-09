@@ -1,27 +1,22 @@
 package service.impl;
 
-import model.Cliente;
 import model.Conta;
-import repository.ClienteDAO;
-import repository.impl.ClienteDAOImpl;
-import repository.impl.ContaDAO;
+import repository.ContaDAO;
 import repository.impl.ContaDAOimpl;
-
-import java.util.ArrayList;
+import service.ContaService;
 import java.util.List;
 
 public class ContaServiceimpl implements ContaService {
-    List<Conta> contas = new ArrayList<>();
+
     private ContaDAO repository = new ContaDAOimpl();
+    List<Conta> contas = repository.readAll();
 
     @Override
     public void create(Conta parametro) {
-        parametro.setNome(parametro.getNome() + " Louzano ");
-        parametro.setEmail(parametro.getEmail() + "Louzano@gmail.com");
-        parametro.setSenha(parametro.getSenha() + "12358");
+        String SemPontos = parametro.getCpfCnpj().replaceAll("[.-]", "");
+        parametro.setCpfCnpj(SemPontos);
         repository.create(parametro);
     }
-
     @Override
     public List<Conta> readAll() {
         for (Conta parametro : contas) {
@@ -37,13 +32,13 @@ public class ContaServiceimpl implements ContaService {
     }
 
     @Override
-    public void update(String nome, Conta parametro) {
-        repository.update(nome, parametro);
+    public boolean update(String nome, Conta parametro) {
+        return repository.update(nome, parametro);
     }
 
     @Override
-    public void delete(String nome) {
-        repository.delete(nome);
+    public boolean delete(String nome) {
+      return repository.delete(nome);
 
     }
 }

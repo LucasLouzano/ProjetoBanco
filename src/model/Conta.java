@@ -2,7 +2,7 @@ package model;
 
 import java.util.Date;
 
-public abstract class Conta {
+public class Conta {
     private String nome;
     private String email;
     private String senha;

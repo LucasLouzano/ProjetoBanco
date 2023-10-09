@@ -2,58 +2,54 @@ package service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import model.Cliente;
 import repository.ClienteDAO;
 import repository.impl.ClienteDAOImpl;
+import service.ClienteService;
 
 public class ClienteServiceImpl implements ClienteService {
-    private List<Cliente> clientes = new ArrayList<>();
-    private ClienteDAO repository = new ClienteDAOImpl();
 
-    @Override // remover pontos e traços
+    private ClienteDAO repository = new ClienteDAOImpl();
+    List<Cliente> clientes = new ArrayList<>();
+
+    @Override // create-criar //remover pontos e traços
     public void create(Cliente conta) {
         String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
         conta.setCpfCnpj(SemPontos);
-        conta.setNome(conta.getNome() + " Louzano ");
         repository.create(conta);
+
     }
 
-    @Override // adicionar pontos e traços
+    @Override  // adicionar pontos e traços
     public List<Cliente> readAll() {
-
-        /*
-         * for (Cliente cliente : clientes) {
-         * if (cliente.getId() == cliente.getId()) {
-         * return cliente;
-         * }
-         * }
-         */
-        return repository.readAll();
+        for (Cliente cliente : clientes) {
+            String nomeFormatado = adicionarPontosETracos(cliente.getNome());
+            cliente.setNome(nomeFormatado);
+        }
+        return clientes;
     }
+
+    private String adicionarPontosETracos(String nome) {
+        nome = nome.replace(" ", ".");
+        return nome;
+    }
+
 
     @Override // procurar o valor para atualizar //atualizar
     public boolean update(String id, Cliente conta) {
         return repository.update(id, conta);
     }
 
-    @Override
+    @Override    // chamar o read, passar o objeto com parametro
     public boolean delete(int id) {
-        Cliente clienteParaRemover = null;
-        for (Cliente cliente : clientes) {
-            if (cliente.getId() == id) {
-                clienteParaRemover = cliente;
-                break;
-            }
-        }
-        if (clienteParaRemover != null) {
-            clientes.remove(clienteParaRemover);
-            return true;
-        }
-        return false;
+        return repository.delete(id);
+
     }
 }
 
 // Encontrar o cliente com o ID correspondente na lista.
 // procurar o valor para atualizar delele
 // Remover o cliente se ele foi encontrado.
+
+
+

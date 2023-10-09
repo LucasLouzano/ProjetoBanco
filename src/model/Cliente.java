@@ -15,7 +15,7 @@ public class Cliente extends PessoaAbstrata {
 
     @Override
     public String toString() {
-        return "Cliente{" + " ,id ='" + getId()+ '\'' + "'Nome ='" + getNome() + '\'' + ", Email ='" + getEmail() + '\'' + ", CpfCnpj ='" + getCpfCnpj() + '\''+ ", DataNascimento ='" + '\''+ getDataNascimento() + '}';
+        return "Cliente{" + " ,id ='" + getId()+ '\'' + "'Nome ='" + getNome() + '\'' + ", Email ='" + getEmail() + '\'' + ", CpfCnpj ='" + getCpfCnpj() + '\''+ ", Data ='" + '\''+ getData() + '}';
 
 
     }

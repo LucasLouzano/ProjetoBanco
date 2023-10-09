@@ -7,14 +7,14 @@ public class PessoaAbstrata {
     private String nome;
     private String email;
     private String cpfCnpj;
-    private Date dataNascimento;
+    private Date data;
 
-    public Date getDataNascimento() {
-        return dataNascimento;
+    public Date getData() {
+        return data;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setData(Date data) {
+        this.data = data;
     }
 
     public String getNome() {

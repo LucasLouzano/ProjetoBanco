@@ -4,9 +4,9 @@ package model;
 
         private static final double RENDIMENTO_ANUAL = 1;
 
-        public ContaCorrente(int numeroConta, double saldo, double agencia) {
-            super(numeroConta, saldo, agencia);
-        }
+        //public ContaCorrente(int numeroConta, double saldo, double agencia) {
+         //   super(numeroConta, saldo, agencia);
+     //   }
 
         public static double getRendimentoAnual() {
             return RENDIMENTO_ANUAL;

@@ -7,24 +7,31 @@ import java.util.List;
 
 import model.Cliente;
 
-public class ClienteDAOImpl implements ClienteDAO {
 
+public class ClienteDAOImpl implements ClienteDAO {
     private static List<Cliente> baseDados = new ArrayList<>();
 
     public ClienteDAOImpl() {
     }
 
-    // create-criar
+    // create-criar // remover pontos e traços
     public void create(Cliente conta) {
         String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
         conta.setCpfCnpj(SemPontos);
-        conta.setNome(conta.getNome() + " Louzano ");
         baseDados.add(conta);
     }
 
-    @Override // ReadAll-ler-Tudo
+    // ReadAll-ler-Tudo
     public List<Cliente> readAll() {
+        for (Cliente cliente : baseDados) {
+            String cpfcnpjFormatado = adicionarPontosETracos(cliente.getCpfCnpj());
+            cliente.setCpfCnpj(cpfcnpjFormatado);
+        }
         return baseDados;
+    }
+    private String adicionarPontosETracos(String cpfcnpj) {
+        cpfcnpj = cpfcnpj.replace(" ", ".");
+        return cpfcnpj;
     }
 
     // procurar o valor para atualizar //atualizar
@@ -41,16 +48,11 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     // delete-excluir
     public boolean delete(int id) {
-        Cliente clienteParaRemover = null;
         for (Cliente cliente : baseDados) {
             if (cliente.getId() == id) {
-                clienteParaRemover = cliente;
+                baseDados.remove(cliente);
                 break;
             }
-        }
-        if (clienteParaRemover != null) {
-            baseDados.remove(clienteParaRemover);
-            return true;
         }
         return false;
     }

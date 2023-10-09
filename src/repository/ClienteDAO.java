@@ -1,21 +1,22 @@
 package repository;
+import model.Cliente;
 
 import java.util.List;
 
-import model.Cliente;
-
+//TODO exteds do GenericCRUD
 public interface ClienteDAO {
-    /**
-     * Cria uma conta na fake data
-     *
-     * @param conta
-     */
-    void create(Cliente conta);
+        /**
+         * Cria uma conta na fake data
+         *
+         * @param conta
+         * @return
+         */
+        void create(Cliente conta);
 
-    List<Cliente> readAll();
+        List<Cliente> readAll();
 
-    boolean update(String id, Cliente conta);
+        boolean update(String id, Cliente conta);
 
-    boolean delete(int id);
+        boolean delete(int id);
 
 }

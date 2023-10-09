@@ -1,13 +1,14 @@
-package service.impl;
-
-import java.util.List;
+package service;
 
 import model.Cliente;
 
+import java.util.List;
+
 public interface ClienteService {
+
     void create(Cliente conta);
 
-    List<Cliente> readAll();
+    List<Cliente>readAll();
 
     boolean update(String id, Cliente conta);
 

@@ -4,9 +4,9 @@ public class ContaPoupanca extends ContaBancaria {
 
     private static final double RENDIMENTO_ANUAL = 10;
 
-    public ContaPoupanca(int numeroConta, double saldo, double agencia) {
-        super(numeroConta, saldo, agencia);
-    }
+   // public ContaPoupanca(int numeroConta, double saldo, double agencia) {
+     //   super(numeroConta, saldo, agencia);
+  //  }
 
     public static double getRendimentoAnual() {
         return RENDIMENTO_ANUAL;

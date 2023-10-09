@@ -1,4 +1,4 @@
-package service.impl;
+package service;
 
 import model.Conta;
 
@@ -10,8 +10,8 @@ public interface ContaService {
 
     List<Conta> readAll();
 
-    void update(String nome, Conta parametro);
+    boolean update(String nome, Conta parametro);
 
-    void delete(String nome);
+    boolean delete(String nome);
 
 }

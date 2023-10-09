@@ -1,7 +1,6 @@
 package model;
 
 public class Funcionario extends PessoaAbstrata {
-
     private int identificacao;
     private String departamento;
     private String cargo;
@@ -41,10 +40,6 @@ public class Funcionario extends PessoaAbstrata {
 
     @Override
     public String toString() {
-        return "Funcionarios{" +
-                ", identificacao ='" + identificacao + '\'' +
-                ", departamento ='" + departamento + '\'' +
-                ", cargo ='" + cargo + '\'' +
-                '}';
+        return "Funcionarios{" + ", identificacao ='" + getIdentificacao()+ '\'' + ", departamento ='" + getDepartamento() + '\'' + ", CpfCnpj ='" + getSalario() + '\''  + ", CpfCnpj ='" + getCpfCnpj() + '\''  + ", cargo ='" + getCargo() + '\'' + '}';
     }
 }
