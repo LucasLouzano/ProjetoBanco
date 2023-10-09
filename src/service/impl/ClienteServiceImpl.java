@@ -19,21 +19,11 @@ public class ClienteServiceImpl implements ClienteService {
         repository.create(conta);
 
     }
-
     @Override  // adicionar pontos e traços
     public List<Cliente> readAll() {
-        for (Cliente cliente : clientes) {
-            String nomeFormatado = adicionarPontosETracos(cliente.getNome());
-            cliente.setNome(nomeFormatado);
-        }
-        return clientes;
-    }
+        return repository.readAll();
 
-    private String adicionarPontosETracos(String nome) {
-        nome = nome.replace(" ", ".");
-        return nome;
     }
-
 
     @Override // procurar o valor para atualizar //atualizar
     public boolean update(String id, Cliente conta) {

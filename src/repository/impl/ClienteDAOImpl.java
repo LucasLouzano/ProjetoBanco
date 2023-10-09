@@ -23,15 +23,14 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     // ReadAll-ler-Tudo
     public List<Cliente> readAll() {
+        List<Cliente> clientesMaioresDe60 = new ArrayList<>();
         for (Cliente cliente : baseDados) {
-            String cpfcnpjFormatado = adicionarPontosETracos(cliente.getCpfCnpj());
-            cliente.setCpfCnpj(cpfcnpjFormatado);
+            if (cliente.getIdade() > 60) {
+                clientesMaioresDe60.add(cliente);
+
+            }
         }
-        return baseDados;
-    }
-    private String adicionarPontosETracos(String cpfcnpj) {
-        cpfcnpj = cpfcnpj.replace(" ", ".");
-        return cpfcnpj;
+        return clientesMaioresDe60;
     }
 
     // procurar o valor para atualizar //atualizar

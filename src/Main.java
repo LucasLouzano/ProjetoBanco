@@ -14,6 +14,7 @@ public class Main {
         c1.setNome("Antonio");
         c1.setEmail("antonioserra@gmail.com");
         c1.setCpfCnpj("123.456.789.12");
+        c1.setIdade(75);
         c1.setData(new Date());
         controller.create(c1);
 
@@ -22,6 +23,7 @@ public class Main {
         c2.setNome("Rafael");
         c2.setEmail("Rafaelalves@gmail.com");
         c2.setCpfCnpj("399.356.698.22");
+        c2.setIdade(78);
         c2.setData(new Date());
         controller.create(c2);
 
@@ -45,6 +47,7 @@ public class Main {
         update.setNome("lucas");
         update.setEmail("lucas@gmail.com");
         update.setCpfCnpj("12345678912");
+        update.setIdade(70);
         update.setData(new Date());
 
         if (controller.update("12345678912", update)) {
@@ -61,6 +64,7 @@ public class Main {
         update.setNome("Douglas");
         update.setEmail("douglas@gmail.com");
         update.setCpfCnpj("39935669822");
+        update.setIdade(72);
         update.setData(new Date());
 
         if (controller.update("39935669822", update)) {
@@ -70,15 +74,6 @@ public class Main {
         }
         controller.readAll().forEach(c -> {
             System.out.println(c.getId() + " ---" + c.getNome() + " ---" + c.getEmail() + " ---" + c.getCpfCnpj() + " ---" + c.getData());
-        });
-
-        if (controller.delete(663)) {
-            System.out.println("Excluido com sucesso");
-        } else {
-            System.out.println("Não foi possivel excluir");
-        }
-        controller.readAll().forEach(a -> {
-            System.out.println(a.getId() + " ---" + a.getNome() + " ---" + a.getEmail() + " ---" + a.getCpfCnpj() + " ---" + a.getData());
         });
     }
 }
