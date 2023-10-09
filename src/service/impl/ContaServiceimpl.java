@@ -4,6 +4,11 @@ import model.Conta;
 import repository.ContaDAO;
 import repository.impl.ContaDAOimpl;
 import service.ContaService;
+<<<<<<< HEAD
+=======
+
+import java.util.ArrayList;
+>>>>>>> 0cdd496a33ff2e01b5a8b99630c4ba45c213eb5e
 import java.util.List;
 
 public class ContaServiceimpl implements ContaService {
