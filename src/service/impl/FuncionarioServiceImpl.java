@@ -1,4 +1,5 @@
 package service.impl;
+
 import model.Funcionario;
 import repository.FuncionarioDAO;
 import repository.impl.FuncionarioDAOimpl;
@@ -10,20 +11,24 @@ import java.util.List;
 public class FuncionarioServiceImpl implements FuncionarioService {
     private FuncionarioDAO repository = new FuncionarioDAOimpl();
     List<Funcionario> funcionarios = new ArrayList<>();
+
     @Override
     public void create(Funcionario Dados) {
         repository.create(Dados);
     }
+
     @Override
     public List<Funcionario> readAll() {
-       return funcionarios;
+        return funcionarios;
     }
+
     @Override
     public boolean update(String identificacao, Funcionario Dados) {
-        return repository.update(identificacao,Dados);
+        return repository.update(identificacao, Dados);
     }
+
     @Override
-    public boolean delete(int identificacao) {
+    public boolean delete(String identificacao) {
         return repository.delete(identificacao);
     }
 }
