@@ -1,5 +1,6 @@
 package repository.impl;
 
+import model.Conta;
 import repository.ClienteDAO;
 
 import java.util.ArrayList;
@@ -47,11 +48,16 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     // delete-excluir
     public boolean delete(int id) {
+        Cliente clienteParaRemover = null;
         for (Cliente cliente : baseDados) {
             if (cliente.getId() == id) {
-                baseDados.remove(cliente);
+                clienteParaRemover = cliente;
                 break;
             }
+        }
+        if (clienteParaRemover != null) {
+            baseDados.remove(clienteParaRemover);
+            return true;
         }
         return false;
     }

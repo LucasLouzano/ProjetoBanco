@@ -45,17 +45,17 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
     }
 
     public boolean delete(int identificacao) {
+        Funcionario funcionarioParaRemover = null;
         for (Funcionario funcionario : Banco) {
             if (funcionario.getIdentificacao() == identificacao) {
-                Banco.remove(funcionario);
-                System.out.println("Funcionário removido com sucesso!");
-
-            } else {
-                System.out.println("Funcionário com identificação não encontrado.");
+                funcionarioParaRemover = funcionario; // Define a funcionarioParaRemover quando encontramos uma correspondência.
+                break;
             }
         }
-        return false;
+        if (funcionarioParaRemover != null) {
+            Banco.remove(funcionarioParaRemover); // Remove o funcionario encontrado.
+            return true;  // Retorna true para indicar que a funcionario foi removido com sucesso.
+        }
+        return false; // Retorna false se nenhum funcionario com identificação especificado foi encontrado.
     }
 }
-
-
