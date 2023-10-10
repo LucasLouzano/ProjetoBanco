@@ -17,7 +17,8 @@ public class ClienteServiceImpl implements ClienteService {
         repository.create(conta);
 
     }
-    @Override  // adicionar pontos e traços
+
+    @Override // adicionar pontos e traços
     public List<Cliente> readAll() {
         return repository.readAll();
 
@@ -28,8 +29,8 @@ public class ClienteServiceImpl implements ClienteService {
         return repository.update(id, conta);
     }
 
-    @Override    // chamar o read, passar o objeto com parametro
-    public boolean delete(int id) {
+    @Override // chamar o read, passar o objeto com parametro
+    public boolean delete(String id) {
         return repository.delete(id);
 
     }
@@ -38,6 +39,3 @@ public class ClienteServiceImpl implements ClienteService {
 // Encontrar o cliente com o ID correspondente na lista.
 // procurar o valor para atualizar delele
 // Remover o cliente se ele foi encontrado.
-
-
-

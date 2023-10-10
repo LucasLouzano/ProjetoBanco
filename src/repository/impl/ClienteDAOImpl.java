@@ -1,13 +1,11 @@
 package repository.impl;
 
-import model.Conta;
 import repository.ClienteDAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Cliente;
-
 
 public class ClienteDAOImpl implements ClienteDAO {
     private static List<Cliente> baseDados = new ArrayList<>();
@@ -47,10 +45,10 @@ public class ClienteDAOImpl implements ClienteDAO {
     }
 
     // delete-excluir
-    public boolean delete(int id) {
+    public boolean delete(String id) {
         Cliente clienteParaRemover = null;
         for (Cliente cliente : baseDados) {
-            if (cliente.getId() == id) {
+            if (cliente.getCpfCnpj().equals(id)) {
                 clienteParaRemover = cliente;
                 break;
             }

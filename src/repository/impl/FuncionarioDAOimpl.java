@@ -1,6 +1,5 @@
 package repository.impl;
 
-import model.Cliente;
 import model.Funcionario;
 import repository.FuncionarioDAO;
 
@@ -14,29 +13,29 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
     public FuncionarioDAOimpl() {
     }
 
-
     public void create(Funcionario Dados) {
         String SemPontos = Dados.getCpfCnpj().replaceAll("[.-]", "");
         Dados.setCpfCnpj(SemPontos);
         Banco.add(Dados);
     }
+
     public List<Funcionario> readAll() {
         for (Funcionario funcionario : Banco) {
             String cpfcnpjFormatado = adicionarPontosETracos(funcionario.getCpfCnpj());
-           funcionario.setCpfCnpj(cpfcnpjFormatado);
+            funcionario.setCpfCnpj(cpfcnpjFormatado);
         }
         return Banco;
     }
+
     private String adicionarPontosETracos(String cpfcnpj) {
         cpfcnpj = cpfcnpj.replace(" ", ".");
         return cpfcnpj;
     }
 
-
     public boolean update(String identificacao, Funcionario novoFuncionario) {
         for (int i = 0; i < Banco.size(); i++) {
-           Funcionario funcionario = Banco.get(i);
-            if (funcionario.getCpfCnpj().equals (identificacao)) {
+            Funcionario funcionario = Banco.get(i);
+            if (funcionario.getCpfCnpj().equals(identificacao)) {
                 Banco.set(i, novoFuncionario);
                 return true;
             }
@@ -48,14 +47,16 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
         Funcionario funcionarioParaRemover = null;
         for (Funcionario funcionario : Banco) {
             if (funcionario.getIdentificacao() == identificacao) {
-                funcionarioParaRemover = funcionario; // Define a funcionarioParaRemover quando encontramos uma correspondência.
+                funcionarioParaRemover = funcionario; // Define a funcionarioParaRemover quando encontramos uma
+                                                      // correspondência.
                 break;
             }
         }
         if (funcionarioParaRemover != null) {
             Banco.remove(funcionarioParaRemover); // Remove o funcionario encontrado.
-            return true;  // Retorna true para indicar que a funcionario foi removido com sucesso.
+            return true; // Retorna true para indicar que a funcionario foi removido com sucesso.
         }
-        return false; // Retorna false se nenhum funcionario com identificação especificado foi encontrado.
+        return false; // Retorna false se nenhum funcionario com identificação especificado foi
+                      // encontrado.
     }
 }

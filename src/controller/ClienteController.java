@@ -11,16 +11,19 @@ public class ClienteController {
     private ClienteService service = new ClienteServiceImpl();
 
     public void create(Cliente conta) {
-     service.create(conta);
+        service.create(conta);
     }
+
     public List<Cliente> readAll() {
         return service.readAll();
     }
+
     public boolean update(String id, Cliente conta) {
         return service.update(id, conta);
     }
-    public boolean delete(int id) {
-      return service.delete(id);
+
+    public boolean delete(String id) {
+        return service.delete(id);
     }
 
 }
