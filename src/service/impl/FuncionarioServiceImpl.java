@@ -13,8 +13,8 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     List<Funcionario> funcionarios = new ArrayList<>();
 
     @Override
-    public void create(Funcionario Dados) {
-        repository.create(Dados);
+    public void create(Funcionario dados) {
+        repository.create(dados);
     }
 
     @Override
@@ -23,8 +23,8 @@ public class FuncionarioServiceImpl implements FuncionarioService {
     }
 
     @Override
-    public boolean update(String identificacao, Funcionario Dados) {
-        return repository.update(identificacao, Dados);
+    public boolean update(String identificacao, Funcionario dados) {
+        return repository.update(identificacao, dados);
     }
 
     @Override

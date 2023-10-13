@@ -1,5 +1,6 @@
 package repository.impl;
 
+import model.Cliente;
 import model.Funcionario;
 import repository.FuncionarioDAO;
 
@@ -10,49 +11,55 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
 
     private static Funcionario[] database = new Funcionario[20];
     private static int indice = 0;
+    private Funcionario aux;
 
     public FuncionarioDAOimpl() {
     }
+    // TODO
+    // aplicar o buble sort no database (ordenar por cpf)
 
     public void create(Funcionario funcionario) {
         String cpfSemPontos = funcionario.getCpfCnpj().replaceAll("[.-]", "");
         funcionario.setCpfCnpj(cpfSemPontos);
-        database[this.indice] = funcionario;
+        database[indice] = funcionario;
         indice++;
-        // TODO
-        // aplicar o buble sort no database (ordenar por cpf)
+        for (int i = 0; i < indice ; i++) {
+            for (int j = 0; j < indice - 1; j++) {
+                if (Integer.parseInt(database[j].getCpfCnpj()) > Integer.parseInt(database[j + 1].getCpfCnpj())) {
+                    aux = database[j];
+                    database[j] = database[j + 1];
+                    database[j + 1] = aux;
+                }
+            }
+        }
     }
-
+    // converter database para um ArrayList
     public List<Funcionario> readAll() {
-        // converter database para um ArrayList
-        return null;
-    }
-
-    private String adicionarPontosETracos(String cpfcnpj) {
-        cpfcnpj = cpfcnpj.replace(" ", ".");
-        return cpfcnpj;
+        List<Funcionario> funcionarios = new ArrayList<>();
+        for (Funcionario funcionario : database)
+            if (funcionario != null) {
+                funcionarios.add(funcionario);
+            }
+        return funcionarios;
     }
 
     public boolean update(String identificacao, Funcionario novoFuncionario) {
         for (int i = 0; i < this.indice; i++) {
             Funcionario funcionario = database[i];
-            // TODO
-            /*
-             * if (funcionario.getCpfCnpj().equals(identificacao)) {
-             * database.set(i, novoFuncionario);
-             * return true;
-             * }
-             */
+                if (funcionario.getCpfCnpj().equals(identificacao)) {
+                    database[i] = novoFuncionario;
+                    return true;
+                }
+            }
+            return false;
         }
-        return false;
-    }
 
     public boolean delete(String identificacao) {
         Funcionario funcionarioParaRemover = null;
         for (Funcionario funcionario : database) {
             if (funcionario.getCpfCnpj().equals(identificacao)) {
                 funcionarioParaRemover = funcionario; // Define a funcionarioParaRemover quando encontramos uma
-                                                      // correspondência.
+                // correspondência.
                 break;
             }
         }
@@ -65,7 +72,7 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
          * }
          */
         return false; // Retorna false se nenhum funcionario com identificação especificado foi
-                      // encontrado.
+        // encontrado.
     }
 
     @Override

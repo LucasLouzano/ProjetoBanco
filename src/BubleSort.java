@@ -6,28 +6,40 @@ public class BubleSort {
         int[] vet = { 8, 9, 3, 5, 1 };
         // variavel auxiliar que vai ajudar na troca de posicoes
         int aux = 0;
-        int i = 0;
+        boolean controla;
 
         System.out.println("Vetor desordenado: ");
-        for (i = 0; i < 5; i++) {
+        for (int i = 0; i < vet.length; i++) {
             System.out.println(" " + vet[i]);
         }
         System.out.println(" ");
 
         // Algoritmo Buble Sort
         // ============================================================================
-        for (i = 0; i < 5; i++) {
-            for (int j = 0; j < 4; j++) {
+
+        //=================================================================
+        //   8    9    3    5    1
+        //   0    1    2    3    4
+        //  I.J, I.J, I.J, I.J, I.J
+        //=================================================================
+
+        for (int i = 0; i < vet.length; i++) {
+            controla = true;
+            for (int j = 0; j < vet.length - 1; j++) {
                 if (vet[j] > vet[j + 1]) {
                     aux = vet[j];
                     vet[j] = vet[j + 1];
                     vet[j + 1] = aux;
+                    controla = false;
                 }
+            }
+            if (controla){
+                break;
             }
         }
         // ============================================================================
         System.out.println("Vetor organizado:");
-        for (i = 0; i < 5; i++) {
+        for (int i = 0; i < vet.length; i++) {
             System.out.println(" " + vet[i]);
         }
 

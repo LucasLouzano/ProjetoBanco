@@ -9,7 +9,6 @@ import java.util.List;
 public class ContaController {
     private ContaService service = new ContaServiceimpl();
 
-
     public void create(Conta parametro) {
         service.create(parametro);
     }

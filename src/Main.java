@@ -1,7 +1,6 @@
 
 import controller.ClienteController;
 import model.Cliente;
-
 import java.util.Date;
 
 
