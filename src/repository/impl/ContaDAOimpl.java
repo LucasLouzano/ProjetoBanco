@@ -1,12 +1,13 @@
 package repository.impl;
 
 import model.Conta;
+import model.Funcionario;
 import repository.ContaDAO;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ContaDAOimpl implements ContaDAO {
-    private static List<Conta> DATABASE = new ArrayList<>();
+    private static List<Conta> basedata = new ArrayList<>();
 
     public ContaDAOimpl() {
     }
@@ -15,29 +16,25 @@ public class ContaDAOimpl implements ContaDAO {
     public void create(Conta parametro) {
         String SemPontos = parametro.getCpfCnpj().replaceAll("[.-]", "");
         parametro.setCpfCnpj(SemPontos);
-        DATABASE.add(parametro);
+        basedata.add(parametro);
     }
 
     @Override
     public List<Conta> readAll() {
-        for (Conta conta : DATABASE) {
-            String nomeFormatado = adicionarPontosETracos(conta.getNome());
-            conta.setNome(nomeFormatado);
-        }
-        return DATABASE;
-    }
-
-    private String adicionarPontosETracos(String nome) {
-        nome = nome.replace(" ", ".");
-        return nome;
+        List<Conta> contas = new ArrayList<>();
+        for (Conta conta : basedata)
+            if (conta != null) {
+                contas.add(conta);
+            }
+        return contas;
     }
 
     @Override
     public boolean update(String nome, Conta novaConta) {
-        for (int i = 0; i < DATABASE.size(); i++) {
-            Conta conta = DATABASE.get(i);
+        for (int i = 0; i < basedata.size(); i++) {
+            Conta conta = basedata.get(i);
             if (conta.getCpfCnpj().equals(nome)) {
-                DATABASE.set(i, novaConta);
+                basedata.set(i, novaConta);
                 return true;
             }
         }
@@ -47,14 +44,14 @@ public class ContaDAOimpl implements ContaDAO {
     @Override
     public boolean delete(String nome) {
         Conta contaParaRemover = null;
-        for (Conta conta : DATABASE) {
+        for (Conta conta : basedata) {
             if (conta.getNome().equals(nome)) {
                 contaParaRemover = conta;
                 break;
             }
         }
         if (contaParaRemover != null) {
-            DATABASE.remove(contaParaRemover);
+            basedata.remove(contaParaRemover);
             return true;
         }
         return false;

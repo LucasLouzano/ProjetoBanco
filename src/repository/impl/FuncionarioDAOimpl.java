@@ -10,7 +10,6 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
     private static Funcionario[] database = new Funcionario[20];
     private static int indice = 0;
     private Funcionario aux;
-
     // TODO
     // aplicar o bubble sort no database (ordenar por cpf)
     @Override
