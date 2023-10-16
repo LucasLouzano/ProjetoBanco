@@ -40,6 +40,6 @@ public class Funcionario extends PessoaAbstrata {
 
     @Override
     public String toString() {
-        return "Funcionarios{" + ", identificacao ='" + getIdentificacao()+ '\'' + ", departamento ='" + getDepartamento() + '\'' + ", CpfCnpj ='" + getSalario() + '\''  + ", CpfCnpj ='" + getCpfCnpj() + '\''  + ", cargo ='" + getCargo() + '\'' + '}';
+        return "Funcionario " + ", identificacao = '" + getIdentificacao()+ '\'' + ", departamento ='" + getDepartamento() + '\'' + " Salario ='" + getSalario() + '\''  + ", CpfCnpj ='" + getCpfCnpj() + '\''   + ", Nome ='" + getNome() + '\''+ ", Email ='" + getEmail() + '\'' +   ", cargo ='" + getCargo() + '\'' + ", Data ='" + getData() + '\'' + '}';
     }
 }

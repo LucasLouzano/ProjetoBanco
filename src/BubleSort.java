@@ -3,7 +3,7 @@ public class BubleSort {
     public static void main(String[] args) {
 
         // nosso vetor
-        int[] vet = { 8, 9, 3, 5, 1 };
+        int[] vet = {8, 9, 3, 5, 1};
         // variavel auxiliar que vai ajudar na troca de posicoes
         int aux = 0;
         boolean controla;
@@ -13,7 +13,6 @@ public class BubleSort {
             System.out.println(" " + vet[i]);
         }
         System.out.println(" ");
-
         // Algoritmo Buble Sort
         // ============================================================================
 
@@ -22,19 +21,13 @@ public class BubleSort {
         //   0    1    2    3    4
         //  I.J, I.J, I.J, I.J, I.J
         //=================================================================
-
         for (int i = 0; i < vet.length; i++) {
-            controla = true;
             for (int j = 0; j < vet.length - 1; j++) {
                 if (vet[j] > vet[j + 1]) {
                     aux = vet[j];
                     vet[j] = vet[j + 1];
                     vet[j + 1] = aux;
-                    controla = false;
                 }
-            }
-            if (controla){
-                break;
             }
         }
         // ============================================================================
@@ -46,3 +39,4 @@ public class BubleSort {
     }
 
 }
+
