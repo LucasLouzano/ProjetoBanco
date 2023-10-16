@@ -9,6 +9,8 @@ public interface FuncionarioService {
 
     List<Funcionario> readAll();
 
+    Funcionario read();
+
     boolean update(String identificacao, Funcionario Dados);
 
     boolean delete(String identificacao);

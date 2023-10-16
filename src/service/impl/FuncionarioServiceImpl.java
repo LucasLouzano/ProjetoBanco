@@ -5,21 +5,25 @@ import repository.FuncionarioDAO;
 import repository.impl.FuncionarioDAOimpl;
 import service.FuncionarioService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FuncionarioServiceImpl implements FuncionarioService {
     private FuncionarioDAO repository = new FuncionarioDAOimpl();
-    List<Funcionario> funcionarios = new ArrayList<>();
 
     @Override
     public void create(Funcionario dados) {
         repository.create(dados);
+
+    }
+    @Override
+    public List<Funcionario> readAll() {
+        return repository.readAll();
     }
 
     @Override
-    public List<Funcionario> readAll() {
-        return funcionarios;
+    public Funcionario read() {
+        return repository.read();
+
     }
 
     @Override

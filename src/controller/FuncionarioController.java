@@ -6,7 +6,7 @@ import service.impl.FuncionarioServiceImpl;
 
 import java.util.List;
 
-public class FuncionarioController {
+public class FuncionarioController extends FuncionarioServiceImpl {
     private FuncionarioService service = new FuncionarioServiceImpl();
 
     public void create(Funcionario dados) {
@@ -15,6 +15,10 @@ public class FuncionarioController {
 
     public List<Funcionario> readAll() {
         return service.readAll();
+    }
+
+    public Funcionario read() {
+        return service.read();
     }
 
     public boolean update(String identificacao, Funcionario dados) {
