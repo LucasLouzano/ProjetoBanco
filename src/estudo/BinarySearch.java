@@ -1,3 +1,5 @@
+package estudo;
+
 public class BinarySearch {
 
     private static int medirPesquisaNormal = 0;

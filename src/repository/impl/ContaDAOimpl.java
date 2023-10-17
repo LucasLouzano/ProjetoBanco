@@ -1,7 +1,6 @@
 package repository.impl;
 
 import model.Conta;
-import model.Funcionario;
 import repository.ContaDAO;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +57,7 @@ public class ContaDAOimpl implements ContaDAO {
     }
 
     @Override
-    public Conta read() {
+    public Conta read(String numeroConta) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'read'");
     }

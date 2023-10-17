@@ -61,7 +61,7 @@ public class ClienteDAOImpl implements ClienteDAO {
     }
 
     @Override
-    public Cliente read() {
+    public Cliente read(String cpf) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'read'");
     }

@@ -9,7 +9,7 @@ public interface FuncionarioService {
 
     List<Funcionario> readAll();
 
-    Funcionario read();
+    Funcionario read(String cpf);
 
     boolean update(String identificacao, Funcionario Dados);
 

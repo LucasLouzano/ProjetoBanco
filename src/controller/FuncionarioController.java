@@ -17,8 +17,8 @@ public class FuncionarioController extends FuncionarioServiceImpl {
         return service.readAll();
     }
 
-    public Funcionario read() {
-        return service.read();
+    public Funcionario read(String cpf) {
+        return service.read(cpf);
     }
 
     public boolean update(String identificacao, Funcionario dados) {

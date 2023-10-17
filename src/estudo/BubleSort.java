@@ -1,12 +1,13 @@
+package estudo;
+
 public class BubleSort {
 
     public static void main(String[] args) {
 
         // nosso vetor
-        int[] vet = {8, 9, 3, 5, 1};
+        int[] vet = { 8, 9, 3, 5, 1 };
         // variavel auxiliar que vai ajudar na troca de posicoes
         int aux = 0;
-        boolean controla;
 
         System.out.println("Vetor desordenado: ");
         for (int i = 0; i < vet.length; i++) {
@@ -16,11 +17,11 @@ public class BubleSort {
         // Algoritmo Buble Sort
         // ============================================================================
 
-        //=================================================================
-        //   8    9    3    5    1
-        //   0    1    2    3    4
-        //  I.J, I.J, I.J, I.J, I.J
-        //=================================================================
+        // =================================================================
+        // 8 9 3 5 1
+        // 0 1 2 3 4
+        // I.J, I.J, I.J, I.J, I.J
+        // =================================================================
         for (int i = 0; i < vet.length; i++) {
             for (int j = 0; j < vet.length - 1; j++) {
                 if (vet[j] > vet[j + 1]) {
@@ -39,4 +40,3 @@ public class BubleSort {
     }
 
 }
-

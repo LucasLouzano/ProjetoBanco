@@ -15,14 +15,15 @@ public class FuncionarioServiceImpl implements FuncionarioService {
         repository.create(dados);
 
     }
+
     @Override
     public List<Funcionario> readAll() {
         return repository.readAll();
     }
 
     @Override
-    public Funcionario read() {
-        return repository.read();
+    public Funcionario read(String cpf) {
+        return repository.read(cpf);
 
     }
 

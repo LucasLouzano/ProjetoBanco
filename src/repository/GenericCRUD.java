@@ -8,7 +8,7 @@ public interface GenericCRUD<T, v> {
 
     List<T> readAll();
 
-    T read();
+    T read(v id);
 
     boolean update(v nome, T parametro);
 
