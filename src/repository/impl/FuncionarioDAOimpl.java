@@ -86,14 +86,21 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
 
     @Override
     public boolean delete(String identificacao) {
+        boolean funcionarioDeletado = false;
         for (int i = 0; i < indice; i++) {
             if (database[i].getCpfCnpj().equals(identificacao)) {
-                database[i].setCpfCnpj(null); // Define o CPFCNPJ como null para indicar a remoção.
-                return true; // Indica que a remoção foi bem-sucedida.
+                database[i] = null; // Define o CPFCNPJ como null para indicar a remoção.
+                funcionarioDeletado = true;
+                break; // Indica que a remoção foi bem-sucedida.
 
             }
         }
-        return false; // Retorna false se nenhum funcionario com identificação especificado foi
-                      // encontrado.
+
+        // TODO trocar o funcionario da ultima posicao para a posicao null
+        // TODO chamar o método bubleSort
+
+        this.indice--;
+        return funcionarioDeletado; // Retorna false se nenhum funcionario com identificação especificado foi
+        // encontrado.
     }
 }
