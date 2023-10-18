@@ -1,29 +1,45 @@
 package repository.impl;
-
 import repository.ClienteDAO;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import model.Cliente;
 
 public class ClienteDAOImpl implements ClienteDAO {
-    private static List<Cliente> baseDados = new ArrayList<>();
+    private static List<Cliente> basedados = new ArrayList<>();
+
 
     public ClienteDAOImpl() {
     }
 
     // create-criar // remover pontos e traços
     public void create(Cliente conta) {
-        String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
-        conta.setCpfCnpj(SemPontos);
-        baseDados.add(conta);
+        basedados.add(conta);
+        bubbleSort(basedados);
+    }
+
+    /**
+     * Algoritmo para ordenar um array por cpf
+     */
+    private void bubbleSort(List<Cliente>lista) {
+        int indice = lista.size();
+        for (int i = 0; i < indice; i++) {
+            for (int j = 0; j < indice - 1; j++) {
+                if (Long.parseLong(basedados.get(j).getCpfCnpj()) > Long.parseLong( basedados.get( j + 1).getCpfCnpj())) {
+                    // Troca os elementos se o primeiro for maior que o segundo
+                    Cliente aux = lista.get(j);
+                    lista.set(j, lista.get(j + 1));
+                    lista.set( j + 1, aux);
+
+                }
+            }
+        }
     }
 
     // ReadAll-ler-Tudo
     public List<Cliente> readAll() {
         List<Cliente> clientesMaioresDe60 = new ArrayList<>();
-        for (Cliente cliente : baseDados) {
+        for (Cliente cliente : basedados) {
             if (cliente.getIdade() > 60) {
                 clientesMaioresDe60.add(cliente);
             }
@@ -34,10 +50,10 @@ public class ClienteDAOImpl implements ClienteDAO {
     // procurar o valor para atualizar //atualizar
     @Override
     public boolean update(String id, Cliente novoCliente) {
-        for (int i = 0; i < baseDados.size(); i++) {
-            Cliente cliente = baseDados.get(i);
+        for (int i = 0; i < basedados.size(); i++) {
+            Cliente cliente = basedados.get(i);
             if (cliente.getCpfCnpj().equals(id)) {
-                baseDados.set(i, novoCliente);
+                basedados.set(i, novoCliente);
                 return true;
             }
         }
@@ -47,14 +63,14 @@ public class ClienteDAOImpl implements ClienteDAO {
     // delete-excluir
     public boolean delete(String id) {
         Cliente clienteParaRemover = null;
-        for (Cliente cliente : baseDados) {
+        for (Cliente cliente : basedados) {
             if (cliente.getCpfCnpj().equals(id)) {
                 clienteParaRemover = cliente;
                 break;
             }
         }
         if (clienteParaRemover != null) {
-            baseDados.remove(clienteParaRemover);
+            basedados.remove(clienteParaRemover);
             return true;
         }
         return false;

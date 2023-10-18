@@ -16,17 +16,14 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
     // aplicar o bubble sort no database (ordenar por cpf)
     @Override
     public void create(Funcionario dados) {
-        String cpfSemPontos = dados.getCpfCnpj().replaceAll("[.-]", "");
-        dados.setCpfCnpj(cpfSemPontos);
         database[indice] = dados;
         indice++;
-        this.bubleSort();
+        this.bubbleSort();
     }
-
     /**
      * Algoritmo para ordenar um array por cpf
      */
-    private void bubleSort() {
+    private void bubbleSort() {
         for (int i = 0; i < indice; i++) {
             for (int j = 0; j < indice - 1; j++) {
                 if (Long.parseLong(database[j].getCpfCnpj()) > Long.parseLong(database[j + 1].getCpfCnpj())) {
@@ -38,7 +35,6 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
             }
         }
     }
-
     @Override
     public List<Funcionario> readAll() {
         List<Funcionario> funcionarios = new ArrayList<>();

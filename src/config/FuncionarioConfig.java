@@ -15,7 +15,7 @@ public class FuncionarioConfig {
         func2.setNome("Antonio");
         func2.setEmail("lucas@gmail.com");
         func2.setIdade(10);
-        func2.setCpfCnpj("22345678978");
+        func2.setCpfCnpj("42345678978");
 
         Funcionario func3 = new Funcionario();
         func3.setNome("Louzano");
@@ -27,7 +27,7 @@ public class FuncionarioConfig {
         func4.setNome("Teste");
         func4.setEmail("lucas@gmail.com");
         func4.setIdade(10);
-        func4.setCpfCnpj("42345678978");
+        func4.setCpfCnpj("22345678978");
 
         FuncionarioController controller = new FuncionarioController();
         controller.create(func2);

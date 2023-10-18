@@ -15,11 +15,11 @@ public class MainTesteAlgoritmos {
 
         System.out.println(funcionario.getNome());
 
-        /*
-         * controller.readAll().forEach(f -> {
-         * System.out.println(f.getCpfCnpj());
-         * });
-         */
+
+          controller.readAll().forEach(f -> {
+          System.out.println(f.getCpfCnpj());
+         });
+
 
     }
 }

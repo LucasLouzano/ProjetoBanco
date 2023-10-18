@@ -12,6 +12,8 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 
     @Override
     public void create(Funcionario dados) {
+        String cpfSemPontos = dados.getCpfCnpj().replaceAll("[.-]", "");
+        dados.setCpfCnpj(cpfSemPontos);
         repository.create(dados);
 
     }

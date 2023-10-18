@@ -14,6 +14,8 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override // create-criar //remover pontos e traços
     public void create(Cliente conta) {
+        String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
+        conta.setCpfCnpj(SemPontos);
         repository.create(conta);
 
     }
