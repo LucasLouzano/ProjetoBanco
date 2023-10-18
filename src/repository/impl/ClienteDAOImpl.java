@@ -1,4 +1,5 @@
 package repository.impl;
+
 import repository.ClienteDAO;
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,27 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     @Override
     public Cliente read(String cpf) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'read'");
+        return binarySearch(basedados,cpf);
     }
-}
+        private Cliente binarySearch(List<Cliente> lista, String cpf) {
+            int esquerda = 0;
+            int direita = lista.size() - 1;
+
+            while (esquerda <= direita) {
+                int meio = (esquerda + direita) / 2;
+
+                if (lista.get(meio).getCpfCnpj().equals(cpf)) {
+                    return lista.get(meio);
+                } else if (Long.parseLong(lista.get(meio).getCpfCnpj()) < Long.parseLong(cpf)) {
+                    esquerda = meio + 1;
+                } else {
+                    direita = meio - 1;
+                }
+            }
+            return null;  // Retorna null se o cliente não for encontrado
+        }
+
+        // TODO Auto-generated method stub
+     //   throw new UnsupportedOperationException("Unimplemented method 'read'");
+    }
+//}

@@ -12,6 +12,8 @@ public class ContaServiceimpl implements ContaService {
 
     @Override
     public void create(Conta parametro) {
+        String SemPontos = parametro.getCpfCnpj().replaceAll("[.-]", "");
+        parametro.setCpfCnpj(SemPontos);
         repository.create(parametro);
     }
 
