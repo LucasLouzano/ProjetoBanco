@@ -72,21 +72,6 @@ public class ClienteDAOImpl implements ClienteDAO {
            return clienteDeletado;
     }
 
-
-     //   Cliente clienteParaRemover = null;
-     //   for (Cliente cliente : basedados) {
-       //     if (cliente.getCpfCnpj().equals(id)) {
-       //         clienteParaRemover = cliente;
-      //          break;
-     //       }
-     //   }
-    //    if (clienteParaRemover != null) {
-    //        basedados.remove(clienteParaRemover);
-    //        return true;
-  //      }
-  //      return false;
- //   }
-
     @Override
     public Cliente read(String cpf) {
         return binarySearch(cpf);
