@@ -26,4 +26,7 @@ public class ClienteController {
         return service.delete(id);
     }
 
+    public Cliente read(String cpf) {
+        return service.read(cpf);
+    }
 }

@@ -12,4 +12,6 @@ public interface ClienteService {
     boolean update(String id, Cliente conta);
 
     boolean delete(String id);
+
+    Cliente read(String cpf);
 }
