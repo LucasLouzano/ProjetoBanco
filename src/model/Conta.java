@@ -57,4 +57,9 @@ public class Conta {
     public void setDataCriacao(Date dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
+
+    @Override
+    public String toString() {
+        return "Conta " + "nome='" + nome + '\'' + ", email='" + email + '\'' + ", senha='" + senha + '\'' + ", cpfCnpj='" + cpfCnpj + '\'' + ", dataNascimento=" + dataNascimento + ", dataCriacao=" + dataCriacao + '}';
+    }
 }

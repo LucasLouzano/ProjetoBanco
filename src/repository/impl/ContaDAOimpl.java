@@ -1,4 +1,6 @@
 package repository.impl;
+
+import model.Cliente;
 import model.Conta;
 import repository.ContaDAO;
 
@@ -8,31 +10,33 @@ import java.util.List;
 public class ContaDAOimpl implements ContaDAO {
     private static List<Conta> basedata = new ArrayList<>();
 
+    private Conta aux;
+
     public ContaDAOimpl() {
     }
-
     @Override
     public void create(Conta parametro) {
         basedata.add(parametro);
-        bubbleSort(basedata);
+        bubbleSort();
     }
     /**
      * Algoritmo para ordenar um array por cpf
      */
-    private void bubbleSort(List<Conta> lista) {
-        int indice = lista.size();
+    private void bubbleSort() {
+        int indice = basedata.size();
         for (int i = 0; i < indice; i++) {
             for (int j = 0; j < indice - 1; j++) {
                 if (Long.parseLong(basedata.get(j).getCpfCnpj()) > Long.parseLong(basedata.get(j + 1).getCpfCnpj())) {
                     // Troca os elementos se o primeiro for maior que o segundo
-                    Conta aux = lista.get(j);
-                    lista.set(j, lista.get(j + 1));
-                    lista.set(j + 1, aux);
+                        aux = basedata.get(j);
+                    basedata.set(j, basedata.get(j + 1));
+                    basedata.set(j + 1, aux);
 
                 }
             }
         }
     }
+    // ReadAll-ler-Tudo
     @Override
     public List<Conta> readAll() {
         List<Conta> contas = new ArrayList<>();
@@ -54,37 +58,36 @@ public class ContaDAOimpl implements ContaDAO {
         }
         return false;
     }
-
     @Override
     public boolean delete(String nome) {
-        Conta contaParaRemover = null;
-        for (Conta conta : basedata) {
-            if (conta.getNome().equals(nome)) {
-                contaParaRemover = conta;
+        boolean contadelete = false;
+        for (int i = 0; i < basedata.size(); i++) {
+            if (basedata.get(i).getCpfCnpj().equals(nome)) {
+                basedata.set(i, null);
+                contadelete = true;
                 break;
             }
         }
-        if (contaParaRemover != null) {
-            basedata.remove(contaParaRemover);
-            return true;
-        }
-        return false;
+        // TODO trocar o funcionario da ultima posicao para a posicao null
+        // TODO chamar o método bubleSort
+        return contadelete;
     }
 
     @Override
-    public Conta read(String numeroConta) {
-        return binarySearch(basedata,numeroConta);
+    public Conta read(String cpf) {
+        return binarySearch(cpf);
     }
-    private Conta binarySearch(List<Conta> lista, String numeroConta) {
+
+    private Conta binarySearch(String cpf) {
         int esquerda = 0;
-        int direita = lista.size() - 1;
+        int direita = basedata.size() - 1;
 
         while (esquerda <= direita) {
             int meio = (esquerda + direita) / 2;
 
-            if (lista.get(meio).getCpfCnpj().equals(numeroConta)) {
-                return lista.get(meio);
-            } else if (Long.parseLong(lista.get(meio).getCpfCnpj()) < Long.parseLong(numeroConta)) {
+            if (basedata.get(meio).getCpfCnpj().equals(cpf)) {
+                return basedata.get(meio);
+            } else if (Long.parseLong(basedata.get(meio).getCpfCnpj()) < Long.parseLong(cpf)) {
                 esquerda = meio + 1;
             } else {
                 direita = meio - 1;

@@ -4,7 +4,7 @@ import config.ClienteConfig;
 import controller.ClienteController;
 import model.Cliente;
 
-public class MainCreateAlgoritmos {
+public class ClienteCreateAlgoritmo {
     public static void main(String[] args) {
         ClienteConfig.clienteInit();
         ClienteController contro = new ClienteController();

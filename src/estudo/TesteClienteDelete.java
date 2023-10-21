@@ -3,7 +3,7 @@ package estudo;
 import config.ClienteConfig;
 import controller.ClienteController;
 
-public class ClienteDelete {
+public class TesteClienteDelete {
     public static void main(String[] args) {
         ClienteConfig.clienteInit();
         ClienteController contro = new ClienteController();
