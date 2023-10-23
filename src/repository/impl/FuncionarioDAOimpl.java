@@ -1,8 +1,6 @@
 package repository.impl;
-
 import model.Funcionario;
 import repository.FuncionarioDAO;
-
 import java.util.ArrayList;
 import java.util.List;
 

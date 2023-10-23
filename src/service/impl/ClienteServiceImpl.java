@@ -1,9 +1,7 @@
 package service.impl;
-
 import java.util.ArrayList;
 import java.util.List;
 import model.Cliente;
-import model.Funcionario;
 import repository.ClienteDAO;
 import repository.impl.ClienteDAOImpl;
 import service.ClienteService;

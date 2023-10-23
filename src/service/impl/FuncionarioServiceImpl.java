@@ -1,5 +1,4 @@
 package service.impl;
-
 import model.Funcionario;
 import repository.FuncionarioDAO;
 import repository.impl.FuncionarioDAOimpl;

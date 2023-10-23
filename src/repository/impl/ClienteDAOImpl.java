@@ -2,21 +2,16 @@ package repository.impl;
 import repository.ClienteDAO;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.Cliente;
-
 public class ClienteDAOImpl implements ClienteDAO {
     private static List<Cliente> basedados = new ArrayList<>();
     private Cliente aux;
-
     public ClienteDAOImpl() {
     }
-
     public void create(Cliente conta) {
         basedados.add(conta);
         bubbleSort();
     }
-
     /**
      * Algoritmo para ordenar um array por cpf
      */

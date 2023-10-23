@@ -1,9 +1,6 @@
 package repository.impl;
-
-import model.Cliente;
 import model.Conta;
 import repository.ContaDAO;
-
 import java.util.ArrayList;
 import java.util.List;
 
