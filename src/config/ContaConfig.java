@@ -28,10 +28,10 @@ public class ContaConfig {
         conta4.setDataNascimento(new Date(10));
         conta4.setCpfCnpj("22345678978");
 
-        ContaController contr = new ContaController();
-        contr.create(conta2);
-        contr.create(conta1);
-        contr.create(conta4);
-        contr.create(conta3);
+        ContaController contro = new ContaController();
+        contro.create(conta2);
+        contro.create(conta1);
+        contro.create(conta4);
+        contro.create(conta3);
     }
 }

@@ -24,8 +24,8 @@ public class ContaServiceimpl implements ContaService {
         return repository.update(nome, parametro);
     }
     @Override
-    public boolean delete(String nome) {
-        return repository.delete(nome);
+    public boolean delete(String cpf) {
+        return repository.delete(cpf);
     }
     @Override
     public Conta read(String cpf) {

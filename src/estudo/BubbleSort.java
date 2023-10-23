@@ -1,6 +1,6 @@
 package estudo;
 
-public class BubleSort {
+public class BubbleSort {
 
     public static void main(String[] args) {
 

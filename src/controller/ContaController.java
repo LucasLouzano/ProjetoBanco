@@ -1,6 +1,5 @@
 package controller;
 
-import model.Cliente;
 import service.ContaService;
 import service.impl.ContaServiceimpl;
 import model.Conta;
@@ -23,8 +22,9 @@ public class ContaController {
         return service.update(nome, parametro);
     }
 
-    public void delete(String cpf){
-        service.delete(cpf);
+    public boolean delete(String cpf){
+      return service.delete(cpf);
+
     }
 
     public Conta read(String cpf) {

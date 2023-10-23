@@ -61,7 +61,7 @@ public class ClienteDAOImpl implements ClienteDAO {
     public boolean delete(String id) {
        boolean clienteDeletado = false;
         for (int i = 0; i < basedados.size(); i++) {
-            if (basedados.get(i).getCpfCnpj().equals(id)) {
+            if (basedados.get(i) != null && basedados.get(i).getCpfCnpj().equals(id)) {
                 basedados.set(i, null);  // Remove o funcionário da lista.
                 clienteDeletado = true;
                 break; // Indica que a remoção foi bem-sucedida.
@@ -69,9 +69,21 @@ public class ClienteDAOImpl implements ClienteDAO {
         }
         // TODO trocar o funcionario da ultima posicao para a posicao null
         // TODO chamar o método bubleSort
+           bubbleSortNull();
            return clienteDeletado;
     }
-
+    private void bubbleSortNull() {
+        for (int i = 0; i < basedados.size(); i++) {
+            for (int j = 0; j < basedados.size() - 1; j++) {
+                if (basedados.get(j) == null && basedados.get(j + 1) != null) {
+                    // Trocar o cliente  com o próximo na lista
+                    aux = basedados.get(j);
+                    basedados.set(j, basedados.get(j + 1));
+                    basedados.set(j + 1, aux);
+                }
+            }
+        }
+    }
     @Override
     public Cliente read(String cpf) {
         return binarySearch(cpf);

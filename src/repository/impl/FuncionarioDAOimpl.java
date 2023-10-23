@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FuncionarioDAOimpl implements FuncionarioDAO {
-
     private static Funcionario[] database = new Funcionario[20];
     private static int indice = 0;
     private Funcionario aux;
@@ -20,6 +19,7 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
         indice++;
         this.bubbleSort();
     }
+
     /**
      * Algoritmo para ordenar um array por cpf
      */
@@ -35,6 +35,7 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
             }
         }
     }
+
     @Override
     public List<Funcionario> readAll() {
         List<Funcionario> funcionarios = new ArrayList<>();
@@ -79,24 +80,33 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
         }
         return false;
     }
-
     @Override
     public boolean delete(String identificacao) {
         boolean funcionarioDeletado = false;
         for (int i = 0; i < indice; i++) {
-            if (database[i].getCpfCnpj().equals(identificacao)) {
-                database[i] = null; // Define o CPFCNPJ como null para indicar a remoção.
+            if (database[i] != null && database[i].getCpfCnpj().equals(identificacao)) {
+                database[i] = null;
                 funcionarioDeletado = true;
-                break; // Indica que a remoção foi bem-sucedida.
-
+                break;
             }
         }
+        // TODO trocar o funcionario da ultima posição, para a posicao null
+        // TODO chamar o método bubbleSort
+        bubbleSortNull(); // Chama a função de ordenação após a remoção.
+        indice--;
+        return funcionarioDeletado;
+    }
 
-        // TODO trocar o funcionario da ultima posicao para a posicao null
-        // TODO chamar o método bubleSort
-
-        this.indice--;
-        return funcionarioDeletado; // Retorna false se nenhum funcionario com identificação especificado foi
-        // encontrado.
+    private void bubbleSortNull() {
+        for (int i = 0; i < indice; i++) {
+            for (int j = 0; j < indice - 1; j++) {
+                if (database[j] == null && database[j + 1] != null) {
+                    // Trocar o funcionário com o próximo na lista
+                    aux = database[j];
+                    database[j] = database[j + 1];
+                    database[j + 1] = aux;
+                }
+            }
+        }
     }
 }

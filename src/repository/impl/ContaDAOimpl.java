@@ -59,10 +59,10 @@ public class ContaDAOimpl implements ContaDAO {
         return false;
     }
     @Override
-    public boolean delete(String nome) {
+    public boolean delete(String cpf) {
         boolean contadelete = false;
         for (int i = 0; i < basedata.size(); i++) {
-            if (basedata.get(i).getCpfCnpj().equals(nome)) {
+            if (basedata.get(i) != null && basedata.get(i).getCpfCnpj().equals(cpf)) {
                 basedata.set(i, null);
                 contadelete = true;
                 break;
@@ -70,7 +70,20 @@ public class ContaDAOimpl implements ContaDAO {
         }
         // TODO trocar o funcionario da ultima posicao para a posicao null
         // TODO chamar o método bubleSort
+        bubbleSortNull();
         return contadelete;
+    }
+    private void bubbleSortNull() {
+        for (int i = 0; i < basedata.size(); i++) {
+            for (int j = 0; j < basedata.size() - 1; j++) {
+                if (basedata.get(j) == null && basedata.get(j + 1) != null) {
+                        // Trocar o cliente  com o próximo na lista
+                    aux = basedata.get(j);
+                    basedata.set(j, basedata.get(j + 1));
+                    basedata.set(j + 1, aux);
+                }
+            }
+        }
     }
 
     @Override
