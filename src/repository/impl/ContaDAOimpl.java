@@ -1,4 +1,5 @@
 package repository.impl;
+
 import model.Conta;
 import repository.ContaDAO;
 import java.util.ArrayList;
@@ -7,25 +8,26 @@ import java.util.List;
 public class ContaDAOimpl implements ContaDAO {
     private static List<Conta> basedata = new ArrayList<>();
 
-    private Conta aux;
-
     public ContaDAOimpl() {
     }
+
     @Override
     public void create(Conta parametro) {
         basedata.add(parametro);
         bubbleSort();
     }
+
     /**
      * Algoritmo para ordenar um array por cpf
      */
     private void bubbleSort() {
+        Conta aux;
         int indice = basedata.size();
         for (int i = 0; i < indice; i++) {
             for (int j = 0; j < indice - 1; j++) {
                 if (Long.parseLong(basedata.get(j).getCpfCnpj()) > Long.parseLong(basedata.get(j + 1).getCpfCnpj())) {
                     // Troca os elementos se o primeiro for maior que o segundo
-                        aux = basedata.get(j);
+                    aux = basedata.get(j);
                     basedata.set(j, basedata.get(j + 1));
                     basedata.set(j + 1, aux);
 
@@ -33,6 +35,7 @@ public class ContaDAOimpl implements ContaDAO {
             }
         }
     }
+
     // ReadAll-ler-Tudo
     @Override
     public List<Conta> readAll() {
@@ -55,32 +58,19 @@ public class ContaDAOimpl implements ContaDAO {
         }
         return false;
     }
+
     @Override
     public boolean delete(String cpf) {
         boolean contadelete = false;
         for (int i = 0; i < basedata.size(); i++) {
             if (basedata.get(i) != null && basedata.get(i).getCpfCnpj().equals(cpf)) {
-                basedata.set(i, null);
+                basedata.remove(i);
                 contadelete = true;
                 break;
             }
         }
-        // TODO trocar o funcionario da ultima posicao para a posicao null
-        // TODO chamar o método bubleSort
-        bubbleSortNull();
+        bubbleSort();
         return contadelete;
-    }
-    private void bubbleSortNull() {
-        for (int i = 0; i < basedata.size(); i++) {
-            for (int j = 0; j < basedata.size() - 1; j++) {
-                if (basedata.get(j) == null && basedata.get(j + 1) != null) {
-                        // Trocar o cliente  com o próximo na lista
-                    aux = basedata.get(j);
-                    basedata.set(j, basedata.get(j + 1));
-                    basedata.set(j + 1, aux);
-                }
-            }
-        }
     }
 
     @Override
@@ -103,10 +93,6 @@ public class ContaDAOimpl implements ContaDAO {
                 direita = meio - 1;
             }
         }
-        return null;  // Retorna null se o cliente não for encontrado
+        return null; // Retorna null se o cliente não for encontrado
     }
-
-    // TODO Auto-generated method stub
-      //throw new UnsupportedOperationException("Unimplemented method 'read'");
-    }
-
+}
