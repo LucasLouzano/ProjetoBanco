@@ -7,6 +7,7 @@ import java.util.List;
 
 public class FuncionarioDAOimpl implements FuncionarioDAO {
     private static Funcionario[] database = new Funcionario[20];
+    // tamanho preenchido dentro do array
     private static int tamanho = 0;
 
     @Override
