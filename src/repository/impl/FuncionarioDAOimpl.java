@@ -16,7 +16,6 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
         tamanho++;
         this.bubbleSort();
     }
-
     /**
      * Algoritmo para ordenar um array por cpf
      */
@@ -33,7 +32,6 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
             }
         }
     }
-
     @Override
     public List<Funcionario> readAll() {
         List<Funcionario> funcionarios = new ArrayList<>();

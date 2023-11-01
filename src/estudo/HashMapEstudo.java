@@ -8,6 +8,7 @@ public class HashMapEstudo {
         Map<String, Integer> idades = new HashMap<>();
         idades.put("Lucas", 33);
         idades.put("Antonio", 28);
+        idades.put("teste", 45);
 
         for (int idade : idades.values()) {
             System.out.println(idade);
@@ -20,6 +21,7 @@ public class HashMapEstudo {
         Map<String, String> usuarios = new HashMap<>();
         usuarios.put("12345678912", "Lucas");
         usuarios.put("45678912345", "Antonio");
+        usuarios.put("22345678978", "Teste");
 
         System.out.println(usuarios.get("45678912345"));
 

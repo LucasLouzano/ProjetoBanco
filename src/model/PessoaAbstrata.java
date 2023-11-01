@@ -7,7 +7,7 @@ public class PessoaAbstrata {
     private String nome;
     private String email;
     private String cpfCnpj;
-    private int idade;
+    private Date nascimento;
     private Date data;
 
     public Date getData() {
@@ -34,12 +34,12 @@ public class PessoaAbstrata {
         this.email = email;
     }
 
-    public int getIdade() {
-        return idade;
+    public Date getNascimento() {
+        return nascimento;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setNascimento(Date nascimento){
+        this.nascimento = nascimento;
     }
 
     public String getCpfCnpj() {
