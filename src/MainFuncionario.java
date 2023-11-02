@@ -1,7 +1,6 @@
 import config.FuncionarioConfig;
 import controller.FuncionarioController;
 import model.Funcionario;
-
 public class MainFuncionario {
     public static void main(String[] args) {
         FuncionarioConfig.funcionarioInit();

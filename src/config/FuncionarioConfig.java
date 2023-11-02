@@ -11,7 +11,7 @@ public class FuncionarioConfig {
         func1.setNome("Lucas");
         func1.setEmail("lucas@gmail.com");
         func1.setNascimento(new Date());
-        func1.setCpfCnpj("123.456.789-78");
+        func1.setCpfCnpj("123.456.789-789");
 
         Funcionario func2 = new Funcionario();
         func2.setNome("Antonio");

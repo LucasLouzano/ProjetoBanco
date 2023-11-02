@@ -14,13 +14,20 @@ public class FuncionarioServiceImpl implements FuncionarioService {
 
     @Override
     public void create(Funcionario novoFuncionario) {
-        String cpfSemPontos = novoFuncionario.getCpfCnpj().replaceAll("[.-]", "");
+        String cpfSemPontos = novoFuncionario.getCpfCnpj()
+                        .replaceAll("[.-]", "");
         novoFuncionario.setCpfCnpj(cpfSemPontos);
-        if (funcionarios.stream().anyMatch(f -> f.getCpfCnpj().equals(novoFuncionario.getCpfCnpj()))) {
+        boolean validaCpfExistente = funcionarios.stream()
+                .anyMatch(f -> f.getCpfCnpj().equals(novoFuncionario.getCpfCnpj()));
+        //VALIDAR SE O CPF É DIFERENTE AO CPF DO CLIENTE
+        if (validaCpfExistente) {
+            //ERRO NA VALIDAÇÃO DO CPF
             System.out.println("CPF/CNPJ já existe. Não é possível cadastrar.");
-        } else if (novoFuncionario.getCpfCnpj().replaceAll("[^0-9]", "").length() < 11) {
+        } else if (cpfSemPontos.length() != 11) { //VALIDA SE O CPF É DIFERENTE DE 11 DIGITOS
+            //ERRO NO TAMANHO DO CPF
             System.out.println("CPF/CNPJ com tamanho inválido. Deve conter pelo menos 11 dígitos.");
         } else {
+            //CRIA UM NOVO FUNCIONARIO
             repository.create(novoFuncionario);
         }
     }
