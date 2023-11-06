@@ -30,13 +30,27 @@ public class MainGUIConta {
                 System.out.println("\n Conta cadastrada com sucesso!");
 
             } else if (opcao == 2) {
-
+                System.out.println("\n Conta Cadastrada: \n");
+                Conta conta = controller.read("12345678978");
+                System.out.println(conta.getNome());
+                controller.readAll().forEach(c -> {
+                    System.out.println(c.getNome());
+                });
             } else if (opcao == 3) {
-                System.out.println("\n Conta: \n");
+                System.out.println("\n Listando conta: \n");
                 controller.readAll().forEach(f -> {
                     System.out.println("===" + f.getNome() + "===");
                 });
             } else if (opcao == 4) {
+                boolean contadelete = controller.delete("22345678978");
+                if (contadelete) {
+                    System.out.println("conta removida, com sucesso!");
+                } else {
+                    System.out.println("Conta não encontrada, ou não foi possível remover.");
+                }
+                controller.readAll().forEach(f -> {
+                    System.out.println(f.getNome());
+                });
 
 
             }
