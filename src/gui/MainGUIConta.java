@@ -1,10 +1,6 @@
 package gui;
-
-import config.ClienteConfig;
 import config.ContaConfig;
-import controller.ClienteController;
 import controller.ContaController;
-import model.Cliente;
 import model.Conta;
 
 import java.util.Scanner;
@@ -16,7 +12,7 @@ public class MainGUIConta {
         ContaController controller = new ContaController();
 
         while (opcao != 99) { // enquanto
-            System.out.println(ConstantesGUI.CADASTROCONTA.getValor());
+            System.out.println(ConstantesGUI.CADASTRARCONTA.getValor());
             opcao = scan.nextInt();
 
             if (opcao == 1) {
@@ -31,15 +27,18 @@ public class MainGUIConta {
                 conta.setEmail(email);
                 conta.setCpfCnpj(cpf);
                 controller.create(conta);
-                System.out.println("\n Cliente cadastrado com sucesso!");
+                System.out.println("\n Conta cadastrada com sucesso!");
 
             } else if (opcao == 2) {
 
             } else if (opcao == 3) {
-                System.out.println("\n Cliente: \n");
+                System.out.println("\n Conta: \n");
                 controller.readAll().forEach(f -> {
                     System.out.println("===" + f.getNome() + "===");
                 });
+            } else if (opcao == 4) {
+
+
             }
         }
 

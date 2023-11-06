@@ -13,7 +13,7 @@ public class Main {
         c1.setNome("Antonio");
         c1.setEmail("antonioserra@gmail.com");
         c1.setCpfCnpj("123.456.789.12");
-        c1.setNascimento(new Date(75));
+        c1.setNascimento(new Date(95));
         c1.setData(new Date());
         controller.create(c1);
 
@@ -46,7 +46,7 @@ public class Main {
         update.setNome("lucas");
         update.setEmail("lucas@gmail.com");
         update.setCpfCnpj("12345678912");
-        update.setNascimento(new Date(70));
+        update.setNascimento(new Date(90));
         update.setData(new Date());
 
         if (controller.update("12345678912", update)) {
@@ -63,7 +63,7 @@ public class Main {
         update.setNome("Douglas");
         update.setEmail("douglas@gmail.com");
         update.setCpfCnpj("39935669822");
-        update.setNascimento(new Date(72));
+        update.setNascimento(new Date(87));
         update.setData(new Date());
 
         if (controller.update("39935669822", update)) {
