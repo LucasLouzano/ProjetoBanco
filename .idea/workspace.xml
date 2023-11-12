@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/ListaEncadeada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/No.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/teste/ListaEncadeadaTeste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/estudo/NodeCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/estudo/NodeCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/estudo/NodeString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/estudo/NodeString.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2XMJZuP7l6aehrpeC81mUBwq3E3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/gabmo/IdeaProjects/GraphPack_2022_2023_V1_4",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.ListaEncadeadaTeste">
+    <configuration name="ListaEncadeadaTeste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.banco.study.teste.ListaEncadeadaTeste" />
+      <module name="banco-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.banco.study.teste.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainGUIClientes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.MainGUIClientes" />
+      <module name="ProjectBanc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainGUIConta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.MainGUIConta" />
+      <module name="ProjectBanc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainGUIFuncionarios" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.MainGUIFuncionarios" />
+      <module name="ProjectBanc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NodeString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.banco.estudo.NodeString" />
+      <module name="banco-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.banco.estudo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ListaEncadeadaTeste" />
+        <item itemvalue="Application.NodeString" />
+        <item itemvalue="Application.MainGUIConta" />
+        <item itemvalue="Application.MainGUIClientes" />
+        <item itemvalue="Application.MainGUIFuncionarios" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="" />
+      <created>1698433073628</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698433073628</updated>
+    </task>
+    <servers />
+  </component>
+</project>
