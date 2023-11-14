@@ -1,4 +1,4 @@
-package com.banco.study;
+package com.banco.study.teste;
 
 public class ListaEncadeada<T> {
     private No<T> inicio;
@@ -16,7 +16,6 @@ public class ListaEncadeada<T> {
         this.ultimo = celula;
         this.tamanho++;
     }
-
     public int getTamanho() {
         return this.tamanho;
     }

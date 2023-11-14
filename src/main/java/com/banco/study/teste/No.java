@@ -1,4 +1,4 @@
-package com.banco.study;
+package com.banco.study.teste;
 
 public class No<T> {
     private T valor;
