@@ -3,11 +3,15 @@ package com.banco.config;
 import java.util.Date;
 
 import com.banco.controller.ClienteController;
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
 
 public class ClienteConfig {
     public static void clienteInit() {
 
+    	try {
+			
+		
         Cliente cliente1 = new Cliente();
         cliente1.setNome("Lucas");
         cliente1.setEmail("lucas@gmail.com");
@@ -37,7 +41,13 @@ public class ClienteConfig {
         contro.create(cliente1);
         contro.create(cliente4);
         contro.create(cliente3);
-
+    	} catch (CpfCnpjException e) {
+    		System.out.println("Um dos cpfs estão inválidos");
+		}
     }
+    
+    public static void main(String[] args) {
+    	clienteInit();
+	}
 }
 

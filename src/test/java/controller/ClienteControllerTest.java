@@ -1,5 +1,6 @@
 package controller;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
@@ -8,12 +9,13 @@ import java.util.Date;
 import org.junit.Test;
 
 import com.banco.controller.ClienteController;
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
 
 public class ClienteControllerTest {
 
 	@Test
-	public void createClienteTest() {
+	public void createClienteTest() throws CpfCnpjException {
 		ClienteController controller = new ClienteController();
 		
 		Cliente cliente = new Cliente();
@@ -26,6 +28,7 @@ public class ClienteControllerTest {
         
         Cliente c = controller.read("12345678978");
         assertNotNull(c);
+        assertEquals("12345678978", c.getCpfCnpj());
 	}
 	
 	@Test
@@ -36,7 +39,7 @@ public class ClienteControllerTest {
 	}
 	
 	@Test
-	public void readClientePeloNome() {
+	public void readClientePeloNome() throws Exception{
 		ClienteController controller = new ClienteController();
 		
 		Cliente cliente = new Cliente();

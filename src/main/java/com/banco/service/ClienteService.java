@@ -2,11 +2,12 @@ package com.banco.service;
 
 import java.util.List;
 
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
 
 public interface ClienteService {
 
-    void create(Cliente conta);
+    void create(Cliente cliente) throws CpfCnpjException;
 
     List<Cliente> readAll();
 

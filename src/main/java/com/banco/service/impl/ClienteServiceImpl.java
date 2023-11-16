@@ -2,6 +2,7 @@ package com.banco.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
 import com.banco.repository.ClienteDAO;
 import com.banco.repository.impl.ClienteDAOImpl;
@@ -13,10 +14,13 @@ public class ClienteServiceImpl implements ClienteService {
     List<Cliente> clientes = new ArrayList<>();
 
     @Override // create-criar //remover pontos e traços
-    public void create(Cliente conta) {
-        String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
-        conta.setCpfCnpj(SemPontos);
-        repository.create(conta);
+    public void create(Cliente cliente) throws CpfCnpjException {
+    	if(cliente.getCpfCnpj().length() < 11) {
+    		throw new CpfCnpjException();
+    	}
+        String SemPontos = cliente.getCpfCnpj().replaceAll("[.-]", "");
+        cliente.setCpfCnpj(SemPontos);
+        repository.create(cliente);
 
     }
 
