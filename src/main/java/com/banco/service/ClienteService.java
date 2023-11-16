@@ -15,4 +15,6 @@ public interface ClienteService {
     boolean delete(String id);
 
     Cliente read(String cpf);
+
+	Cliente readClientePeloNome(String nome);
 }

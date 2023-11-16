@@ -42,6 +42,11 @@ public class ClienteServiceImpl implements ClienteService {
 
     }
 
+	@Override
+	public Cliente readClientePeloNome(String nome) {
+		return repository.readClientePeloNome(nome);
+	}
+
 }
 
 // Encontrar o cliente com o ID correspondente na lista.

@@ -2,6 +2,7 @@ package com.banco.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.banco.model.Cliente;
 import com.banco.repository.ClienteDAO;
@@ -104,6 +105,14 @@ public class ClienteDAOImpl implements ClienteDAO {
             }
             return null;  // Retorna null se o cliente não for encontrado
         }
+	@Override
+	public Cliente readClientePeloNome(String nome) {
+		List<Cliente> c = basedados.stream().filter(cli -> cli.getNome().equals(nome)).collect(Collectors.toList());
+		if(c != null) {
+			return c.get(0);
+		}
+		return null;
+	}
 
         // TODO Auto-generated method stub
      //   throw new UnsupportedOperationException("Unimplemented method 'read'");

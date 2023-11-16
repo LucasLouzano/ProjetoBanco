@@ -29,4 +29,9 @@ public class ClienteController {
     public Cliente read(String cpf) {
         return service.read(cpf);
     }
+
+	public Cliente readClientePeloNome(String nome) {
+		
+		return service.readClientePeloNome(nome);
+	}
 }
