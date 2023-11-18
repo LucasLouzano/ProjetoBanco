@@ -2,6 +2,7 @@ package com.banco.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
@@ -95,5 +96,16 @@ public class ContaDAOimpl implements ContaDAO {
             }
         }
         return null; // Retorna null se o cliente não for encontrado
+    }
+
+    @Override
+    public Conta createConta(String nome) {
+        List<Conta> conta = basedata
+                .stream().filter(cont -> cont.getNome().equals(nome))
+                .collect(Collectors.toList());
+        if (conta != null){
+            return conta.get(0);
+        }
+        return null;
     }
 }

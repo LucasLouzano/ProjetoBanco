@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 import com.banco.config.ClienteConfig;
 import com.banco.controller.ClienteController;
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
 
 public class MainGUIClientes {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CpfCnpjException {
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
         ClienteConfig.clienteInit();

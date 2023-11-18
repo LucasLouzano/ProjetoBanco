@@ -53,6 +53,22 @@ public class ClienteControllerTest {
         Cliente c = controller.readClientePeloNome("Antonio");
         assertNotNull(c);
 	}
-	
+	@Test
+	public void readClientepeloCpf()throws Exception{
+		ClienteController controller = new ClienteController();
+
+		Cliente cliente = new Cliente();
+		cliente.setNome("Louzano");
+		cliente.setEmail("louzano@gmail.com");
+		cliente.setNascimento(new Date(92));
+		cliente.setCpfCnpj("83992558282");
+
+		controller.create(cliente);
+
+		Cliente l = controller.read("83992558282");
+		assertNotNull(l);
+		assertEquals("83992558282", l.getCpfCnpj());
+
+	}
 	
 }

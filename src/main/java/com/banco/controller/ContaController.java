@@ -22,12 +22,16 @@ public class ContaController {
         return service.update(nome, parametro);
     }
 
-    public boolean delete(String cpf){
-      return service.delete(cpf);
+    public boolean delete(String cpf) {
+        return service.delete(cpf);
 
     }
 
     public Conta read(String cpf) {
         return service.read(cpf);
+    }
+
+    public Conta creteConta(String nome) {
+        return service.createConta(nome);
     }
 }

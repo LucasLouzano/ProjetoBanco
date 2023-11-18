@@ -15,5 +15,6 @@ public interface ContaService {
     boolean delete(String cpf);
 
     Conta read(String cpf);
+    Conta createConta(String nome);
 
 }

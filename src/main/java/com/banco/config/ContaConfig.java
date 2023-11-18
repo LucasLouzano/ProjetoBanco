@@ -2,9 +2,12 @@ package com.banco.config;
 import java.util.Date;
 
 import com.banco.controller.ContaController;
+import com.banco.exceptions.CpfException;
 import com.banco.model.Conta;
 public class ContaConfig {
     public static void contaInit() {
+
+
         Conta conta1 = new Conta();
         conta1.setNome("Lucas");
         conta1.setEmail("lucas@gmail.com");
@@ -35,4 +38,9 @@ public class ContaConfig {
         contro.create(conta4);
         contro.create(conta3);
     }
+
+    public static void main(String[] args) {
+        contaInit();
+    }
+
 }

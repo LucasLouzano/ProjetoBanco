@@ -5,23 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/ImplementeRunnable/MinhaThreadRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/ImplementeRunnable/Thread1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/ImplementeRunnable/Thread3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/ImplementeRunnable/Thread4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/ImplementeRunnable/Threada2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/calculadora/Calculadora.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/calculadora/TesteCalculadoraThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/calculadora/ThreadSoma.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/exemplo/ExemploThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/exemplo/MainThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/minha/MinhaThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/minha/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/exceptions/CpfException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/ContaControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/study/ListaEncadeada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/teste/ListaEncadeada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/study/No.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/teste/No.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/study/teste/ListaEncadeadaTeste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/study/teste/ListaEncadeadaTeste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/config/ContaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/config/ContaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/exceptions/CpfCnpjException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/exceptions/CpfCnpjException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ClienteDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ClienteDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +57,19 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Thread4">
-    <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.study.minha.Teste" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.banco.config" />
+      <recent name="controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ClienteConfig">
+    <configuration name="ClienteConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.banco.config.ClienteConfig" />
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.study.minha.*" />
+          <option name="PATTERN" value="com.banco.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,65 +77,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Thread1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.study.ImplementeRunnable.Thread1" />
+    <configuration name="ClienteControllerTest.createClienteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.study.teste.*" />
+          <option name="PATTERN" value="com.banco.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="createClienteTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Thread3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.study.ImplementeRunnable.Thread3" />
+    <configuration name="ClienteControllerTest.readClienteNaoExiste" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.study.ImplementeRunnable.*" />
+          <option name="PATTERN" value="com.banco.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="readClienteNaoExiste" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Thread4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.study.ImplementeRunnable.Thread4" />
+    <configuration name="ClienteControllerTest.readClientePeloNome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.study.ImplementeRunnable.*" />
+          <option name="PATTERN" value="com.banco.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="readClientePeloNome" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Threada2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.study.ImplementeRunnable.Threada2" />
+    <configuration name="ClienteControllerTest.readClientepeloCpf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.study.ImplementeRunnable.*" />
+          <option name="PATTERN" value="com.banco.exceptions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="readClientepeloCpf" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Thread4" />
-        <item itemvalue="Application.Thread3" />
-        <item itemvalue="Application.Threada2" />
-        <item itemvalue="Application.Thread1" />
-        <item itemvalue="Application.Teste" />
+        <item itemvalue="Application.ClienteConfig" />
+        <item itemvalue="JUnit.ClienteControllerTest.readClientepeloCpf" />
+        <item itemvalue="JUnit.ClienteControllerTest.createClienteTest" />
+        <item itemvalue="JUnit.ClienteControllerTest.readClientePeloNome" />
+        <item itemvalue="JUnit.ClienteControllerTest.readClienteNaoExiste" />
       </list>
     </recent_temporary>
   </component>
@@ -146,5 +161,10 @@
       <updated>1698433073628</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProjetoBanco$ClienteControllerTest_readClientepeloCpf.ic" NAME="ClienteControllerTest.readClientepeloCpf Coverage Results" MODIFIED="1700260215985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

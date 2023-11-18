@@ -2,7 +2,8 @@ package com.banco.exceptions;
 
 public class CpfCnpjException extends Exception {
 	
-	private static final String MSG = "CPF INVÁLIDO"; 
+	private static final String MSG = "CPF INVÁLIDO";
+
 
 	/**
 	 * 
@@ -16,5 +17,5 @@ public class CpfCnpjException extends Exception {
     public CpfCnpjException(String mensagem) {
         super(mensagem);
     }
-	
+
 }
