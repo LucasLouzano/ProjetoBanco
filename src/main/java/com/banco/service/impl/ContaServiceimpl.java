@@ -10,18 +10,18 @@ public class ContaServiceimpl implements ContaService {
     private ContaDAO repository = new ContaDAOimpl();
 
     @Override
-    public void create(Conta parametro) {
-        String SemPontos = parametro.getCpfCnpj().replaceAll("[.-]", "");
-        parametro.setCpfCnpj(SemPontos);
-        repository.create(parametro);
+    public void create(Conta conta) {
+        String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
+        conta.setCpfCnpj(SemPontos);
+        repository.create(conta);
     }
     @Override
     public List<Conta> readAll() {
         return repository.readAll();
     }
     @Override
-    public boolean update(String nome, Conta parametro) {
-        return repository.update(nome, parametro);
+    public boolean update(String nome, Conta conta) {
+        return repository.update(nome,conta);
     }
     @Override
     public boolean delete(String cpf) {
@@ -30,11 +30,6 @@ public class ContaServiceimpl implements ContaService {
     @Override
     public Conta read(String cpf) {
         return repository.read(cpf);
-    }
-
-    @Override
-    public Conta createConta(String nome) {
-        return repository.createConta(nome);
     }
 
 }

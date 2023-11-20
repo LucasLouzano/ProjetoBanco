@@ -18,8 +18,8 @@ public class ContaController {
         return service.readAll();
     }
 
-    public boolean update(String nome, Conta parametro) {
-        return service.update(nome, parametro);
+    public boolean update(String nome, Conta conta) {
+        return service.update(nome,conta);
     }
 
     public boolean delete(String cpf) {
@@ -31,7 +31,4 @@ public class ContaController {
         return service.read(cpf);
     }
 
-    public Conta creteConta(String nome) {
-        return service.createConta(nome);
-    }
 }

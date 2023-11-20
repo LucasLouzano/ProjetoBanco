@@ -10,11 +10,10 @@ public interface ContaService {
 
     List<Conta> readAll();
 
-    boolean update(String nome, Conta parametro);
+    boolean update(String nome, Conta conta);
 
     boolean delete(String cpf);
 
     Conta read(String cpf);
-    Conta createConta(String nome);
 
 }

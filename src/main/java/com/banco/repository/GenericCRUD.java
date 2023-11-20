@@ -10,7 +10,7 @@ public interface GenericCRUD<T, v> {
 
     T read(v id);
 
-    boolean update(v nome, T parametro);
+    boolean update(v nome, T conta);
 
     boolean delete(String nome);
 

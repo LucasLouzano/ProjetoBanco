@@ -2,7 +2,6 @@ package com.banco.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
@@ -14,8 +13,8 @@ public class ContaDAOimpl implements ContaDAO {
     }
 
     @Override
-    public void create(Conta parametro) {
-        basedata.add(parametro);
+    public void create(Conta conta) {
+        basedata.add(conta);
         bubbleSort();
     }
 
@@ -52,7 +51,7 @@ public class ContaDAOimpl implements ContaDAO {
     @Override
     public boolean update(String nome, Conta novaConta) {
         for (int i = 0; i < basedata.size(); i++) {
-            Conta conta = basedata.get(i);
+           Conta conta = basedata.get(i);
             if (conta.getCpfCnpj().equals(nome)) {
                 basedata.set(i, novaConta);
                 return true;
@@ -98,14 +97,4 @@ public class ContaDAOimpl implements ContaDAO {
         return null; // Retorna null se o cliente não for encontrado
     }
 
-    @Override
-    public Conta createConta(String nome) {
-        List<Conta> conta = basedata
-                .stream().filter(cont -> cont.getNome().equals(nome))
-                .collect(Collectors.toList());
-        if (conta != null){
-            return conta.get(0);
-        }
-        return null;
-    }
 }
