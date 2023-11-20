@@ -30,5 +30,8 @@ public class ContaController {
     public Conta read(String cpf) {
         return service.read(cpf);
     }
+    public Conta readClientePeloNome(String nome) {
+        return service.readClientePeloNome(nome);
+    }
 
 }

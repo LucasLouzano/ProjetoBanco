@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.Date;
 
 import org.junit.Test;
@@ -17,11 +19,11 @@ public class ClienteControllerTest {
 	@Test
 	public void createClienteTest() throws CpfCnpjException {
 		ClienteController controller = new ClienteController();
-		
+		LocalDate dataNascimento = LocalDate.of(1990, Month.JUNE, 8);
 		Cliente cliente = new Cliente();
 		cliente.setNome("Lucas");
 		cliente.setEmail("lucas@gmail.com");
-		cliente.setNascimento(new Date(90));
+		cliente.setNascimento(dataNascimento);
 		cliente.setCpfCnpj("12345678978");
         
         controller.create(cliente);
@@ -41,11 +43,11 @@ public class ClienteControllerTest {
 	@Test
 	public void readClientePeloNome() throws Exception{
 		ClienteController controller = new ClienteController();
-		
+		LocalDate dataNascimento = LocalDate.of(1995, Month.JUNE, 9);
 		Cliente cliente = new Cliente();
 		cliente.setNome("Antonio");
-		cliente.setEmail("lucas@gmail.com");
-		cliente.setNascimento(new Date(90));
+		cliente.setEmail("antonio@gmail.com");
+		cliente.setNascimento(dataNascimento);
 		cliente.setCpfCnpj("12345678123");
         
         controller.create(cliente);
@@ -56,11 +58,11 @@ public class ClienteControllerTest {
 	@Test
 	public void readClientepeloCpf()throws Exception{
 		ClienteController controller = new ClienteController();
-
+		LocalDate dataNascimento = LocalDate.of(1987, Month.JUNE, 5);
 		Cliente cliente = new Cliente();
 		cliente.setNome("Louzano");
 		cliente.setEmail("louzano@gmail.com");
-		cliente.setNascimento(new Date(92));
+		cliente.setNascimento(dataNascimento);
 		cliente.setCpfCnpj("83992558282");
 
 		controller.create(cliente);

@@ -1,5 +1,6 @@
 package com.banco.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class PessoaAbstrata {
@@ -7,7 +8,7 @@ public class PessoaAbstrata {
     private String nome;
     private String email;
     private String cpfCnpj;
-    private Date nascimento;
+    private LocalDate nascimento;
     private Date data;
 
     public Date getData() {
@@ -34,11 +35,11 @@ public class PessoaAbstrata {
         this.email = email;
     }
 
-    public Date getNascimento() {
+    public  LocalDate getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(Date nascimento){
+    public void setNascimento(LocalDate nascimento){
         this.nascimento = nascimento;
     }
 

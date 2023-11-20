@@ -1,10 +1,8 @@
 package com.banco.config;
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.Date;
 
 import com.banco.controller.ContaController;
-import com.banco.exceptions.CpfException;
 import com.banco.model.Conta;
 public class ContaConfig {
     public static void contaInit() {
@@ -14,7 +12,7 @@ public class ContaConfig {
         LocalDate dataNascimento = LocalDate.of(1990, Month.JUNE, 8);
         conta1.setNome("Lucas");
         conta1.setEmail("lucas@gmail.com");
-        conta1.setDataNascimento(dataNascimento );
+        conta1.setDataNascimento(dataNascimento);
         conta1.setCpfCnpj("12345678978");
 
         Conta conta2 = new Conta();

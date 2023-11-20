@@ -6,15 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/config/ClienteConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/config/ClienteConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/config/ContaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/config/ContaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/config/FuncionarioConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/config/FuncionarioConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/model/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/model/Conta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/estudo/NodeCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/estudo/NodeCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/exceptions/CpfException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/model/PessoaAbstrata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/model/PessoaAbstrata.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/GenericCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/GenericCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controller/ContaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ContaControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,24 +53,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Lucas/Alunos&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowCoverage.ShowToolbar": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Lucas/Alunos",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.banco.config" />
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContaControllerTest.testUpdateConta">
+  <component name="RunManager" selected="JUnit.ContaControllerTest">
+    <configuration name="ContaConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.banco.config.ContaConfig" />
+      <module name="banco-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.banco.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ContaControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
@@ -78,13 +95,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaControllerTest.createConta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaControllerTest.TestMetodoReadContaInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
@@ -94,13 +110,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
-      <option name="METHOD_NAME" value="createConta" />
+      <option name="METHOD_NAME" value="TestMetodoReadContaInexistente" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaControllerTest.createContaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaControllerTest.testAdicionarContaReadAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
@@ -110,23 +126,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
-      <option name="METHOD_NAME" value="createContaTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContaControllerTest.readContaNaoExistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="banco-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
-      <option name="METHOD_NAME" value="readContaNaoExistente" />
+      <option name="METHOD_NAME" value="testAdicionarContaReadAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,11 +150,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContaControllerTest.testUpdateConta" />
-        <item itemvalue="JUnit.ContaControllerTest.readContaNaoExistente" />
         <item itemvalue="JUnit.ContaControllerTest" />
-        <item itemvalue="JUnit.ContaControllerTest.createContaTest" />
-        <item itemvalue="JUnit.ContaControllerTest.createConta" />
+        <item itemvalue="JUnit.ContaControllerTest.testAdicionarContaReadAll" />
+        <item itemvalue="JUnit.ContaControllerTest.testUpdateConta" />
+        <item itemvalue="JUnit.ContaControllerTest.TestMetodoReadContaInexistente" />
+        <item itemvalue="Application.ContaConfig" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +184,10 @@
     <SUITE FILE_PATH="coverage/ProjetoBanco$ClienteControllerTest_readClientepeloCpf.ic" NAME="ClienteControllerTest.readClientepeloCpf Coverage Results" MODIFIED="1700260215985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ProjetoBanco$ContaControllerTest.ic" NAME="ContaControllerTest Coverage Results" MODIFIED="1700425636141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/ProjetoBanco$ContaControllerTest.ic" NAME="ContaControllerTest Coverage Results" MODIFIED="1700494887787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjetoBanco$ContaControllerTest_createContaTest.ic" NAME="ContaControllerTest.createContaTest Coverage Results" MODIFIED="1700494995384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
   </component>
