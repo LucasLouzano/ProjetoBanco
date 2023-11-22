@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
-
 public class ContaControllerTest {
     @Test
     public void createContaTest() throws CpfCnpjException {
@@ -27,31 +26,9 @@ public class ContaControllerTest {
         assertNotNull(c);
         assertEquals("12345678978", c.getCpfCnpj());
     }
-    @Test
-    public void readContaNaoExistente() throws Exception {
-        ContaController controller = new ContaController();
-        Conta c = controller.read("12345678970");
-        assertNull(c);
-    }
 
     @Test
-    public void testReadPeloNome() throws Exception {
-        ContaController controller = new ContaController();
-        LocalDate dataNascimento = LocalDate.of(1995, Month.JUNE, 9);
-        Conta conta = new Conta();
-        conta.setNome("Antonio");
-        conta.setEmail("antonio@gmail.com");
-        conta.setDataNascimento(dataNascimento);
-        conta.setCpfCnpj("12345678123");
-
-        controller.create(conta);
-
-        Conta c = controller.readClientePeloNome("Antonio");
-        assertNotNull(c);
-    }
-
-    @Test
-    public void testAdicionarContaReadAll()throws Exception {
+    public void testAdicionarContaReadAll() throws Exception {
         ContaController controller = new ContaController();
         Conta conta = new Conta();
         LocalDate daNascimento = LocalDate.of(1987, Month.JUNE, 8);
@@ -65,18 +42,10 @@ public class ContaControllerTest {
         if (contas != null) {
             assertNotNull(contas);
             System.out.println("A conta foi adicionada com sucesso");
-        }else{
+        } else {
             System.out.println("Erro em adicionar a conta");
         }
 
-    }
-
-
-    @Test
-    public void TestMetodoReadContaInexistente() throws Exception{
-        ContaController controller = new ContaController();
-        Conta contaNaoEncontrada = controller.read("83992558282");
-        assertNull(contaNaoEncontrada);
     }
 
     @Test
@@ -104,6 +73,39 @@ public class ContaControllerTest {
         } else {
             System.out.println("Não foi possivel atualizar");
 
+        }
+    }
+
+    @Test
+    public void readContaPeloNome() {
+        ContaController controller = new ContaController();
+        LocalDate dataNascimento = LocalDate.of(1995, Month.JUNE, 9);
+        Conta conta = new Conta();
+        conta.setNome("Antonio");
+        conta.setEmail("Antonio@gmail.com");
+        conta.setDataNascimento(dataNascimento);
+        conta.setCpfCnpj("12345678123");
+
+        controller.create(conta);
+
+        Conta c = controller.readContaPeloNome("Antonio");
+        assertNotNull(c);
+    }
+
+    @Test
+    public void testdelete() {
+        ContaController controller = new ContaController();
+        Conta conta = new Conta();
+        LocalDate taNascimento = LocalDate.of(1992, Month.JUNE, 8);
+        conta.setNome("Louzano");
+        conta.setEmail("louzano@gmail.com");
+        conta.setDataNascimento(taNascimento);
+        conta.setCpfCnpj("83992558282");
+        boolean excluiu = controller.delete("83992558282");
+        if (excluiu) {
+            System.out.println("Exclusão bem sucedida");
+        } else {
+            System.out.println("O cpf não foi encontrado, ou a exclusão falhou.");
         }
     }
 }

@@ -100,14 +100,13 @@ public class ContaDAOimpl implements ContaDAO {
     }
 
     @Override
-    public Conta readClientePeloNome(String nome) {
-        List<Conta> conta = basedata
-                .stream().filter(con -> con.getNome()
-                        .equals(nome))
-                .collect(Collectors.toList());
-        if (conta != null) {
-            return conta.get(0);
+    public Conta readContaPeloNome(String nome) {
+        List<Conta> c = basedata
+                .stream().filter(cont -> cont.getNome().equals(nome)).collect(Collectors.toList());
+        if(c != null) {
+            return c.get(0);
         }
         return null;
     }
+
 }

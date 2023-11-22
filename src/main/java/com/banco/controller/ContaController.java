@@ -13,25 +13,20 @@ public class ContaController {
     public void create(Conta parametro) {
         service.create(parametro);
     }
-
     public List<Conta> readAll() {
         return service.readAll();
     }
-
     public boolean update(String nome, Conta conta) {
         return service.update(nome,conta);
     }
-
     public boolean delete(String cpf) {
         return service.delete(cpf);
-
     }
-
     public Conta read(String cpf) {
         return service.read(cpf);
     }
-    public Conta readClientePeloNome(String nome) {
-        return service.readClientePeloNome(nome);
+    public Conta readContaPeloNome(String nome) {
+        return service.readContaPeloNome(nome);
     }
 
 }

@@ -31,10 +31,9 @@ public class ContaServiceimpl implements ContaService {
     public Conta read(String cpf) {
         return repository.read(cpf);
     }
-
     @Override
-    public Conta readClientePeloNome(String nome) {
-        return repository.readClientePeloNome(nome);
+    public Conta readContaPeloNome(String nome) {
+        return repository.readContaPeloNome(nome);
     }
 
 }

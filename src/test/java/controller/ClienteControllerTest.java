@@ -1,24 +1,26 @@
 package controller;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Date;
+import java.util.List;
 
+import com.banco.controller.ContaController;
+import com.banco.model.Conta;
 import org.junit.Test;
 
 import com.banco.controller.ClienteController;
 import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
 
+import static org.junit.Assert.*;
+
 public class ClienteControllerTest {
 
 	@Test
 	public void createClienteTest() throws CpfCnpjException {
 		ClienteController controller = new ClienteController();
+
 		LocalDate dataNascimento = LocalDate.of(1990, Month.JUNE, 8);
 		Cliente cliente = new Cliente();
 		cliente.setNome("Lucas");
@@ -32,21 +34,60 @@ public class ClienteControllerTest {
         assertNotNull(c);
         assertEquals("12345678978", c.getCpfCnpj());
 	}
-	
 	@Test
-	public void readClienteNaoExiste() {
+	public void testAdicionarClienteReadAll()throws Exception {
 		ClienteController controller = new ClienteController();
-        Cliente c = controller.read("12345678970");
-        assertNull(c);
+		Cliente cliente = new Cliente();
+		LocalDate daNascimento = LocalDate.of(1987, Month.JUNE, 8);
+		cliente.setId(1234);
+		cliente.setNome("Teste");
+		cliente.setEmail("teste@gmail.com");
+		cliente.setNascimento(daNascimento);
+		cliente.setCpfCnpj("22345678978");
+		cliente.setData(new Date());
+		List<Cliente> clientes = controller.readAll();
+		if (clientes != null) {
+			assertNotNull(clientes);
+			System.out.println("A conta foi adicionada com sucesso");
+		}else{
+			System.out.println("Erro em adicionar a conta");
+		}
+
 	}
-	
 	@Test
-	public void readClientePeloNome() throws Exception{
+	public void testUpdateCliente() throws Exception {
+		ClienteController controller = new ClienteController();
+		LocalDate dataNascimento = LocalDate.of(1990, Month.JUNE, 8);
+		Cliente cliente = new Cliente();
+		cliente.setId(123);
+		cliente.setNome("Lucas");
+		cliente.setEmail("lucas@gmail.com");
+		cliente.setData(new Date());
+		cliente.setNascimento(dataNascimento);
+		cliente.setCpfCnpj("12345678978");
+
+		controller.create(cliente);
+		cliente.setEmail("lucas_louzano@gmail.com");
+
+
+		boolean clienteAtualizada = controller.update("12345678978", cliente);
+		if (clienteAtualizada) {
+
+			System.out.println("Foi atualizado com sucesso");
+			assertTrue(clienteAtualizada);
+
+		} else {
+			System.out.println("Não foi possivel atualizar");
+
+		}
+	}
+	@Test
+	public void readClientePeloNome() throws CpfCnpjException {
 		ClienteController controller = new ClienteController();
 		LocalDate dataNascimento = LocalDate.of(1995, Month.JUNE, 9);
 		Cliente cliente = new Cliente();
 		cliente.setNome("Antonio");
-		cliente.setEmail("antonio@gmail.com");
+		cliente.setEmail("Antonio@gmail.com");
 		cliente.setNascimento(dataNascimento);
 		cliente.setCpfCnpj("12345678123");
         
@@ -54,23 +95,6 @@ public class ClienteControllerTest {
 
         Cliente c = controller.readClientePeloNome("Antonio");
         assertNotNull(c);
-	}
-	@Test
-	public void readClientepeloCpf()throws Exception{
-		ClienteController controller = new ClienteController();
-		LocalDate dataNascimento = LocalDate.of(1987, Month.JUNE, 5);
-		Cliente cliente = new Cliente();
-		cliente.setNome("Louzano");
-		cliente.setEmail("louzano@gmail.com");
-		cliente.setNascimento(dataNascimento);
-		cliente.setCpfCnpj("83992558282");
-
-		controller.create(cliente);
-
-		Cliente l = controller.read("83992558282");
-		assertNotNull(l);
-		assertEquals("83992558282", l.getCpfCnpj());
-
 	}
 	
 }

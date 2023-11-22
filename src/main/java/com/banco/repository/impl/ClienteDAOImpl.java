@@ -108,16 +108,15 @@ public class ClienteDAOImpl implements ClienteDAO {
 	@Override
 	public Cliente readClientePeloNome(String nome) {
 		List<Cliente> c = basedados
-                .stream().filter(cli -> cli.getNome()
-                        .equals(nome))
-                .collect(Collectors.toList());
+                .stream().filter(cli -> cli.getNome().equals(nome)).collect(Collectors.toList());
 		if(c != null) {
 			return c.get(0);
 		}
 		return null;
 	}
 
-        // TODO Auto-generated method stub
+
+    // TODO Auto-generated method stub
      //   throw new UnsupportedOperationException("Unimplemented method 'read'");
     }
 //}

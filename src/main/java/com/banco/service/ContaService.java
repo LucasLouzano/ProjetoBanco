@@ -16,6 +16,6 @@ public interface ContaService {
 
     Conta read(String cpf);
 
-    Conta readClientePeloNome(String nome);
+    Conta readContaPeloNome(String nome);
 
 }

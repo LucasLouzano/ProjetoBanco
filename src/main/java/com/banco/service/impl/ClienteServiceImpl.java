@@ -52,7 +52,3 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 }
-
-// Encontrar o cliente com o ID correspondente na lista.
-// procurar o valor para atualizar delele
-// Remover o cliente se ele foi encontrado.
