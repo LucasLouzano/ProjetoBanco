@@ -34,6 +34,20 @@ public class ClienteControllerTest {
         assertNotNull(c);
         assertEquals("12345678978", c.getCpfCnpj());
 	}
+	
+	@Test(expected = CpfCnpjException.class)
+	public void createClienteSemCPFTest() throws CpfCnpjException {
+		ClienteController controller = new ClienteController();
+
+		LocalDate dataNascimento = LocalDate.of(1990, Month.JUNE, 8);
+		Cliente cliente = new Cliente();
+		cliente.setNome("Lucas");
+		cliente.setEmail("lucas@gmail.com");
+		cliente.setNascimento(dataNascimento);
+		cliente.setCpfCnpj("1234567897");
+        controller.create(cliente);
+	}
+	
 	@Test
 	public void testAdicionarClienteReadAll()throws Exception {
 		ClienteController controller = new ClienteController();

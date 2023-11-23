@@ -29,8 +29,17 @@ public class MainGUIClientes {
                 cliente.setNome(nome);
                 cliente.setEmail(email);
                 cliente.setCpfCnpj(cpf);
-                controller.create(cliente);
-                System.out.println("\n Cliente cadastrado com sucesso!");
+                try {
+                	controller.create(cliente);
+                	System.out.println("\n Cliente cadastrado com sucesso!");
+				} catch (CpfCnpjException e) {
+					System.out.println("============================");
+					System.out.println("Cpf menor do que 11 dígitos.");
+					System.out.println("============================");
+					System.out.println("Retornando para o menu principal.");
+				}
+                
+                
 
             } else if (opcao == 2) {
                 System.out.println("\n A Busca foi concluida: \n");

@@ -1,7 +1,7 @@
  package com.banco.gui;
 
 public enum ConstantesGUI {
-    MENU("\"\n" + //
+    MENU("\n" + //
             "===================\n" + //
             "Menu Funcionários\n" + //
             "1 - Cadastrar de Funcionários\n" + //
@@ -9,7 +9,7 @@ public enum ConstantesGUI {
             "3 - Listar todos Funcionários\n" + //
             "4 - Deletar Funcionários\n" + //
             "99 - Sair do Software"),
-    CADASTRO("\"\n" + //);
+    CADASTRO("\n" + //);
             "===================\n" + //
             "Cadastro de Cliente\n" + //
             "1 - Cadastrar Cliente\n" + //
