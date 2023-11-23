@@ -1,14 +1,8 @@
 package com.banco.controller;
-
-
-
-
 import java.util.List;
-
 import com.banco.model.Funcionario;
 import com.banco.service.FuncionarioService;
 import com.banco.service.impl.FuncionarioServiceImpl;
-
 public class FuncionarioController extends FuncionarioServiceImpl {
     private FuncionarioService service = new FuncionarioServiceImpl();
 

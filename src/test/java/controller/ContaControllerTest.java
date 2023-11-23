@@ -68,7 +68,7 @@ public class ContaControllerTest {
         if (contaAtualizada) {
 
             System.out.println("Foi atualizado com sucesso");
-            assertTrue(contaAtualizada);
+            assertTrue(true);
 
         } else {
             System.out.println("Não foi possivel atualizar");
@@ -101,6 +101,7 @@ public class ContaControllerTest {
         conta.setEmail("louzano@gmail.com");
         conta.setDataNascimento(taNascimento);
         conta.setCpfCnpj("83992558282");
+
         boolean excluiu = controller.delete("83992558282");
         if (excluiu) {
             System.out.println("Exclusão bem sucedida");

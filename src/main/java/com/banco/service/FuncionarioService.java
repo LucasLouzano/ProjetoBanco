@@ -14,4 +14,5 @@ public interface FuncionarioService {
     boolean update(String identificacao, Funcionario Dados);
 
     boolean delete(String identificacao);
+
 }

@@ -2,7 +2,9 @@ package com.banco.repository.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import com.banco.model.Conta;
 import com.banco.model.Funcionario;
 import com.banco.repository.FuncionarioDAO;
 
@@ -98,4 +100,5 @@ public class FuncionarioDAOimpl implements FuncionarioDAO {
         this.bubbleSort();
         return funcionarioDeletado;
     }
+
 }

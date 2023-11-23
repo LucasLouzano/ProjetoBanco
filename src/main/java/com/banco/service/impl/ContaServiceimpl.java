@@ -1,6 +1,7 @@
 package com.banco.service.impl;
 import java.util.List;
 
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
 import com.banco.repository.impl.ContaDAOimpl;
@@ -14,6 +15,7 @@ public class ContaServiceimpl implements ContaService {
         String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
         conta.setCpfCnpj(SemPontos);
         repository.create(conta);
+
     }
     @Override
     public List<Conta> readAll() {

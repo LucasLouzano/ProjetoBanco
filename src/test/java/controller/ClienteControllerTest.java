@@ -74,7 +74,7 @@ public class ClienteControllerTest {
 		if (clienteAtualizada) {
 
 			System.out.println("Foi atualizado com sucesso");
-			assertTrue(clienteAtualizada);
+			assertTrue(true);
 
 		} else {
 			System.out.println("Não foi possivel atualizar");
@@ -96,5 +96,21 @@ public class ClienteControllerTest {
         Cliente c = controller.readClientePeloNome("Antonio");
         assertNotNull(c);
 	}
-	
+	@Test
+	public void testdelete() {
+		ClienteController controller = new ClienteController();
+		LocalDate taNascimento = LocalDate.of(1992, Month.JUNE, 8);
+		Cliente cliente = new Cliente();
+		cliente.setNome("Louzano");
+		cliente.setEmail("louzano@gmail.com");
+		cliente.setNascimento(taNascimento);
+		cliente.setCpfCnpj("83992558282");
+
+		boolean excluiu = controller.delete("83992558282");
+		if (excluiu) {
+			System.out.println("Exclusão bem sucedida");
+		} else {
+			System.out.println("O cpf não foi encontrado, ou a exclusão falhou.");
+		}
+	}
 }

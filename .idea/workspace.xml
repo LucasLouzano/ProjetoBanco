@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/FuncionarioControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ClienteDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ClienteDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/controller/FuncionarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/FuncionarioDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/FuncionarioDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/FuncionarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/FuncionarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ClienteServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" afterDir="false" />
@@ -65,11 +62,12 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.banco.service.impl" />
       <recent name="com.banco.config" />
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContaControllerTest.testdelete">
+  <component name="RunManager" selected="JUnit.ClienteControllerTest">
     <configuration name="ClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
@@ -81,6 +79,38 @@
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClienteControllerTest.testUpdateCliente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banco-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="testUpdateCliente" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClienteControllerTest.testdelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banco-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="testdelete" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaControllerTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FuncionarioControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
@@ -109,52 +139,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
-      <option name="METHOD_NAME" value="delete" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContaControllerTest.testAdicionarContaReadAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="banco-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
-      <option name="METHOD_NAME" value="testAdicionarContaReadAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContaControllerTest.testdelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="banco-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
-      <option name="METHOD_NAME" value="testdelete" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="controller.FuncionarioControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ContaControllerTest.testdelete" />
-        <item itemvalue="JUnit.ContaControllerTest.delete" />
-        <item itemvalue="JUnit.ContaControllerTest.testAdicionarContaReadAll" />
         <item itemvalue="JUnit.ClienteControllerTest" />
+        <item itemvalue="JUnit.ClienteControllerTest.testdelete" />
         <item itemvalue="JUnit.ContaControllerTest" />
+        <item itemvalue="JUnit.FuncionarioControllerTest" />
+        <item itemvalue="JUnit.ClienteControllerTest.testUpdateCliente" />
       </list>
     </recent_temporary>
   </component>
