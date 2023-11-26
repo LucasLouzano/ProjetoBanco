@@ -1,5 +1,6 @@
 package com.banco.gui;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 import com.banco.config.ClienteConfig;
@@ -30,24 +31,30 @@ public class MainGUIClientes {
                 cliente.setEmail(email);
                 cliente.setCpfCnpj(cpf);
                 try {
-                	controller.create(cliente);
-                	System.out.println("\n Cliente cadastrado com sucesso!");
-				} catch (CpfCnpjException e) {
-					System.out.println("============================");
-					System.out.println("Cpf menor do que 11 dígitos.");
-					System.out.println("============================");
-					System.out.println("Retornando para o menu principal.");
-				}
-                
-                
+                    controller.create(cliente);
+                    System.out.println("\n Cliente cadastrado com sucesso!");
+                } catch (CpfCnpjException e) {
+                    System.out.println("============================");
+                    System.out.println("Cpf menor do que 11 dígitos.");
+                    System.out.println("============================");
+                    System.out.println("Retornando para o menu principal.");
+                }
+
 
             } else if (opcao == 2) {
-                System.out.println("\n A Busca foi concluida: \n");
-                Cliente cliente = controller.read("12345678978");
-                System.out.println(cliente.getNome());
-                controller.readAll().forEach(c -> {
-                    System.out.println(c.getNome());
-                });
+                try {
+                    System.out.println("Digite o cpf");
+                    String ClienteCpf = scan.next();
+                    Cliente cliente = controller.read(ClienteCpf);
+                    System.out.println("Cpf existente: " + cliente.getCpfCnpj());
+                } catch (Exception e) {
+                    System.out.println("============================");
+                    System.out.println("não foi possivel validar a conta, cpf não existe.");
+                    System.out.println("============================");
+                    System.out.println("Retornando para busca do cliente.");
+
+                }
+
             } else if (opcao == 3) {
                 System.out.println("\n Listando todos os clientes: \n");
                 controller.readAll().forEach(f -> {
@@ -55,21 +62,29 @@ public class MainGUIClientes {
                 });
 
             } else if (opcao == 4) {
-                System.out.println("\n deletando todos os clientes: \n");
-                boolean clientedelete = controller.delete("22345678978");
+                System.out.print("Digite o cpf desejado: ");
+                String cpfDesejado = scan.next();
+                controller.readAll().forEach(cliente -> {
+                    if (cliente.getCpfCnpj().equals(cpfDesejado)) {
+                        System.out.println("Conta encontrada - Nome : " + cliente.getNome());
+                    }
+                });
+
+            } else if (opcao == 5) {
+                System.out.println("Digite o cpf para deletar o cliente");
+                String DeletandoCliente = scan.next();
+                boolean clientedelete = controller.delete(DeletandoCliente);
                 if (clientedelete) {
                     System.out.println("Cliente removido com sucesso!");
                 } else {
                     System.out.println("Cliente não encontrado, ou não foi possível remover.");
                 }
                 controller.readAll().forEach(f -> {
-                    System.out.println(f.getNome());
                 });
             }
         }
-
-
         System.out.println("Fim da aplicação!");
 
     }
 }
+

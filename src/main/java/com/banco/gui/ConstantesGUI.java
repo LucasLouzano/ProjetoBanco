@@ -12,10 +12,11 @@ public enum ConstantesGUI {
     CADASTRO("\n" + //);
             "===================\n" + //
             "Cadastro de Cliente\n" + //
-            "1 - Cadastrar Cliente\n" + //
-            "2 - Buscar Clientes\n" + //
-            "3 - Listar todos os Clientes\n" + //
-            "4 - Deletar Clientes \n" + //
+            "1 - Cadastrar Novo Cliente\n" + //
+            "2 - Buscar Cliente usando o cpf\n" + //
+            "3 - Listar todos os clientes\n" + //
+            "4 - Adicionar conta usando o cpf\n" + //
+            "5 - Deletar Clientes \n" + //
             "99 - Sair do Software"),
     CADASTRARCONTA("\"\n" + //);
             "===================\n" + //

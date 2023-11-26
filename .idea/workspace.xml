@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/controller/FuncionarioControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/controller/FuncionarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/FuncionarioDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/FuncionarioDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/FuncionarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/FuncionarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ClienteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ContaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ContaControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/ConstantesGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/ConstantesGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +61,36 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClienteControllerTest">
+  <component name="RunManager" selected="Application.MainGUIClientes">
+    <configuration name="MainGUIClientes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.banco.gui.MainGUIClientes" />
+      <module name="banco-java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.banco.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in banco-java (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banco-java" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in banco-java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="banco-java" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClienteControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
@@ -78,53 +101,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteControllerTest.testUpdateCliente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="banco-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testUpdateCliente" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClienteControllerTest.testdelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="banco-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
-      <option name="METHOD_NAME" value="testdelete" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContaControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="banco-java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClienteControllerTest" />
-        <item itemvalue="JUnit.ClienteControllerTest.testdelete" />
-        <item itemvalue="JUnit.ContaControllerTest" />
+        <item itemvalue="Application.MainGUIClientes" />
+        <item itemvalue="JUnit.All in banco-java (1)" />
+        <item itemvalue="JUnit.All in banco-java" />
         <item itemvalue="JUnit.FuncionarioControllerTest" />
-        <item itemvalue="JUnit.ClienteControllerTest.testUpdateCliente" />
+        <item itemvalue="JUnit.ClienteControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -178,6 +154,11 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProjetoBanco$FuncionarioControllerTest.ic" NAME="FuncionarioControllerTest Coverage Results" MODIFIED="1700760943832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjetoBanco$All_in_banco_java__1_.ic" NAME="All in banco-java (1) Coverage Results" MODIFIED="1700761043473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjetoBanco$All_in_banco_java.ic" NAME="All in banco-java Coverage Results" MODIFIED="1700761003697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjetoBanco$ClienteControllerTest_readClientepeloCpf.ic" NAME="ClienteControllerTest.readClientepeloCpf Coverage Results" MODIFIED="1700260215985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
