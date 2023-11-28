@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 import com.banco.config.FuncionarioConfig;
 import com.banco.controller.FuncionarioController;
+import com.banco.exceptions.CpfCnpjException;
+import com.banco.model.Cliente;
+import com.banco.model.Conta;
 import com.banco.model.Funcionario;
 
 public class MainGUIFuncionarios {
@@ -29,35 +32,58 @@ public class MainGUIFuncionarios {
                 funcionario.setEmail(email);
                 funcionario.setCpfCnpj(cpf);
                 controller.create(funcionario);
-                System.out.println("\nFuncionário cadastrado com sucesso!");
+                try {
+                    controller.create(funcionario);
+                    System.out.println("\n Funcionario cadastrado com sucesso!");
+                } catch (Exception e) {
+                    System.out.println("============================");
+                    System.out.println("Cpf menor do que 11 dígitos.");
+                    System.out.println("============================");
+                    System.out.println("Retornando para o menu principal.");
+                }
+
+
 
             } else if (opcao == 2) {
-                System.out.println("\nFuncionários: \n");
+                try {
+                    System.out.println("Digite o cpf");
+                    String ClienteCpf = scan.next();
+                    Funcionario funcionario = controller.read(ClienteCpf);
+                    System.out.println("Conta cadastrada cpf existente: " + funcionario.getCpfCnpj());
+                    System.out.println("Nome:" +funcionario.getNome());
+                } catch (Exception e) {
+                    System.out.println("============================");
+                    System.out.println("não foi possivel validar a funcionario, cpf não existe.");
+                    System.out.println("============================");
+                    System.out.println("Retornando para busca do funcionario.");
+
+                }
+            } else if (opcao == 3) {
+                System.out.println("\n Listando todos os funcionarios: \n");
                 controller.readAll().forEach(f -> {
                     System.out.println("===" + f.getNome() + "===");
                 });
-            } else if (opcao == 3) {
-                System.out.println("\nFuncionários: \n");
-                Funcionario funcionario = controller.read("82345678978");
-                System.out.println(funcionario.getNome());
-                controller.readAll().forEach(f -> {System.out.println(f.getNome());
-                });
 
             } else if (opcao == 4) {
-                System.out.println("\nFuncionários: \n");
-                boolean funcionarioDeletado = controller.delete("12345678978");
-                if (funcionarioDeletado) {
-                    System.out.println("Funcionário removido com sucesso!");
-                } else {
-                    System.out.println("Funcionário não encontrado ou não foi possível remover.");
-                }
-                controller.readAll().forEach(f -> {
-                    System.out.println(f.getNome());
+                System.out.print("Digite o cpf desejado: ");
+                String cpfDesejado = scan.next();
+                controller.readAll().forEach(funcionario -> {
+                    if (funcionario.getCpfCnpj().equals(cpfDesejado)) {
+                        System.out.println("Funcionario encontrado - Nome : " + funcionario.getNome());
+                    }
                 });
+
+            } else if (opcao == 5) {
+                System.out.println("Digite o cpf para deletar o funcionario");
+                String cpfDeletar = scan.next();
+                Funcionario funcionarioDeletado = controller.read(cpfDeletar);
+                if (funcionarioDeletado != null && controller.delete(cpfDeletar)){
+                    System.out.println("Funcionario " + funcionarioDeletado.getNome() + " removido com sucesso!");
+                } else {
+                    System.out.println("Funcionario não encontrado, ou não foi possível remover.");
+                }
             }
         }
-
-            System.out.println("Fim da aplicação!");
-
-        }
+        System.out.println("Fim da aplicação!");
     }
+}

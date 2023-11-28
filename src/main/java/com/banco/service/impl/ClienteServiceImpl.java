@@ -39,14 +39,11 @@ public class ClienteServiceImpl implements ClienteService {
     @Override // chamar o read, passar o objeto com parametro
     public boolean delete(String id) {
         return repository.delete(id);
-
     }
     @Override
     public Cliente read(String cpf) {
         return repository.read(cpf);
-
     }
-
 	@Override
 	public Cliente readClientePeloNome(String nome) {
 		return repository.readClientePeloNome(nome);

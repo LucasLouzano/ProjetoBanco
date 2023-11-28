@@ -1,6 +1,6 @@
 package com.banco.gui;
 
-import java.sql.SQLOutput;
+import java.util.List;
 import java.util.Scanner;
 
 import com.banco.config.ClienteConfig;
@@ -46,7 +46,8 @@ public class MainGUIClientes {
                     System.out.println("Digite o cpf");
                     String ClienteCpf = scan.next();
                     Cliente cliente = controller.read(ClienteCpf);
-                    System.out.println("Cpf existente: " + cliente.getCpfCnpj());
+                    System.out.println("Conta cadastrada cpf existente: " + cliente.getCpfCnpj());
+                    System.out.println("Nome:" + cliente.getNome());
                 } catch (Exception e) {
                     System.out.println("============================");
                     System.out.println("não foi possivel validar a conta, cpf não existe.");
@@ -66,25 +67,23 @@ public class MainGUIClientes {
                 String cpfDesejado = scan.next();
                 controller.readAll().forEach(cliente -> {
                     if (cliente.getCpfCnpj().equals(cpfDesejado)) {
-                        System.out.println("Conta encontrada - Nome : " + cliente.getNome());
+                        System.out.println("Cliente encontrado - Nome : " + cliente.getNome());
                     }
                 });
 
+
             } else if (opcao == 5) {
                 System.out.println("Digite o cpf para deletar o cliente");
-                String DeletandoCliente = scan.next();
-                boolean clientedelete = controller.delete(DeletandoCliente);
-                if (clientedelete) {
-                    System.out.println("Cliente removido com sucesso!");
+                String cpfDeletar = scan.next();
+                Cliente clienteDeletado = controller.read(cpfDeletar);
+                if (clienteDeletado != null && controller.delete(cpfDeletar)){
+                    System.out.println("Cliente " +clienteDeletado.getNome() + " removido com sucesso!");
                 } else {
                     System.out.println("Cliente não encontrado, ou não foi possível remover.");
                 }
-                controller.readAll().forEach(f -> {
-                });
             }
         }
         System.out.println("Fim da aplicação!");
-
     }
 }
 
