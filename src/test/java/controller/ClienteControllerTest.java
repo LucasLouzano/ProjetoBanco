@@ -48,6 +48,19 @@ public class ClienteControllerTest {
         controller.create(cliente);
 	}
 	
+	@Test(expected = RuntimeException.class)
+	public void createClienteNomeInvalido() throws CpfCnpjException {
+		ClienteController controller = new ClienteController();
+
+		LocalDate dataNascimento = LocalDate.of(1990, Month.JUNE, 8);
+		Cliente cliente = new Cliente();
+		cliente.setNome("Luc");
+		cliente.setEmail("lucas@gmail.com");
+		cliente.setNascimento(dataNascimento);
+		cliente.setCpfCnpj("12345678971");
+        controller.create(cliente);
+	}
+	
 	@Test
 	public void testAdicionarClienteReadAll()throws Exception {
 		ClienteController controller = new ClienteController();
@@ -60,12 +73,8 @@ public class ClienteControllerTest {
 		cliente.setCpfCnpj("22345678978");
 		cliente.setData(new Date());
 		List<Cliente> clientes = controller.readAll();
-		if (clientes != null) {
-			assertNotNull(clientes);
-			System.out.println("A conta foi adicionada com sucesso");
-		}else{
-			System.out.println("Erro em adicionar a conta");
-		}
+		assertNotNull(clientes);
+		System.out.println("A conta foi adicionada com sucesso");
 
 	}
 	@Test

@@ -1,7 +1,6 @@
 package com.banco.service.impl;
 import java.util.List;
 
-import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
 import com.banco.repository.impl.ContaDAOimpl;
