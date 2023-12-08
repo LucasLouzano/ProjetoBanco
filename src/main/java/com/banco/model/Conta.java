@@ -1,15 +1,14 @@
 package com.banco.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Conta {
+
+public class Conta  {
     private String nome;
+    private String cpfCnpj;
     private String email;
     private String senha;
-    private String cpfCnpj;
-    private LocalDate dataNascimento;
-    private Date dataCriacao;
+    private LocalDate dataCriacao;
 
 
     public String getSenha() {
@@ -43,24 +42,22 @@ public class Conta {
         this.cpfCnpj = cpfCnpj;
     }
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public Date getDataCriacao() {
+    public LocalDate getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(Date dataCriacao) {
+    public void setDataCriacao(LocalDate dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
     @Override
     public String toString() {
-        return "Conta " + "nome='" + nome + '\'' + ", email='" + email + '\'' + ", senha='" + senha + '\'' + ", cpfCnpj='" + cpfCnpj + '\'' + ", dataNascimento=" + dataNascimento + ", dataCriacao=" + dataCriacao + '}';
+        return "Conta{" +
+                "nome='" + nome + '\'' +
+                ", cpfCnpj='" + cpfCnpj + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", dataCriacao=" + dataCriacao +
+                '}';
     }
 }

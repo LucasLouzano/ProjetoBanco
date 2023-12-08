@@ -5,12 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/ConstantesGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/ConstantesGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlReport/css/coverage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlReport/css/idea.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlReport/img/arrowDown.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlReport/img/arrowUp.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlReport/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlReport/js/highlight.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/htmlReport/js/highlightjs-line-numbers.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/config/ContaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/config/ContaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/controller/ContaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/estudo/ContaTesteAlgoritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/estudo/ContaTesteAlgoritmos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/estudo/TesteDeleteConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/estudo/TesteDeleteConta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIConta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIFuncionarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIFuncionarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/model/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/model/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/model/ContaBancaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/model/ContaBancaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/model/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/model/PessoaAbstrata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/model/PessoaAbstrata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/ClienteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/ContaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ClienteDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ClienteDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/repository/impl/ContaDAOimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/ContaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ClienteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ClienteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ClienteControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/ContaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/ContaControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/FuncionarioControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/FuncionarioControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +78,7 @@
     &quot;ToolWindowCoverage.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Lucas/Alunos&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Lucas/aluno-service&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
 }</component>
@@ -64,13 +89,13 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainGUIFuncionarios">
-    <configuration name="MainGUIClientes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.gui.MainGUIClientes" />
+  <component name="RunManager" selected="JUnit.ClienteControllerTest.testListarClientes">
+    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.banco.main" />
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.gui.*" />
+          <option name="PATTERN" value="com.banco.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -78,55 +103,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainGUIConta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.gui.MainGUIConta" />
+    <configuration name="ClienteControllerTest.testAdicionarClienteReadAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.gui.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="testAdicionarClienteReadAll" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainGUIFuncionarios" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.banco.gui.MainGUIFuncionarios" />
+    <configuration name="ClienteControllerTest.testListarClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.banco.gui.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="testListarClientes" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in banco-java (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClienteControllerTest.testListarClientesComCPF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClienteControllerTest" />
+      <option name="METHOD_NAME" value="testListarClientesComCPF" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in banco-java" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaControllerTest.TestListarContas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="banco-java" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ContaControllerTest" />
+      <option name="METHOD_NAME" value="TestListarContas" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainGUIFuncionarios" />
-        <item itemvalue="Application.MainGUIConta" />
-        <item itemvalue="Application.MainGUIClientes" />
-        <item itemvalue="JUnit.All in banco-java (1)" />
-        <item itemvalue="JUnit.All in banco-java" />
+        <item itemvalue="JUnit.ClienteControllerTest.testListarClientes" />
+        <item itemvalue="JUnit.ClienteControllerTest.testListarClientesComCPF" />
+        <item itemvalue="Application.main" />
+        <item itemvalue="JUnit.ClienteControllerTest.testAdicionarClienteReadAll" />
+        <item itemvalue="JUnit.ContaControllerTest.TestListarContas" />
       </list>
     </recent_temporary>
   </component>
@@ -151,6 +198,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProjetoBanco$FuncionarioControllerTest.ic" NAME="FuncionarioControllerTest Coverage Results" MODIFIED="1700760943832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

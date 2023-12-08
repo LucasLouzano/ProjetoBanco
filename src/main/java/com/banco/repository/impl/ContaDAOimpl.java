@@ -15,8 +15,8 @@ public class ContaDAOimpl implements ContaDAO {
     }
 
     @Override
-    public void create(Conta conta) {
-        basedata.add(conta);
+    public void create(Conta nome) {
+        basedata.add(nome);
         bubbleSort();
     }
 
@@ -64,17 +64,18 @@ public class ContaDAOimpl implements ContaDAO {
 
     @Override
     public boolean delete(String cpf) {
-        boolean contadelete = false;
+        boolean contaDeletada = false;
         for (int i = 0; i < basedata.size(); i++) {
             if (basedata.get(i) != null && basedata.get(i).getCpfCnpj().equals(cpf)) {
-                basedata.remove(i);
-                contadelete = true;
-                break;
+                basedata.set(i, null);  // Remove o funcionário da lista.
+                contaDeletada = true;
+                break; // Indica que a remoção foi bem-sucedida.
             }
         }
         bubbleSort();
-        return contadelete;
+        return contaDeletada;
     }
+
 
     @Override
     public Conta read(String cpf) {
@@ -101,12 +102,15 @@ public class ContaDAOimpl implements ContaDAO {
 
     @Override
     public Conta readContaPeloNome(String nome) {
-        List<Conta> c = basedata
-                .stream().filter(cont -> cont.getNome().equals(nome)).collect(Collectors.toList());
-        if(c != null) {
+        List<Conta> c = basedata;
+        c.stream().filter(cont -> cont.getNome().equals(nome))
+                .collect(Collectors.toList());
+        if (c != null) {
             return c.get(0);
         }
         return null;
     }
 
 }
+
+

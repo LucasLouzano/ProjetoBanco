@@ -1,10 +1,13 @@
 package com.banco.model;
 
+import java.time.LocalDate;
+
 public  class ContaBancaria {
     private int NumeroConta;
-    private double agencia;
+    private double tipoConta;
     private double saldo;
-
+    private LocalDate dataAbertura;
+    private Cliente titular;
 
     public int getNumeroConta() {
         return NumeroConta;
@@ -12,6 +15,14 @@ public  class ContaBancaria {
 
     public void setNumeroConta(int numeroConta) {
         NumeroConta = numeroConta;
+    }
+
+    public double getTipoConta() {
+        return tipoConta;
+    }
+
+    public void setTipoConta(double tipoConta) {
+        this.tipoConta = tipoConta;
     }
 
     public double getSaldo() {
@@ -22,12 +33,19 @@ public  class ContaBancaria {
         this.saldo = saldo;
     }
 
-    public double getAgencia() {
-        return agencia;
+    public LocalDate getDataAbertura() {
+        return dataAbertura;
     }
 
-    public void setAgencia(double agencia) {
-        this.agencia = agencia;
+    public void setDataAbertura(LocalDate dataAbertura) {
+        this.dataAbertura = dataAbertura;
     }
 
+    public Cliente getTitular() {
+        return titular;
+    }
+
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
 }

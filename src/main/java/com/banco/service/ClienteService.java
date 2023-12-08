@@ -11,12 +11,13 @@ public interface ClienteService {
 
     List<Cliente> readAll();
 
-    boolean update(String id, Cliente conta);
+    boolean update(String id, Cliente novoCliente);
 
     boolean delete(String id);
 
     Cliente read(String cpf);
 
 	Cliente readClientePeloNome(String nome);
+    List<Cliente> listarClientes(String cpfInformado);
 
 }

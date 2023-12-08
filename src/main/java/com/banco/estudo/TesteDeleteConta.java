@@ -2,7 +2,7 @@ package com.banco.estudo;
 import com.banco.config.ContaConfig;
 import com.banco.controller.ContaController;
 public class TesteDeleteConta {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ContaConfig.contaInit();
         ContaController contro = new ContaController();
         boolean contadelete = contro.delete("22345678978");

@@ -41,7 +41,6 @@ public class FuncionarioControllerTest {
         funcionario.setEmail("teste@gmail.com");
         funcionario.setNascimento(taNascimento);
         funcionario.setCpfCnpj("22345678978");
-        funcionario.setData(new Date());
 
         List<Funcionario> funcionarios = controller.readAll();
         if (funcionarios != null) {
@@ -61,7 +60,6 @@ public class FuncionarioControllerTest {
         funcionario.setEmail("louzano@gmail.com");
         funcionario.setNascimento(daNascimento);
         funcionario.setCpfCnpj("82345678978");
-        funcionario.setData(new Date());
 
 
         controller.create(funcionario);

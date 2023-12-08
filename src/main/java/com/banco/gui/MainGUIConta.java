@@ -9,7 +9,7 @@ import com.banco.model.Cliente;
 import com.banco.model.Conta;
 
 public class MainGUIConta {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
         ContaConfig.contaInit();

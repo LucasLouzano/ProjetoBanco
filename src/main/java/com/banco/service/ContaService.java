@@ -2,11 +2,13 @@ package com.banco.service;
 
 import java.util.List;
 
+import com.banco.exceptions.CpfCnpjException;
+import com.banco.model.Cliente;
 import com.banco.model.Conta;
 
 public interface ContaService {
 
-    void create(Conta parametro);
+    void create(Conta nome) throws CpfCnpjException;
 
     List<Conta> readAll();
 
@@ -17,5 +19,6 @@ public interface ContaService {
     Conta read(String cpf);
 
     Conta readContaPeloNome(String nome);
+
 
 }

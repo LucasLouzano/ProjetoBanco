@@ -2,6 +2,7 @@ package com.banco.controller;
 
 import java.util.List;
 
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Conta;
 import com.banco.service.ContaService;
 import com.banco.service.impl.ContaServiceimpl;
@@ -10,8 +11,16 @@ import com.banco.service.impl.ContaServiceimpl;
 public class ContaController {
     private ContaService service = new ContaServiceimpl();
 
-    public void create(Conta parametro) {
-        service.create(parametro);
+    public void create(Conta nome) {
+
+        try {
+            service.create(nome);
+        } catch (CpfCnpjException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public List<Conta> listarContasPorCpf(String cpfInformado) {
+      return listarContasPorCpf(cpfInformado);
     }
     public List<Conta> readAll() {
         return service.readAll();
@@ -28,5 +37,4 @@ public class ContaController {
     public Conta readContaPeloNome(String nome) {
         return service.readContaPeloNome(nome);
     }
-
 }

@@ -11,16 +11,19 @@ public class ClienteController {
 
     private ClienteService service = new ClienteServiceImpl();
 
-    public void create(Cliente conta) throws CpfCnpjException  {
-        service.create(conta);
+    public void create(Cliente cliente) throws CpfCnpjException {
+        service.create(cliente);
+    }
+    public List<Cliente> listarClientes(String cpfInformado) {
+       return service.listarClientes(cpfInformado);
     }
 
     public List<Cliente> readAll() {
         return service.readAll();
     }
 
-    public boolean update(String id, Cliente conta) {
-        return service.update(id, conta);
+    public boolean update(String id, Cliente novoCliente) {
+        return service.update(id, novoCliente);
     }
 
     public boolean delete(String id) {

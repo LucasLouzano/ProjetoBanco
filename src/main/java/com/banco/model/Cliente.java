@@ -11,12 +11,6 @@ public class Cliente extends PessoaAbstrata {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente " + " ,id ='" + getId()+ '\'' + "'Nome ='" + getNome() + '\'' + ", Email ='" + getEmail() + '\'' + ", CpfCnpj ='" + getCpfCnpj() + '\''  + ", Nascimento ='" + getNascimento() + '\''+ ", Data ='" + '\''+ getData() + '}';
-
 
     }
 }

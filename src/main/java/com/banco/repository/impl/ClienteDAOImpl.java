@@ -10,12 +10,22 @@ import com.banco.repository.ClienteDAO;
 public class ClienteDAOImpl implements ClienteDAO {
     private static List<Cliente> basedados = new ArrayList<>();
     private Cliente aux;
+
     public ClienteDAOImpl() {
     }
-    public void create(Cliente conta) {
-        basedados.add(conta);
+
+    public void create(Cliente cliente) {
+        basedados.add(cliente);
         bubbleSort();
     }
+    @Override
+    public List<Cliente> listarClientes(String cpfInformado) {
+        List<Cliente> clientesCpf = basedados.stream()
+                .filter(c -> c.getCpfCnpj().equals(cpfInformado))
+                .collect(Collectors.toList());
+        return clientesCpf;
+    }
+
     /**
      * Algoritmo para ordenar um array por cpf
      */
@@ -32,6 +42,7 @@ public class ClienteDAOImpl implements ClienteDAO {
             }
         }
     }
+
     // ReadAll-ler-Tudo
     @Override
     public List<Cliente> readAll() {
@@ -58,7 +69,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 
     // delete-excluir
     public boolean delete(String id) {
-       boolean clienteDeletado = false;
+        boolean clienteDeletado = false;
         for (int i = 0; i < basedados.size(); i++) {
             if (basedados.get(i) != null && basedados.get(i).getCpfCnpj().equals(id)) {
                 basedados.set(i, null);  // Remove o funcionário da lista.
@@ -66,11 +77,10 @@ public class ClienteDAOImpl implements ClienteDAO {
                 break; // Indica que a remoção foi bem-sucedida.
             }
         }
-        // TODO trocar o funcionario da ultima posicao para a posicao null
-        // TODO chamar o método bubleSort
-           bubbleSortNull();
-           return clienteDeletado;
+        bubbleSortNull();
+        return clienteDeletado;
     }
+
     private void bubbleSortNull() {
         for (int i = 0; i < basedados.size(); i++) {
             for (int j = 0; j < basedados.size() - 1; j++) {
@@ -83,40 +93,37 @@ public class ClienteDAOImpl implements ClienteDAO {
             }
         }
     }
+
     @Override
     public Cliente read(String cpf) {
         return binarySearch(cpf);
     }
 
     private Cliente binarySearch(String cpf) {
-            int esquerda = 0;
-            int direita = basedados.size() - 1;
+        int esquerda = 0;
+        int direita = basedados.size() - 1;
 
-            while (esquerda <= direita) {
-                int meio = (esquerda + direita) / 2;
+        while (esquerda <= direita) {
+            int meio = (esquerda + direita) / 2;
 
-                if (basedados.get(meio).getCpfCnpj().equals(cpf)) {
-                    return basedados.get(meio);
-                } else if (Long.parseLong(basedados.get(meio).getCpfCnpj()) < Long.parseLong(cpf)) {
-                    esquerda = meio + 1;
-                } else {
-                    direita = meio - 1;
-                }
+            if (basedados.get(meio).getCpfCnpj().equals(cpf)) {
+                return basedados.get(meio);
+            } else if (Long.parseLong(basedados.get(meio).getCpfCnpj()) < Long.parseLong(cpf)) {
+                esquerda = meio + 1;
+            } else {
+                direita = meio - 1;
             }
-            return null;  // Retorna null se o cliente não for encontrado
         }
-	@Override
-	public Cliente readClientePeloNome(String nome) {
-		List<Cliente> c = basedados
-                .stream().filter(cli -> cli.getNome().equals(nome)).collect(Collectors.toList());
-		if(c != null) {
-			return c.get(0);
-		}
-		return null;
-	}
-
-
-    // TODO Auto-generated method stub
-     //   throw new UnsupportedOperationException("Unimplemented method 'read'");
+        return null;  // Retorna null se o cliente não for encontrado
     }
-//}
+
+    @Override
+    public Cliente readClientePeloNome(String nome) {
+        List<Cliente> c = basedados
+                .stream().filter(cli -> cli.getNome().equals(nome)).collect(Collectors.toList());
+        if (c != null) {
+            return c.get(0);
+        }
+        return null;
+    }
+}
