@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
+import com.banco.model.LoginDTO;
 
 public interface ClienteService {
 
@@ -19,5 +20,7 @@ public interface ClienteService {
 
 	Cliente readClientePeloNome(String nome);
     List<Cliente> listarClientes(String cpfInformado);
+    
+    boolean login(LoginDTO loginDTO);
 
 }

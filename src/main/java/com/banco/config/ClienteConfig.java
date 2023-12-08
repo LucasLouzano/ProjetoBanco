@@ -16,6 +16,7 @@ public class ClienteConfig {
         LocalDate dataNascimento = LocalDate.of(1990, Month.JUNE, 8);
         cliente1.setNome("Lucas");
         cliente1.setEmail("lucas@gmail.com");
+        cliente1.setSenha("123456");
         cliente1.setNascimento(dataNascimento);
         cliente1.setCpfCnpj("12345678910");
 
@@ -23,6 +24,7 @@ public class ClienteConfig {
         LocalDate Nascimento = LocalDate.of(1995, Month.JUNE, 8);
         cliente2.setNome("Antonio");
         cliente2.setEmail("antonio@gmail.com");
+        cliente2.setSenha("456123");
         cliente2.setNascimento(Nascimento);
         cliente2.setCpfCnpj("12345678920");
 

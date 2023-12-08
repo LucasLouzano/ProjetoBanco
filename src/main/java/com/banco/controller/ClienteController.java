@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
+import com.banco.model.LoginDTO;
 import com.banco.service.ClienteService;
 import com.banco.service.impl.ClienteServiceImpl;
 
@@ -36,5 +37,9 @@ public class ClienteController {
 
 	public Cliente readClientePeloNome(String nome){
 		return service.readClientePeloNome(nome);
+	}
+	
+	public boolean login(LoginDTO login) {
+		return service.login(login);
 	}
 }

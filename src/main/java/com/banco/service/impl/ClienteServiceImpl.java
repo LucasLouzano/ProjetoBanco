@@ -6,6 +6,7 @@ import java.util.List;
 import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
 import com.banco.model.Conta;
+import com.banco.model.LoginDTO;
 import com.banco.repository.ClienteDAO;
 
 import com.banco.repository.impl.ClienteDAOImpl;
@@ -70,4 +71,14 @@ public class ClienteServiceImpl implements ClienteService {
     public Cliente readClientePeloNome(String nome) {
         return repository.readClientePeloNome(nome);
     }
+
+	@Override
+	public boolean login(LoginDTO loginDTO) {
+		Cliente cliente = repository.readClientePeloEmail(loginDTO.email());
+		if(cliente != null) {
+			return cliente.getSenha().equals(loginDTO.senha());
+		}
+		
+		return false;
+	}
 }

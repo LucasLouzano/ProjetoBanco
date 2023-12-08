@@ -1,28 +1,40 @@
 package com.banco.gui;
 
-import java.util.List;
 import java.util.Scanner;
 
 import com.banco.config.ClienteConfig;
+import com.banco.config.ContaConfig;
 import com.banco.controller.ClienteController;
 import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
+import com.banco.model.LoginDTO;
 
 public class MainGUIClientes {
+	
+	
     public static void main(String[] args) throws CpfCnpjException {
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
         ClienteConfig.clienteInit();
+        ContaConfig.contaInit();
         ClienteController controller = new ClienteController();
         while (opcao != 98){
             System.out.println(ConstantesGUI.LOGIN.getValor());
             opcao = scan.nextInt();
             if (opcao == 1){
-                Cliente cliente = new Cliente();
                 System.out.println("digite o email");
                 String email = scan.next();
                 System.out.println("Digite a senha");
                 String senha = scan.next();
+                
+                
+                System.out.println("Validando o login:");
+                LoginDTO login = new LoginDTO(email, senha);
+                if(controller.login(login)) {
+                	System.out.println("Login realizado");
+                }else {
+                	System.out.println("Login inválido");
+                }
             }
         }
 

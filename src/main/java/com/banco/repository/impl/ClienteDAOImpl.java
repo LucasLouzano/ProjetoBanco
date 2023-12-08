@@ -126,4 +126,14 @@ public class ClienteDAOImpl implements ClienteDAO {
         }
         return null;
     }
+
+	@Override
+	public Cliente readClientePeloEmail(String email) {
+		List<Cliente> c = basedados
+                .stream().filter(cli -> cli.getEmail().equals(email)).collect(Collectors.toList());
+        if (c != null) {
+            return c.get(0);
+        }
+        return null;
+	}
 }
