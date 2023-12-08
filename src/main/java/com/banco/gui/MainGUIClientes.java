@@ -14,11 +14,21 @@ public class MainGUIClientes {
         int opcao = 0;
         ClienteConfig.clienteInit();
         ClienteController controller = new ClienteController();
+        while (opcao != 98){
+            System.out.println(ConstantesGUI.LOGIN.getValor());
+            opcao = scan.nextInt();
+            if (opcao == 1){
+                Cliente cliente = new Cliente();
+                System.out.println("digite o email");
+                String email = scan.next();
+                System.out.println("Digite a senha");
+                String senha = scan.next();
+            }
+        }
 
         while (opcao != 99) { // enquanto
             System.out.println(ConstantesGUI.CADASTRO.getValor());
             opcao = scan.nextInt();
-
             if (opcao == 1) {
                 Cliente cliente = new Cliente();
                 System.out.print("Digite o nome: ");

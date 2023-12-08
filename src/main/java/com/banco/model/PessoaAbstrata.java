@@ -9,6 +9,7 @@ public class PessoaAbstrata {
     private String endereco;
     private String telefone;
     private String email;
+    private String senha;
     private LocalDate nascimento;
 
     public String getNome() {
@@ -49,6 +50,14 @@ public class PessoaAbstrata {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public LocalDate getNascimento() {

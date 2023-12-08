@@ -32,6 +32,8 @@ public class ClienteServiceImpl implements ClienteService {
             throw new CpfCnpjException();
         } else if (cliente.getNome() == null || cliente.getNome().length() < 4) {
             throw new RuntimeException(MSG_CLIENTE_VALID);
+        } else if(cliente.getCpfCnpj() == null && cliente.getSenha() == null){
+
         }
     }
 

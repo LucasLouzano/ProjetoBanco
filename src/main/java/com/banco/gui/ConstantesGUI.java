@@ -19,6 +19,12 @@ public enum ConstantesGUI {
             "4 - Adicionar cliente usando o cpf\n" + //
             "5 - Deletar Clientes \n" + //
             "99 - Sair do Software"),
+    LOGIN("\n" + //);
+            "===================\n" + //
+            "Login do cliente\n" + //
+            "1 - Entrar\n" + //
+            "98 - Voltar ao Menu"),
+
     CADASTRARCONTA("\"\n" + //);
             "===================\n" + //
             "Cadastro  Conta\n" + //
