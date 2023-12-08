@@ -1,6 +1,6 @@
 package com.banco.model;
 
-    public class ContaCorrente extends ContaBancaria {
+    public class ContaCorrente extends Conta {
 
         private static final double RENDIMENTO_ANUAL = 1;
 

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.banco.model.Cliente;
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
 
@@ -103,11 +102,11 @@ public class ContaDAOimpl implements ContaDAO {
     @Override
     public Conta readContaPeloNome(String nome) {
         List<Conta> c = basedata;
-        c.stream().filter(cont -> cont.getNome().equals(nome))
+        /*c.stream().filter(cont -> cont.getNome().equals(nome))
                 .collect(Collectors.toList());
         if (c != null) {
             return c.get(0);
-        }
+        }*/
         return null;
     }
 

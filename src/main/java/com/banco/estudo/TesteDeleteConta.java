@@ -12,7 +12,7 @@ public class TesteDeleteConta {
             System.out.println("Conta não encontrada, ou não foi possível remover.");
         }
         contro.readAll().forEach(f -> {
-            System.out.println(f.getNome());
+            System.out.println(f.getCpfCnpj());
         });
     }
 }

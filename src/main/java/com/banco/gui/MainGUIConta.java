@@ -2,16 +2,16 @@ package com.banco.gui;
 
 import java.util.Scanner;
 
+import com.banco.config.ClienteConfig;
 import com.banco.config.ContaConfig;
 import com.banco.controller.ContaController;
-import com.banco.exceptions.CpfCnpjException;
-import com.banco.model.Cliente;
 import com.banco.model.Conta;
 
 public class MainGUIConta {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
         int opcao = 0;
+        ClienteConfig.clienteInit();
         ContaConfig.contaInit();
         ContaController controller = new ContaController();
 
@@ -27,7 +27,6 @@ public class MainGUIConta {
                 String email = scan.next();
                 System.out.print("Digite o cpf: ");
                 String cpf = scan.next();
-                conta.setNome(nome);
                 conta.setEmail(email);
                 conta.setCpfCnpj(cpf);
                 controller.create(conta);
@@ -47,7 +46,6 @@ public class MainGUIConta {
                     String ContaCpf = scan.next();
                     Conta conta = controller.read(ContaCpf);
                     System.out.println("Conta cadastrada cpf existente: " + conta.getCpfCnpj());
-                    System.out.println("Nome:" + conta.getNome());
                 } catch (Exception e) {
                     System.out.println("============================");
                     System.out.println("não foi possivel validar a conta, cpf não existe.");
@@ -57,9 +55,9 @@ public class MainGUIConta {
 
             } else if (opcao == 3) {
                 System.out.println("\n Listando todas as contas: \n");
-                controller.readAll().forEach(f -> {
+                /*controller.readAll().forEach(f -> {
                     System.out.println("===" + f.getNome() + "===");
-                });
+                });*/
 
 
             } else if (opcao == 4) {
@@ -67,7 +65,7 @@ public class MainGUIConta {
                 String cpfDesejado = scan.next();
                 controller.readAll().forEach(conta -> {
                     if (conta.getCpfCnpj().equals(cpfDesejado)) {
-                        System.out.println("Conta encontrada - Nome : " + conta.getNome());
+                        System.out.println("Conta encontrada - CPF : " + conta.getCpfCnpj());
                     }
                 });
 
@@ -76,7 +74,7 @@ public class MainGUIConta {
                 String cpfDeletar = scan.next();
                 Conta contaDeletado = controller.read(cpfDeletar);
                 if (contaDeletado != null && controller.delete(cpfDeletar)){
-                    System.out.println("Cliente " + contaDeletado.getNome() + " removido com sucesso!");
+                    System.out.println("Cliente " + contaDeletado.getCpfCnpj() + " removido com sucesso!");
                 } else {
                     System.out.println("Cliente não encontrado, ou não foi possível remover.");
                 }

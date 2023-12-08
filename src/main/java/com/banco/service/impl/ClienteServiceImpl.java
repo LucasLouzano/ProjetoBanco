@@ -16,6 +16,7 @@ public class ClienteServiceImpl implements ClienteService {
     private ClienteDAO repository = new ClienteDAOImpl();
     List<Cliente> clientes = new ArrayList<>();
     private static final String MSG_CLIENTE_VALID = "Cliente com nome inválido.";
+    private static final String MSG_LOGIN_VALID = "Cliente com login e senha inválido.";
 
     @Override // create-criar //remover pontos e traços
     public void create(Cliente cliente) throws CpfCnpjException {
@@ -33,7 +34,7 @@ public class ClienteServiceImpl implements ClienteService {
         } else if (cliente.getNome() == null || cliente.getNome().length() < 4) {
             throw new RuntimeException(MSG_CLIENTE_VALID);
         } else if(cliente.getCpfCnpj() == null && cliente.getSenha() == null){
-
+        	throw new RuntimeException(MSG_LOGIN_VALID);
         }
     }
 

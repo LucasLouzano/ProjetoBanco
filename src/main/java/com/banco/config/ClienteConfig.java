@@ -17,14 +17,14 @@ public class ClienteConfig {
         cliente1.setNome("Lucas");
         cliente1.setEmail("lucas@gmail.com");
         cliente1.setNascimento(dataNascimento);
-        cliente1.setCpfCnpj("12345678978");
+        cliente1.setCpfCnpj("12345678910");
 
         Cliente cliente2 = new Cliente();
         LocalDate Nascimento = LocalDate.of(1995, Month.JUNE, 8);
         cliente2.setNome("Antonio");
         cliente2.setEmail("antonio@gmail.com");
         cliente2.setNascimento(Nascimento);
-        cliente2.setCpfCnpj("42345678978");
+        cliente2.setCpfCnpj("12345678920");
 
         Cliente cliente3 = new Cliente();
         LocalDate daNascimento = LocalDate.of(1992, Month.JUNE, 8);
@@ -38,7 +38,7 @@ public class ClienteConfig {
         cliente4.setNome("Teste");
         cliente4.setEmail("teste@gmail.com");
         cliente4.setNascimento(taNascimento);
-        cliente4.setCpfCnpj("22345678978");
+        cliente4.setCpfCnpj("12345678940");
 
         ClienteController contro = new ClienteController();
         contro.create(cliente2);

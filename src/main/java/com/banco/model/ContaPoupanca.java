@@ -1,6 +1,6 @@
 package com.banco.model;
 
-public class ContaPoupanca extends ContaBancaria {
+public class ContaPoupanca extends Conta {
 
     private static final double RENDIMENTO_ANUAL = 10;
 

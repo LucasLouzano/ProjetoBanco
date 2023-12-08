@@ -5,27 +5,34 @@ import java.util.List;
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
 import com.banco.repository.impl.ContaDAOimpl;
+import com.banco.service.ClienteService;
 import com.banco.service.ContaService;
 
 public class ContaServiceimpl implements ContaService {
     private ContaDAO repository = new ContaDAOimpl();
+    private ClienteService clienteService = new ClienteServiceImpl();
 
 
     @Override
-    public void create(Conta nome) {
-        if (nome.getCpfCnpj().length() < 11 && nome.getCpfCnpj() != null) {
-            this.validConta(nome);
-            String SemPontos = nome.getCpfCnpj().replaceAll("[.-]", "");
-            nome.setCpfCnpj(SemPontos);
-            repository.create(nome);
+    public void create(Conta conta) {
+        if (this.validConta(conta)) {
+            String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
+            conta.setCpfCnpj(SemPontos);
+            if(clienteService.read(conta.getCpfCnpj()) != null) {
+            	repository.create(conta);
+            }else {
+            	System.out.println("Este cpf não existe! " + conta.getCpfCnpj());
+            }
+        }else {
+        	System.out.println("Não foi possível cadastrar a conta : " + conta.getNumeroConta());
         }
     }
 
-    private void validConta(Conta nome) {
-        if (nome.getCpfCnpj().length() < 11) {
-        } else if (nome.getNome() == null || nome.getNome().length() < 4) {
-
+    private boolean validConta(Conta conta) {
+        if (conta.getCpfCnpj() == null || conta.getCpfCnpj().length() < 11) {
+        	return false;
         }
+        return true;
     }
     
     @Override
