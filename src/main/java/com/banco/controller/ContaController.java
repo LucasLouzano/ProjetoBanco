@@ -20,7 +20,7 @@ public class ContaController {
         }
     }
     public List<Conta> listarContasPorCpf(String cpfInformado) {
-      return listarContasPorCpf(cpfInformado);
+      return service.listarContasPorCpf(cpfInformado);
     }
     public List<Conta> readAll() {
         return service.readAll();

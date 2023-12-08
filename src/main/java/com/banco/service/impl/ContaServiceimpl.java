@@ -1,12 +1,7 @@
 package com.banco.service.impl;
 
-import java.util.ArrayList;
-import java.util.IllegalFormatCodePointException;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import com.banco.exceptions.CpfCnpjException;
-import com.banco.model.Cliente;
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
 import com.banco.repository.impl.ContaDAOimpl;
@@ -32,20 +27,26 @@ public class ContaServiceimpl implements ContaService {
 
         }
     }
+    
     @Override
     public List<Conta> readAll() {
         return repository.readAll();
     }
 
+    @Override
     public List<Conta> listarContasPorCpf(String cpfInformado) {
-        List<Conta> ContasPorCpf = repository.readAll();
-        for (Conta contas : ContasPorCpf) {
-            if (contas.getCpfCnpj().equals(cpfInformado) && contas.getCpfCnpj().length() < 11) {
-                ContasPorCpf.add(contas);
-            }
-        }
-        return ContasPorCpf;
+    	if(cpfInformado != null && cpfInformado.length() == 11) {
+	        List<Conta> ContasPorCpf = repository.readAll();
+	        for (Conta contas : ContasPorCpf) {
+	            if (contas.getCpfCnpj().equals(cpfInformado)) {
+	                ContasPorCpf.add(contas);
+	            }
+	        }
+	        return ContasPorCpf;
+    	}
+    	return null;
     }
+    
     @Override
     public boolean update(String nome, Conta conta) {
         return repository.update(nome, conta);

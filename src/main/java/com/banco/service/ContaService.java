@@ -3,7 +3,6 @@ package com.banco.service;
 import java.util.List;
 
 import com.banco.exceptions.CpfCnpjException;
-import com.banco.model.Cliente;
 import com.banco.model.Conta;
 
 public interface ContaService {
@@ -19,6 +18,8 @@ public interface ContaService {
     Conta read(String cpf);
 
     Conta readContaPeloNome(String nome);
+    
+    List<Conta> listarContasPorCpf(String cpfInformado);
 
 
 }
