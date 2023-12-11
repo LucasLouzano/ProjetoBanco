@@ -1,31 +1,48 @@
 package com.banco.model;
 
     public class ContaCorrente extends Conta {
+        private boolean debitoAutomatico;
 
-        private static final double RENDIMENTO_ANUAL = 1;
-
-        //public ContaCorrente(int numeroConta, double saldo, double agencia) {
-         //   super(numeroConta, saldo, agencia);
-     //   }
-
-        public static double getRendimentoAnual() {
-            return RENDIMENTO_ANUAL;
+        public boolean getDebitoAutomatico() {
+            return debitoAutomatico;
         }
-        public void depositar(double valor) {
+
+        public void setDebitoAutomatico(boolean debitoAutomatico) {
+            this.debitoAutomatico = debitoAutomatico;
+        }
+
+        public void credito(double valor) {
             if (valor > 0) {
-                setSaldo(getSaldo() + valor);
-                System.out.println("Seu deposito foi realizado com sucesso!");
+                credito(valor);
+                System.out.println("Crédito de " + valor + " realizado com sucesso!");
             } else {
-                System.out.println("Não foi possivel realizar o deposito!");
+                System.out.println("Não foi possível realizar o crédito!");
             }
         }
 
-        public void sacar(double valor) {
+        public void debito(double valor) {
             if (valor > 0 && this.getSaldo() >= valor) {
-                setSaldo(getSaldo() - valor);
-                System.out.println("Saque realizado com sucesso!");
+                debito(valor);
+                System.out.println("Débito de " + valor + " realizado com sucesso!");
             } else {
-                System.out.println("Não foi possivel realizar saque!");
+                System.out.println("Não foi possível realizar o débito!");
+            }
+        }
+        public void transferir(Conta destino, double valor) {
+            if (valor > 0 && this.getSaldo() >= valor) {
+                transferir(destino, valor);
+                System.out.println("Transferência de " + valor + " realizada com sucesso para a conta " + destino.getNumeroConta());
+            } else {
+                System.out.println("Não foi possível realizar a transferência!");
+            }
+        }
+
+        public void debitoAutomatico(double valor) {
+            if (debitoAutomatico && this.getSaldo() >= valor) {
+                debito(valor);
+                System.out.println("Débito automático de " + valor + " realizado com sucesso!");
+            } else {
+                System.out.println("Débito automático não ativado ou saldo insuficiente!");
             }
         }
     }

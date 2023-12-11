@@ -7,7 +7,7 @@ import com.banco.model.Conta;
 
 public interface ContaService {
 
-    void create(Conta nome) throws CpfCnpjException;
+    void create(Conta nome) throws Exception;
 
     List<Conta> readAll();
 

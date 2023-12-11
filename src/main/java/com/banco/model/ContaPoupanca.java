@@ -1,12 +1,7 @@
 package com.banco.model;
 
-public class ContaPoupanca extends Conta {
-
+public class ContaPoupanca extends ContaCorrente {
     private static final double RENDIMENTO_ANUAL = 10;
-
-   // public ContaPoupanca(int numeroConta, double saldo, double agencia) {
-     //   super(numeroConta, saldo, agencia);
-  //  }
 
     public static double getRendimentoAnual() {
         return RENDIMENTO_ANUAL;
@@ -22,7 +17,7 @@ public class ContaPoupanca extends Conta {
     }
 
     public void sacar(double valor) {
-        if (valor > 0 && this.getSaldo() >= valor) {
+        if (valor > 0 && getSaldo() >= valor) {
             setSaldo(getSaldo() - valor);
             System.out.println("Saque realizado com sucesso!");
         } else {
@@ -30,3 +25,4 @@ public class ContaPoupanca extends Conta {
         }
     }
 }
+

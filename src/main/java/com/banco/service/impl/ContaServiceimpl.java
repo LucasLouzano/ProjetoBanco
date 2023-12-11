@@ -11,10 +11,11 @@ import com.banco.service.ContaService;
 public class ContaServiceimpl implements ContaService {
     private ContaDAO repository = new ContaDAOimpl();
     private ClienteService clienteService = new ClienteServiceImpl();
-
+    private static final String MSG_CONTA_VALID = " Número da agencia com 4 caracteres.";
+    private static final String VALID_NUMERO_CONTA = " A validação foi bem sucedida.";
 
     @Override
-    public void create(Conta conta) {
+    public void create(Conta conta) throws Exception {
         if (this.validConta(conta)) {
             String SemPontos = conta.getCpfCnpj().replaceAll("[.-]", "");
             conta.setCpfCnpj(SemPontos);
@@ -28,10 +29,15 @@ public class ContaServiceimpl implements ContaService {
         }
     }
 
-    private boolean validConta(Conta conta) {
-        if (conta.getCpfCnpj() == null || conta.getCpfCnpj().length() < 11) {
-        	return false;
-        }
+    private boolean validConta(Conta conta) throws Exception {
+        if (conta.getNumeroConta().length() < 5){
+            throw new Exception(VALID_NUMERO_CONTA);
+        }else if(conta.getAgencia().length() < 4) {
+            throw new Exception(MSG_CONTA_VALID);
+        }else if (conta.getCpfCnpj() == null || conta.getCpfCnpj().length() < 11) {
+                return false;
+            }
+
         return true;
     }
     

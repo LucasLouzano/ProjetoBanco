@@ -3,8 +3,8 @@ package com.banco.model;
 import java.time.LocalDate;
 
 public  class Conta {
-    private int numeroConta;
-    private double tipoConta;
+    private String numeroConta;
+    private String agencia;
     private double saldo;
     private String cpfCnpj;
     private String email;
@@ -15,6 +15,7 @@ public  class Conta {
     public String getSenha() {
         return senha;
     }
+
     public void setSenha(String senha) {
         this.senha = senha;
     }
@@ -43,20 +44,20 @@ public  class Conta {
         this.dataCriacao = dataCriacao;
     }
 
-    public int getNumeroConta() {
+    public String getNumeroConta() {
         return numeroConta;
     }
 
-    public void setNumeroConta(int numeroConta) {
+    public void setNumeroConta(String numeroConta) {
         this.numeroConta = numeroConta;
     }
 
-    public double getTipoConta() {
-        return tipoConta;
+    public String getAgencia() {
+        return agencia;
     }
 
-    public void setTipoConta(double tipoConta) {
-        this.tipoConta = tipoConta;
+    public void setAgencia(String agencia) {
+        this.agencia = agencia;
     }
 
     public double getSaldo() {
@@ -66,15 +67,18 @@ public  class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
+
     @Override
     public String toString() {
         return "Conta{" +
+                "numeroConta='" + numeroConta + '\'' +
+                ", agencia='" + agencia + '\'' +
+                ", saldo=" + saldo +
                 ", cpfCnpj='" + cpfCnpj + '\'' +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
                 ", dataCriacao=" + dataCriacao +
                 '}';
     }
-
 }
+

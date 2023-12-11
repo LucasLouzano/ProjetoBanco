@@ -1,5 +1,4 @@
 package com.banco.gui;
-
 import java.util.Scanner;
 
 import com.banco.config.ClienteConfig;
@@ -10,37 +9,37 @@ import com.banco.model.Cliente;
 import com.banco.model.LoginDTO;
 
 public class MainGUIClientes {
-	
-	
-    public static void main(String[] args) throws CpfCnpjException {
-        Scanner scan = new Scanner(System.in);
-        int opcao = 0;
-        ClienteConfig.clienteInit();
-        ContaConfig.contaInit();
-        ClienteController controller = new ClienteController();
-        while (opcao != 98){
-            System.out.println(ConstantesGUI.LOGIN.getValor());
-            opcao = scan.nextInt();
-            if (opcao == 1){
-                System.out.println("digite o email");
-                String email = scan.next();
-                System.out.println("Digite a senha");
-                String senha = scan.next();
-                
-                
-                System.out.println("Validando o login:");
-                LoginDTO login = new LoginDTO(email, senha);
-                if(controller.login(login)) {
-                	System.out.println("Login realizado");
-                }else {
-                	System.out.println("Login inválido");
+        public static void main(String[] args) throws Exception {
+            Scanner scan = new Scanner(System.in);
+            int opcao = 0;
+            ClienteConfig.clienteInit();
+            ContaConfig.contaInit();
+            ClienteController controller = new ClienteController();
+            while (opcao != 98){
+                System.out.println(ConstantesGUI.LOGIN.getValor());
+                opcao = scan.nextInt();
+                if (opcao == 1){
+                    System.out.println("digite o email");
+                    String email = scan.next();
+                    System.out.println("Digite a senha");
+                    String senha = scan.next();
+
+
+                    System.out.println("Validando o login:");
+                    LoginDTO login = new LoginDTO(email, senha);
+                    if(controller.login(login)) {
+                        System.out.println("Login realizado");
+                    }else {
+                        System.out.println("Login inválido");
+                    }
                 }
             }
-        }
 
-        while (opcao != 99) { // enquanto
+
+            while (opcao != 99) { // enquanto
             System.out.println(ConstantesGUI.CADASTRO.getValor());
             opcao = scan.nextInt();
+
             if (opcao == 1) {
                 Cliente cliente = new Cliente();
                 System.out.print("Digite o nome: ");
