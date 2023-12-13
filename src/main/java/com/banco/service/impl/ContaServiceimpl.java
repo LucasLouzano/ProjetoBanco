@@ -29,17 +29,18 @@ public class ContaServiceimpl implements ContaService {
         }
     }
 
-    private boolean validConta(Conta conta) throws Exception {
-        if (conta.getNumeroConta().length() < 5) {
-            throw new Exception(VALID_NUMERO_CONTA);
-        } else if (conta.getAgencia().length() < 4) {
-            throw new Exception(MSG_CONTA_VALID);
-        } else if (conta.getCpfCnpj() == null || conta.getCpfCnpj().length() < 11) {
-            return false;
+    private boolean validConta(Conta conta)throws Exception {
+            if (conta.getNumeroConta().length() < 5) {
+                throw new Exception(VALID_NUMERO_CONTA);
+            } else if (conta.getAgencia().length() < 4) {
+                throw new Exception(MSG_CONTA_VALID);
+            } else if (conta.getCpfCnpj() == null || conta.getCpfCnpj().length() < 11) {
+                return false;
+            }
+
+            return true;
         }
 
-        return true;
-    }
 
 
     @Override

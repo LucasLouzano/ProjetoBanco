@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eab02643-9f6a-47b0-a65b-b56b0f0a8178" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/banco/exceptions/LoginInvalidoException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/config/ClienteConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/config/ClienteConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/exceptions/LoginInvalidoException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIConta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/gui/MainGUIConta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/banco/service/impl/ContaServiceimpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
