@@ -33,6 +33,7 @@ public class ClienteConfig {
         cliente3.setNome("Louzano");
         cliente3.setEmail("louzano@gmail.com");
         cliente3.setNascimento(daNascimento);
+        cliente3.setSenha("1234");
         cliente3.setCpfCnpj("83992558282");
 
         Cliente cliente4 = new Cliente();

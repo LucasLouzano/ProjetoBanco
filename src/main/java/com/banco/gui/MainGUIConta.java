@@ -1,5 +1,6 @@
 package com.banco.gui;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.banco.config.ClienteConfig;
@@ -21,21 +22,25 @@ public class MainGUIConta {
 
             if (opcao == 1) {
                 Conta conta = new Conta();
-                System.out.print("Digite o nome: ");
-                String nome = scan.next();
                 System.out.print("Digite o email: ");
                 String email = scan.next();
-                System.out.print("Digite o cpf: ");
+                System.out.println("Digite o cpf:");
                 String cpf = scan.next();
+                System.out.print("Digite o número da agencia: ");
+                String agencia = scan.next();
+                System.out.println("Digite o número da conta:");
+                String numConta = scan.next();
                 conta.setEmail(email);
                 conta.setCpfCnpj(cpf);
+                conta.setAgencia(agencia);
+                conta.setNumeroConta(numConta);
                 controller.create(conta);
                 try {
                     controller.create(conta);
                     System.out.println("\n Conta cadastrada com sucesso!");
                 } catch (Exception e) {
                     System.out.println("============================");
-                    System.out.println("Cpf menor do que 11 dígitos.");
+                    System.out.println("Número da agencia menor que 4 digitos, e número conta menor que 11 digitos.");
                     System.out.println("============================");
                     System.out.println("Retornando para o menu principal.");
                 }
@@ -45,7 +50,7 @@ public class MainGUIConta {
                     System.out.println("Digite o cpf");
                     String ContaCpf = scan.next();
                     Conta conta = controller.read(ContaCpf);
-                    System.out.println("Conta cadastrada cpf existente: " + conta.getCpfCnpj());
+                    System.out.println("Conta existente cpf: " + conta.getCpfCnpj());
                 } catch (Exception e) {
                     System.out.println("============================");
                     System.out.println("não foi possivel validar a conta, cpf não existe.");
@@ -55,9 +60,10 @@ public class MainGUIConta {
 
             } else if (opcao == 3) {
                 System.out.println("\n Listando todas as contas: \n");
-                /*controller.readAll().forEach(f -> {
-                    System.out.println("===" + f.getNome() + "===");
-                });*/
+                List<Conta> contas = controller.readAll();
+                contas.forEach(f -> {
+                    System.out.println("Cpf: " + f.getCpfCnpj() + "===");
+                });
 
 
             } else if (opcao == 4) {
@@ -65,19 +71,24 @@ public class MainGUIConta {
                 String cpfDesejado = scan.next();
                 controller.readAll().forEach(conta -> {
                     if (conta.getCpfCnpj().equals(cpfDesejado)) {
-                        System.out.println("Conta encontrada - CPF : " + conta.getCpfCnpj());
+                        System.out.println("Conta encontrada - CPF : " + cpfDesejado);
                     }
                 });
 
             } else if (opcao == 5) {
-                System.out.println("Digite o cpf para deletar o cliente");
-                String cpfDeletar = scan.next();
-                Conta contaDeletado = controller.read(cpfDeletar);
-                if (contaDeletado != null && controller.delete(cpfDeletar)){
-                    System.out.println("Cliente " + contaDeletado.getCpfCnpj() + " removido com sucesso!");
-                } else {
-                    System.out.println("Cliente não encontrado, ou não foi possível remover.");
+                try {
+                    System.out.println("Digite o cpf para deletar a conta ");
+                    String cpfDeletar = scan.next();
+                    Conta contaDeletado = controller.read(cpfDeletar);
+                    if (contaDeletado != null && controller.delete(cpfDeletar)) {
+                        System.out.println("Conta " + contaDeletado.getCpfCnpj() + " removida com sucesso!");
+                    } else {
+                        System.out.println("Conta não encontrada, ou não foi possível remover.");
+                    }
+                } catch (Exception e) {
+                    System.out.println(" Voltar ao menu ");
                 }
+
             }
         }
         System.out.println("Fim da aplicação!");
