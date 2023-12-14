@@ -67,6 +67,24 @@ public  class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+    
+    public void creditar(double valor) {
+        if (valor > 0) {
+            setSaldo(getSaldo() + valor);
+            System.out.println("Seu deposito foi realizado com sucesso!");
+        } else {
+            System.out.println("Não foi possivel realizar o deposito!");
+        }
+    }
+
+    public void debitar(double valor) {
+        if (valor > 0 && getSaldo() >= valor) {
+            setSaldo(getSaldo() - valor);
+            System.out.println("Saque realizado com sucesso!");
+        } else {
+            System.out.println("Não foi possivel realizar saque!");
+        }
+    }
 
     @Override
     public String toString() {

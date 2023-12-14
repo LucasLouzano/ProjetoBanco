@@ -34,8 +34,8 @@ public class ContaServiceimpl implements ContaService {
             throw new RuntimeException(MSG_CPF_INVALIDO);
         } else if (conta.getCpfCnpj().length() < 11) {
             throw new CpfCnpjException();
-        } else if (conta.getAgencia().length() < 4 && conta.getNumeroConta().length() < 5){
-            throw new RuntimeException(MSG_CONTA_VALID);
+        } else if (conta.getAgencia() == null || conta.getAgencia().length() < 4 || conta.getNumeroConta() == null || conta.getNumeroConta().length() < 5){
+            throw new RuntimeException(MSG_CONTA_VALID + "-" + conta.getAgencia()  +" - " + conta.getNumeroConta());
         }
 
         return true;
