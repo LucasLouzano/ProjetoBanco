@@ -17,7 +17,7 @@ public interface ContaService {
 
     Conta read(String cpf);
 
-    Conta readContaPeloNome(String nome);
+    Conta readContaPeloEmail(String email);
     
     List<Conta> listarContasPorCpf(String cpfInformado);
 

@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Cliente;
-import com.banco.model.Conta;
 import com.banco.model.LoginDTO;
 import com.banco.repository.ClienteDAO;
 

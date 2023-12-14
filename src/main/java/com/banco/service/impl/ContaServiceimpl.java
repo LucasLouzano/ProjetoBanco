@@ -2,6 +2,7 @@ package com.banco.service.impl;
 
 import java.util.List;
 
+import com.banco.exceptions.CpfCnpjException;
 import com.banco.model.Conta;
 import com.banco.repository.ContaDAO;
 import com.banco.repository.impl.ContaDAOimpl;
@@ -11,8 +12,8 @@ import com.banco.service.ContaService;
 public class ContaServiceimpl implements ContaService {
     private ContaDAO repository = new ContaDAOimpl();
     private ClienteService clienteService = new ClienteServiceImpl();
-    private static final String MSG_CONTA_VALID = " Número da agencia com 4 caracteres.";
-    private static final String VALID_NUMERO_CONTA = " A validação foi bem sucedida.";
+    private static final String MSG_CONTA_VALID = " Número numero da conta e agencia ivalido.";
+    private static final String MSG_CPF_INVALIDO = "Cpf ivalido.";
 
     @Override
     public void create(Conta conta) throws Exception {
@@ -28,20 +29,17 @@ public class ContaServiceimpl implements ContaService {
             System.out.println("Não foi possível cadastrar a conta : " + conta.getNumeroConta());
         }
     }
-
-    private boolean validConta(Conta conta)throws Exception {
-            if (conta.getNumeroConta().length() < 5) {
-                throw new Exception(VALID_NUMERO_CONTA);
-            } else if (conta.getAgencia().length() < 4) {
-                throw new Exception(MSG_CONTA_VALID);
-            } else if (conta.getCpfCnpj() == null || conta.getCpfCnpj().length() < 11) {
-                return false;
-            }
-
-            return true;
+    private boolean validConta(Conta conta) throws CpfCnpjException {
+        if (conta.getCpfCnpj() == null) {
+            throw new RuntimeException(MSG_CPF_INVALIDO);
+        } else if (conta.getCpfCnpj().length() < 11) {
+            throw new CpfCnpjException();
+        } else if (conta.getAgencia().length() < 4 && conta.getNumeroConta().length() < 5){
+            throw new RuntimeException(MSG_CONTA_VALID);
         }
 
-
+        return true;
+    }
 
     @Override
     public List<Conta> readAll() {
@@ -78,8 +76,8 @@ public class ContaServiceimpl implements ContaService {
     }
 
     @Override
-    public Conta readContaPeloNome(String nome) {
-        return repository.readContaPeloNome(nome);
+    public Conta readContaPeloEmail(String email) {
+        return repository.readContaPeloEmail(email);
     }
 
 }

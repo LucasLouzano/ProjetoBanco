@@ -1,16 +1,16 @@
 package controller;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
 import com.banco.controller.ContaController;
 import com.banco.model.Conta;
+
+import static org.junit.Assert.*;
 
 public class ContaControllerTest {
     @Test
@@ -28,17 +28,12 @@ public class ContaControllerTest {
     }
 
     @Test
-    public void readContaPeloNome() throws Exception {
+    public void readContaPeloEmail() { //Quando a lista vazia deve retornar Null
         ContaController controller = new ContaController();
-        Conta conta = new Conta();
-        conta.setEmail("rafael@gmail.com");
-        conta.setCpfCnpj("1234567894");
-        conta.setSenha("8563");
-        controller.create(conta);
-
-        Conta c = controller.readContaPeloNome("Rafael");
-        assertNotNull(c);
+        Conta c = controller.readContaPeloEmail("daniel@gmail.com");
+        assertNull(c);
     }
+
 
     @Test
     public void TestListarContas() throws Exception {

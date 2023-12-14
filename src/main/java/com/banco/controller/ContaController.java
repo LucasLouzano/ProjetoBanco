@@ -36,7 +36,7 @@ public class ContaController {
         return service.read(cpf);
     }
 
-    public Conta readContaPeloNome(String nome) {
-        return service.readContaPeloNome(nome);
+    public Conta readContaPeloEmail(String email) {
+        return service.readContaPeloEmail(email);
     }
 }
