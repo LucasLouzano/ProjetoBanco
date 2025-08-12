@@ -1,2 +1,6 @@
-package com.banco.model;public enum TipoMovimentacao {
+package com.banco.model;
+
+public enum TipoMovimentacao {
+
+    DEBITO, CREDITO;
 }
