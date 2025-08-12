@@ -113,5 +113,14 @@ public class ContaDAOimpl implements ContaDAO {
         return null;
     }
 
+    @Override
+    public Conta readByNumber(String numeroConta) {
+        for(Conta cont: basedata ){
+            if(cont.getNumeroConta().equals(numeroConta)){
+                return cont;
+            }
+        }
+        return null;
+    }
 }
 
