@@ -1,5 +1,7 @@
 package com.banco.service.impl;
 
+import com.banco.exceptions.ContaException;
+import com.banco.model.Conta;
 import com.banco.model.Movimentacao;
 import com.banco.repository.MovimentacaoDAO;
 import com.banco.repository.impl.MovimentacaoDAOImpl;
@@ -17,11 +19,11 @@ public class MovimentacaoServiceImpl implements MovimentacaoService {
     private ContaService conta = new ContaServiceimpl();
 
     @Override
-    public void create(Movimentacao movimentacao) {
-        if(conta.read(movimentacao.getNumeroConta())!=null){
+    public void create(Movimentacao movimentacao) throws ContaException {
+        if(conta.readByNumber(movimentacao.getNumeroConta())!=null){
             repository.create(movimentacao);
-//        }else{
-//            System.out.println("Conta não encontrada: " + movimentacao.getNumeroConta());
+        }else{
+            throw new ContaException();
         }
     }
     @Override
@@ -50,12 +52,18 @@ public class MovimentacaoServiceImpl implements MovimentacaoService {
     }
 
     @Override
-    public List<Movimentacao> estratoGeralPorConta() {
+    public List<Movimentacao> extratoGeralPorConta() {
     return repository.readAll()
                 .stream().filter(m -> m.getNumeroConta() != null &&
                     !m.getNumeroConta().isEmpty())
             .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Movimentacao> buscarConta(String numeroConta) {
+        return repository.buscarTodasContas(numeroConta);
+    }
 }
+
+
 //criar extrato de todas as movimetação das contas'
