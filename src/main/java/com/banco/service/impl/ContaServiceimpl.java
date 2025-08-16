@@ -76,6 +76,11 @@ public class ContaServiceimpl implements ContaService {
     }
 
     @Override
+    public Conta readByNumber(String numeroConta) {
+        return repository.readByNumber(numeroConta);
+    }
+
+    @Override
     public Conta readContaPeloEmail(String email) {
         return repository.readContaPeloEmail(email);
     }

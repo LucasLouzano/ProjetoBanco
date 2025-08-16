@@ -12,6 +12,6 @@ public interface GenericCRUD<T, v> {
 
     boolean update(v nome, T conta);
 
-    boolean delete(String nome);
+    boolean delete(v id);
 
 }

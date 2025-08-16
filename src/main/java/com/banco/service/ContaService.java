@@ -16,6 +16,7 @@ public interface ContaService {
     boolean delete(String cpf);
 
     Conta read(String cpf);
+    Conta readByNumber(String numeroConta);
 
     Conta readContaPeloEmail(String email);
     

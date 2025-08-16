@@ -14,7 +14,7 @@ public class ContaConfig {
         conta1.setEmail("lucas@gmail.com");
         conta1.setSenha("8560");
         conta1.setAgencia("0890-9");
-        conta1.setNumeroConta("12341");
+        conta1.setNumeroConta("146856");
         conta1.setSaldo(1200.50);
         conta1.setDataCriacao(data);
 

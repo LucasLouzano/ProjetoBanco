@@ -5,6 +5,6 @@ import com.banco.model.Conta;
 
 public interface ContaDAO extends GenericCRUD<Conta, String> {
     Conta readContaPeloEmail(String email);
-
+    Conta readByNumber(String numeroConta);
 }
 

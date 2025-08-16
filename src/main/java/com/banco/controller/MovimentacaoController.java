@@ -1,5 +1,6 @@
 package com.banco.controller;
 
+import com.banco.exceptions.ContaException;
 import com.banco.model.Movimentacao;
 import com.banco.service.MovimentacaoService;
 import com.banco.service.impl.MovimentacaoServiceImpl;
@@ -9,7 +10,7 @@ import java.util.List;
 public class MovimentacaoController{
     private final MovimentacaoService service = new MovimentacaoServiceImpl();
 
-    public void create(Movimentacao movimetacao) {
+    public void create(Movimentacao movimetacao) throws ContaException {
         service.create(movimetacao);
 
     }
@@ -27,5 +28,9 @@ public class MovimentacaoController{
 
     public boolean delete(Long id) {
         return service.delete(id);
+    }
+
+    public List<Movimentacao> buscar(String numeroConta){
+        return service.buscarConta(numeroConta);
     }
 }
